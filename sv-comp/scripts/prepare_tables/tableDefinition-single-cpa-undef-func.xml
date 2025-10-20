@@ -1,0 +1,9 @@
+<?xml version='1.0' ?>
+<!DOCTYPE table PUBLIC "+//IDN sosy-lab.org//DTD BenchExec table 1.0//EN" "http://www.sosy-lab.org/benchexec/table-1.0.dtd">
+<table>
+    <column title="status"/>
+    <column title="undef funcs">Non-standard undefined functions called</column>
+    <column title="undeclared funcs">Non-standard undeclared functions called</column>
+    <column title="cputime"     numberOfDigits="2" displayTitle="cpu"/>
+    <column title="memUsage"    numberOfDigits="2" displayTitle="mem"     displayUnit="MB" sourceUnit="B"/>
+</table>

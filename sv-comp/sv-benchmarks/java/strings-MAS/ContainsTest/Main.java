@@ -1,0 +1,28 @@
+import org.sosy_lab.sv_benchmarks.Verifier;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String a1 = Verifier.nondetString();
+        String a2 = Verifier.nondetString();
+        testSym(a1, a2);
+        testConc(a1);
+    }
+
+    public static void testSym(String s1, String s2) {
+        if (s1.contains(s2)) {
+            System.out.println("s1 contains s2");
+       } else {
+            System.out.println("s1 does not contain s2");
+        }
+    }
+
+    public static void testConc(String s2) {
+        String s3 = "HelloWorld";
+        if (s3.contains(s2)) {
+            System.out.println("Hello World contains s2");
+        } else if (s2.contains(s3)){
+            System.out.println("s2 contains Hello World");
+        }
+    }
+}

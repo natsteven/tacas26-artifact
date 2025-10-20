@@ -1,0 +1,82 @@
+id: cbmc
+name: CBMC
+input_languages:
+  - C
+project_url: https://www.cprover.org/cbmc/
+repository_url: https://github.com/diffblue/cbmc
+spdx_license_identifier: BSD-4-Clause
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/cbmc.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - tautschnig
+
+maintainers:
+  - orcid: 0000-0002-7947-983X
+    name: Michael Tautschnig
+    institution: Queen Mary University of London
+    country: UK
+    url: https://www.tautschnig.net/
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10396159
+    benchexec_toolinfo_options: ['--graphml-witness', 'witness.graphml']
+    required_ubuntu_packages:
+      - gcc
+      - libc6-dev-i386
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-7947-983X
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-7947-983X
+      name: Michael Tautschnig
+      institution: Queen Mary University of London
+      country: UK
+      url: https://www.tautschnig.net/
+
+techniques:
+  - Bounded Model Checking
+  - Bit-Precise Analysis
+  - Concurrency Support
+
+frameworks_solvers:
+  - CProver
+  - MiniSAT
+
+used_actors:
+  - actor_type: "Translator"
+    description: |
+      Translates from C to a Goto program for verification.
+
+literature:
+  - doi: 10.1007/978-3-642-54862-8_26
+    title: "CBMC: C Bounded Model Checker (Competition Contribution)"
+    year: 2014
+  - doi: 10.1007/978-3-540-24730-2_15
+    title: "A Tool for Checking ANSI-C Programs"
+    year: 2004

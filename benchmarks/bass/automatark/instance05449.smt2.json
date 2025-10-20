@@ -1,0 +1,43 @@
+{
+	"alphabet" : {
+		"size" : 95,
+		"declaration" : "A,B,D,H,I,M,P,S,U,_,a,b,c,d,e,g,h,i,m,-,.,n,o,p,r,s,t,v,:"
+	},
+	"vertices" : [
+		{
+			"num" : 0,
+			"actualValue" : "X",
+			"incomingEdges" :[
+			],
+			"sourceConstraints" : [ ],
+			"timeStamp" : 1760381798748,
+			"type" : 0,
+			"id" : 0,
+			"value" : "r0!:!getStringValue!!"
+		},{
+			"num" : 0,
+			"actualValue" : "Host:DIMBUSsidebar.activeshopper.comUser-Agent:Pcast_",
+			"incomingEdges" :[
+			],
+			"sourceConstraints" : [ ],
+			"timeStamp" : 1760381798748,
+			"type" : 0,
+			"id" : 1,
+			"value" : "\"Host:DIMBUSsidebar.activeshopper.comUser-Agent:Pcast_\"!:!<init>"
+		},{
+			"num" : 0,
+			"actualValue" : "true",
+			"incomingEdges" :[
+				 {
+					"source" : 0,
+					"type" : "t"
+				}, {
+					"source" : 1,
+					"type" : "s1"
+				}],
+			"sourceConstraints" : [ ],
+			"timeStamp" : 1760381798748,
+			"type" : 0,
+			"id" : 2,
+			"value" : "equals!!Ljava/lang/Object;!:!0"
+		} ] }

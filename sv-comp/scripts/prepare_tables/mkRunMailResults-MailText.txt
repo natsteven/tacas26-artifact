@@ -1,0 +1,40 @@
+To: ___NAME___ <___EMAIL___>
+Cc: ___OBSERVERS___
+From: Dirk Beyer <dirk.beyer@sosy-lab.org>
+Subject: ___COMPETITIONNAME___ ___YEAR___ -- ___RESULTSLEVEL___ Results for ___VERIFIER___
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Dear ___NAME___,
+
+Please find below the ___RESULTSLEVEL___ results for tool ___VERIFIER___,
+as a collection of tables, raw benchmark results, and log files.
+___LIMITSTEXT___
+___ERROR___
+The tables show the raw results of the tool
+(link to log file via column 'status',
+ link to the generated witness/test-suites via column 'wit/test-suite',
+ CPU time, wall time, and memory consumption),
+and the validation results.
+
+Please check the log files to verify that all components that your tool needs are available
+and that the process was executed correctly.
+
+The tables also show the (raw, not yet normalized) scores for each task.
+Cf. Section Computation of Scores for Meta Categories
+of the rules page for instructions on how to compute normalized scores:
+https://___TARGETSERVER___.sosy-lab.org/___YEAR___/rules.php#meta
+
+You are required to forward this e-mail to your team members;
+the results are sent only to the jury members by default.
+
+If you have questions or complaints, please reply to this e-mail.
+
+Provenance information for the benchmarking results is
+contained in the results XML files in tag <description>.
+
+Best regards,
+Dirk Beyer
+(for ___COMPETITIONNAME___ ___YEAR___)
+
+

@@ -1,0 +1,43 @@
+{
+	"alphabet" : {
+		"size" : 95,
+		"declaration" : "a,b,c,e,i,j,l,-,M,r,s,S,t,u,X,:,_"
+	},
+	"vertices" : [
+		{
+			"num" : 0,
+			"actualValue" : "X",
+			"incomingEdges" :[
+			],
+			"sourceConstraints" : [ ],
+			"timeStamp" : 1760381798743,
+			"type" : 0,
+			"id" : 0,
+			"value" : "r0!:!getStringValue!!"
+		},{
+			"num" : 0,
+			"actualValue" : "X-Mailer:_isSubject:_",
+			"incomingEdges" :[
+			],
+			"sourceConstraints" : [ ],
+			"timeStamp" : 1760381798743,
+			"type" : 0,
+			"id" : 1,
+			"value" : "\"X-Mailer:_isSubject:_\"!:!<init>"
+		},{
+			"num" : 0,
+			"actualValue" : "false",
+			"incomingEdges" :[
+				 {
+					"source" : 0,
+					"type" : "t"
+				}, {
+					"source" : 1,
+					"type" : "s1"
+				}],
+			"sourceConstraints" : [ ],
+			"timeStamp" : 1760381798743,
+			"type" : 0,
+			"id" : 2,
+			"value" : "equals!!Ljava/lang/Object;!:!0"
+		} ] }

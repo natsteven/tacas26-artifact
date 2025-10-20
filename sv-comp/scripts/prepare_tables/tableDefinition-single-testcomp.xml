@@ -1,0 +1,15 @@
+<?xml version='1.0' ?>
+<!DOCTYPE table PUBLIC "+//IDN sosy-lab.org//DTD BenchExec table 1.0//EN" "http://www.sosy-lab.org/benchexec/table-1.0.dtd">
+<table>
+    <column title="status"/>
+    <column title="score"/>
+    <column title="tests"       href="___WITDOWNDEL___${logfile_path}/___RUNDEFNAME___/${taskdef_name}/test-suite.zip">tests</column>
+    <column title="tests"       numberOfDigits="2" href="___TESTSUITESIZE___${logfile_path}/___RUNDEFNAME___/${taskdef_name}/test-suite.zip">0</column>
+    <column title="tests"       href="${taskdef_path}/${taskdef_name}___WITINSPDEL___${logfile_path}/___RUNDEFNAME___/${taskdef_name}/test-suite.zip">inspect</column>
+    <column title="branches_plot"    displayTitle="cov. plot" href="___COVPLOT___${logfile_path}/___RUNDEFNAME___/${taskdef_name}/test-suite.zip">0</column>
+    <column title="branches_covered" displayTitle="cov"/>
+    <column title="cputime"     numberOfDigits="2" displayTitle="cpu"/>
+    <column title="walltime"    numberOfDigits="2" displayTitle="wall"/>
+    <column title="memory"      numberOfDigits="2" displayTitle="mem"     displayUnit="MB" sourceUnit="B"/>
+    <column title="cpuenergy"   numberOfDigits="2" displayTitle="energy"  displayUnit="J"  sourceUnit="J"/>
+</table>

@@ -1,0 +1,16 @@
+import org.sosy_lab.sv_benchmarks.Verifier;
+
+public class Main {
+    public static void main(String[] args) {
+        String a1 = Verifier.nondetString();
+        test(a1);
+    }
+
+    public static void test(String s1) {
+        if (s1.toUpperCase().equals("HELLOWORLD")) {
+            System.out.println("s1.toUpperCase() equals \"HELLOWORLD\"");
+        } else {
+            System.out.println("s1.toUpperCase() does not equal \"HELLOWORLD\"");
+        }
+    }
+}

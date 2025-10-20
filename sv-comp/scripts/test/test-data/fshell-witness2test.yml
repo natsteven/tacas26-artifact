@@ -1,0 +1,70 @@
+id: fshell-witness2test
+name: CProver-witness2test
+input_languages:
+  - C
+project_url: https://www.cprover.org/cbmc/
+repository_url: https://github.com/diffblue/cbmc
+spdx_license_identifier: BSD-4-Clause
+benchexec_toolinfo_module: benchexec.tools.fshell-witness2test
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - tautschnig
+
+maintainers:
+  - orcid: 0000-0002-7947-983X
+    name: Michael Tautschnig
+    institution: Queen Mary University of London
+    country: UK
+    url: https://www.tautschnig.net/
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10206716
+    benchexec_toolinfo_options: ["--graphml-witness", "${witness}"]
+    required_ubuntu_packages:
+      - gcc
+      - libc6-dev-i386
+      - make
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 1.0"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 1.0"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: SV-COMP 2023
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-7947-983X
+      name: Michael Tautschnig
+      institution: Queen Mary University of London
+      country: UK
+      url: https://www.tautschnig.net/
+
+techniques:
+  - Bounded Model Checking
+
+frameworks_solvers: []
+
+used_actors:
+  - actor_type: "Witness Transformer"
+    description: |
+      Transforms a witness to a test case.
+
+literature: []

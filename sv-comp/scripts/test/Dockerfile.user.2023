@@ -1,0 +1,137 @@
+# This file is part of the competition environment.
+#
+# SPDX-FileCopyrightText: 2011-2022 Dirk Beyer <https://www.sosy-lab.org>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+FROM ubuntu:22.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y tzdata
+RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+RUN dpkg --add-architecture i386
+RUN apt-get install -y \
+       gcc-multilib \
+       libgomp1 \
+       make \
+       clang \
+       clang-11 \
+       clang-12 \
+       clang-tidy \
+       expect \
+       llvm \
+       llvm-dev \
+       g++-multilib \
+       lcov \
+       libc6-dev-i386 \
+       libclang-cpp-dev \
+       libclang-dev \
+       libgmp-dev \
+       libmpfr6 \
+       libmpfr-dev \
+       libtinfo5 \
+       libz3-4 \
+       llvm-11 \
+       llvm-12 \
+       mono-runtime \
+       openjdk-8-jdk-headless \
+       openjdk-11-jdk-headless \
+       openjdk-17-jdk-headless \
+       openmpi-bin \
+       python3-absl \
+       python3-astunparse \
+       python3-certifi \
+       python3-flatbuffers \
+       python3-gast \
+       python3-h5py \
+       python3-idna \
+       python3-pandas \
+       python3-sklearn \
+       python3-lxml \
+       python3-mpi4py \
+       python3-networkx \
+       python3-numpy \
+       python3-packaging \
+       python3-pycparser \
+       python3-requests \
+       python3-setuptools \
+       python3-termcolor \
+       python3-typing-extensions \
+       python3-urllib3 \
+       python3-wrapt \
+       sbcl \
+       python2
+
+# Requirements from SV-COMP '21 and Test-Comp '21:
+#
+# (Fetch latest version from the Ansible configuration for the competition machines:
+#  https://gitlab.com/sosy-lab/admin/sysadmin/ansible/blob/master/roles/benchmarking/tasks/main.yml)
+#
+# Last synchronized: 2021-11-09 from commit 065243bd2e26609c0020e5a74f58dc53c1ba4218
+#
+#      #- acpid
+#      #- graphviz
+#      - gcc-multilib # cpp, development headers
+#      - libgomp1 # for Z3
+#      - make # for fshellw2t
+#      - clang # Test-Comp'21 LibKluzzer, SV-COMP'22 AProVE, SV-COMP'22 SESL
+#      #- clang-3.9 # SV-COMP'20 Dartagnan
+#      - clang-6.0 # SV-COMP'21 VeriAbs, Test-Comp'21 LibKluzzer
+#      - clang-9 # SV-COMP'21 Dartagnan, Test-Comp'21 Klee, SV-COMP'22 Gazer-Theta
+#      - clang-10 # SV-COMP'21 SMACK, Test-Comp'21 Klee
+#      - clang-11 # SV-COMP'22 Dartagnan
+#      - clang-12  # SV-COMP'22 LART
+#      - clang-tidy  # TestCov
+#      - expect # SV-COMP'20 PredatorHP
+#      - frama-c-base
+#      #- libc6-dev # SV-COMP'20 Map2Check
+#      #- lldb-3.9 # SV-COMP'20 Dartagnan
+#      - llvm # Test-Comp'21 LibKluzzer, SV-COMP'22 SESL
+#      - llvm-6.0 # SV-COMP'21 VeriAbs, Test-Comp'21 LibKluzzer
+#      #- mono-devel # SV-COMP'19 AProVE, SMACK
+#      #- gcc-5-multilib # SV-COMP'19 PredatorHP
+#      - gcc-7-multilib # SV-COMP'20 PredatorHP
+#      - g++-multilib # Test-Comp'20 LibKluzzer
+#      #- python-minimal # SV-COMP'20 Map2Check, Test-Comp'20 Tracer-X
+#      #- python-lxml # SV-COMP'20 Symbiotic
+#      - lcov # TestCov
+#      - libc6-dev-i386 # SV-COMP'21 VeriAbs, Test-Comp'21 VeriFuzz, SV-COMP'22 CBMC
+#      - libmpfr6 # SV-COMP'22 Theta
+#      - libssl1.1 # SV-COMP'22 SESL
+#      - libtinfo5 # Thomas L.: llvm2c
+#      - libwhy3-ocaml-dev # for Frama-C
+#      - libz3-4  # SV-COMP'22 LART
+#      #- linux-libc-dev:i386 # SV-COMP'20 CBMC
+#      - llvm-9 # SV-COMP'21 Dartagnan, gazer-theta, Test-Comp'21 Klee
+#      - llvm-10 # Test-Comp'21 Klee
+#      - llvm-11 # SV-COMP'22 Dartagnan
+#      - llvm-12  # SV-COMP'22 LART
+#      - mono-runtime # SV-COMP'22 AProVE
+#      - openjdk-8-jdk-headless # SV-COMP'20 Ultimate, SV-COMP'22 VeriAbs, SV-COMP'22 JayHorn
+#      - openjdk-11-jdk-headless
+#      - openmpi-bin
+#      - python3-pandas # Test-Comp'21 VeriFuzz
+#      - python3-sklearn # Test-Comp'21 VeriFuzz
+#      #- python-pycparser # SV-COMP'19 CSeq
+#      - python3-lxml # Witnesslint, SV-COMP'22 Symbiotic, SV-COMP'22 LART
+#      - python3-mpi4py
+#      - python3-networkx # SV-COMP'22 Wit4Java
+#      - python3-numpy # Gidon
+#      - python3-pycparser  # SV-COMP'22 Frama-C-SV
+#      - python3-setuptools # SecC
+#      - sbcl # SV-COMP'20 GACAL
+#      #- unzip # SV-COMP'19 JBMC, Test-Comp'20 Tracer-X
+#      #- uncrustify
+#      #- exuberant-ctags
+#      #- libboost-graph1.58.0
+#      #- libz3-dev
+#      #- llvm
+#      #- libhtml-parser-perl
+#      #- libdigest-sha-perl
+#      - why3 # for Frama-C
+#      - why3-coq # for Frama-C
+
+#      - python-is-python2 # ESBMC, VeriAbs, PredatorHP
+#      - python2 # Test-Comp'21 VeriFuzz, PredatorHP
+
+

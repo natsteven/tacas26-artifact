@@ -1,0 +1,26 @@
+import org.sosy_lab.sv_benchmarks.Verifier;
+
+public class Main {
+    public static void main(String[] args) {
+        testFirst("aa");
+        testAll("aa");
+    }
+
+    public static void testFirst(String s1) {
+        String s2 = s1.replaceFirst("a", "b");
+        if (s2.equals("ba")) {
+            System.out.println("s2 equals \"ba\"");
+        } else {
+            System.out.println("s2 does not equal \"aa\"");
+        }
+    }
+
+    public static void testAll(String s1) {
+        String s2 = s1.replace("a", "b");
+        if (s2.equals("aa")) {
+            System.out.println("s2 equals \"muggy\"");
+        } else {
+            System.out.println("s2 does not equal \"muggy\"");
+        }
+    }
+}

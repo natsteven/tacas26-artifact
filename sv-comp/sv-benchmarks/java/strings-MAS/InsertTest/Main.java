@@ -1,0 +1,32 @@
+import org.sosy_lab.sv_benchmarks.Verifier;
+
+public class Main {
+    public static void main(String[] args) {
+        String a1 = Verifier.nondetString();
+        String a2 = Verifier.nondetString();
+        testConc(a1);
+        testSym(a1, a2);
+    }
+
+    public static void testConc(String s1) {
+        StringBuilder sb = new StringBuilder(s1);
+        if (sb.toString().equals("Hello")) {
+            System.out.println("s1 is Hello");
+        }
+        String s2 = sb.insert(5,"World").toString();
+        if (s2.equals("HelloWorld")) {
+            System.out.println("s1 + 'World' equals 'HelloWorld'");
+        }
+    }
+
+    public static void testSym(String s1, String s2) {
+        StringBuilder sb = new StringBuilder(s1);
+        if (sb.toString().equals("Hello")) {
+            System.out.println("s1 is Hello");
+        }
+        String s3 = sb.insert(5,s2).toString();
+        if (s3.equals("HelloWorld")) {
+            System.out.println("s1 + s2 equals 'HelloWorld'");
+        }
+    }
+}

@@ -1,0 +1,35 @@
+# This file is part of the competition environment.
+#
+# SPDX-FileCopyrightText: 2011-2020 Dirk Beyer <https://www.sosy-lab.org>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# This image is used only for executing GitLab CI jobs
+# and automatically updated by the CI.
+
+FROM registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:latest
+RUN apt-get update && apt-get install -y \
+  python3 \
+  python3-pip \
+  python3-yaml \
+  git \
+  jq \
+  make \
+  moreutils \
+  wget \
+  unzip
+
+RUN pip3 install --break-system-packages \
+  argcomplete \
+  black \
+  httpx[http2] \
+  jsonschema \
+  lxml \
+  pandas \
+  progressbar2 \
+  pyyaml \
+  yq
+
+
+RUN git clone https://gitlab.com/sosy-lab/sv-comp/bench-defs
+#RUN cd bench-defs; make init

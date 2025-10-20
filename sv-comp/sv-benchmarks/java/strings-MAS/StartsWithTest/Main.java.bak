@@ -1,0 +1,29 @@
+import org.sosy_lab.sv_benchmarks.Verifier;
+
+public class Main {
+    public static void main(String[] args) {
+        String s1 = "HelloWorld";
+        String s2 = "Hello";
+        testSym(s1, s2);
+        testConc(s2);
+    }
+
+    public static void testSym(String s1, String s2){
+        if(s1.startsWith(s2)){
+            System.out.println("s1 starts with s2");
+        } else if (s2.startsWith(s1)){
+            System.out.println("s2 starts with s1");
+        } else {
+            System.out.println("s1 does not start with s2 and s2 does not start with s1");
+        }
+    }
+
+    public static void testConc(String s2){
+        String s3 = "Hello";
+        if(s2.startsWith(s3)){
+            System.out.println("s2 starts with Hello");
+        } else {
+            System.out.println("s2 does not start with Hello");
+        }
+    }
+}

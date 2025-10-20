@@ -1,0 +1,12 @@
+<?xml version='1.0' ?>
+<!DOCTYPE table PUBLIC "+//IDN sosy-lab.org//DTD BenchExec table 1.0//EN" "http://www.sosy-lab.org/benchexec/table-1.0.dtd">
+<table>
+    <column title="status"/>
+    <column title="score" displayTitle="raw score"/>
+    <column title="witness" href="___WITDOWNDEL___${logfile_path}/___RUNDEFNAME___/${taskdef_name}/___WITNESS___">wit</column>
+    <column title="inspect witness" href="${taskdef_path}/${taskdef_name}___WITINSPDEL___${logfile_path}/___RUNDEFNAME___/${taskdef_name}/___WITNESS___">inspect</column>
+    <column title="cputime"     numberOfDigits="2" displayTitle="cpu"/>
+    <column title="walltime"    numberOfDigits="2" displayTitle="wall"/>
+    <column title="memory"      numberOfDigits="2" displayTitle="mem"     displayUnit="MB" sourceUnit="B"/>
+    <column title="cpuenergy"   numberOfDigits="2" displayTitle="energy"  displayUnit="J"  sourceUnit="J"/>
+</table>

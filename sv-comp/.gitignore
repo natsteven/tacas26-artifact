@@ -1,0 +1,7 @@
+**/__pycache__
+fileByHash/
+results-verified/
+results-validated/
+results-X/
+.idea/
+archives/*.zip

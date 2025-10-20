@@ -1,0 +1,23 @@
+// This file is part of CoVeriTeam, a tool for on-demand composition of cooperative verification systems:
+// https://gitlab.com/sosy-lab/software/coveriteam
+//
+// SPDX-FileCopyrightText: 2020 Dirk Beyer <https://www.sosy-lab.org>
+//
+// SPDX-License-Identifier: Apache-2.0
+
+// A CoVeriTeam program to execut a verifier.
+
+// Create tester from external-actor definition file
+tester = ActorFactory.create(ProgramTester, tool_path, tool_version);
+
+// Print type information of the created ProgramVerifier
+print(tester);
+
+// Prepare example inputs
+program = ArtifactFactory.create(CProgram, program_path, data_model);
+specification = ArtifactFactory.create(TestSpecification, specification_path);
+inputs = {'program':program, 'test_spec':specification};
+
+// Execute the verifier on the inputs
+res = execute(tester, inputs);
+print(res);

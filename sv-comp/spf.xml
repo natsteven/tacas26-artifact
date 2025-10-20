@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE benchmark PUBLIC "+//IDN sosy-lab.org//DTD BenchExec benchmark 2.3//EN" "https://www.sosy-lab.org/benchexec/benchmark-2.3.dtd">
+<benchmark tool="spf" displayName="SPF" timelimit="30 s" memlimit="1 GB" cpuCores="2">
+
+    <rundefinition name="String-MAS">
+        <option>--string-dp</option>
+        <option>MAS</option>
+        <tasks name="RuntimeException-Java">
+            <includesfile>quickRun.set</includesfile>
+            <propertyfile>sv-benchmarks/java/properties/runtime-exception.prp</propertyfile>
+        </tasks>
+    </rundefinition>
+
+    <rundefinition name="String-z3">
+        <option>--string-dp</option>
+        <option>z3str3</option>
+        <tasks name="RuntimeException-Java">
+            <includesfile>quickRun.set</includesfile>
+            <propertyfile>sv-benchmarks/java/properties/runtime-exception.prp</propertyfile>
+        </tasks>
+    </rundefinition>
+
+</benchmark>

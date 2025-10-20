@@ -1,0 +1,43 @@
+{
+	"alphabet" : {
+		"size" : 95,
+		"declaration" : "A,C,E,H,M,R,S,T,U,_,a,c,e,g,h,i,l,-,m,n,.,o,p,q,r,3,s,t,u,w,:,z,="
+	},
+	"vertices" : [
+		{
+			"num" : 0,
+			"actualValue" : "X",
+			"incomingEdges" :[
+			],
+			"sourceConstraints" : [ ],
+			"timeStamp" : 1760381798667,
+			"type" : 0,
+			"id" : 0,
+			"value" : "r0!:!getStringValue!!"
+		},{
+			"num" : 0,
+			"actualValue" : "TM_SEARCH3SearchUser-Agent:as.starware.comM.zipCasinoResults_sq=aolsnssignin_",
+			"incomingEdges" :[
+			],
+			"sourceConstraints" : [ ],
+			"timeStamp" : 1760381798667,
+			"type" : 0,
+			"id" : 1,
+			"value" : "\"TM_SEARCH3SearchUser-Agent:as.starware.comM.zipCasinoResults_sq=aolsnssignin_\"!:!<init>"
+		},{
+			"num" : 0,
+			"actualValue" : "true",
+			"incomingEdges" :[
+				 {
+					"source" : 0,
+					"type" : "t"
+				}, {
+					"source" : 1,
+					"type" : "s1"
+				}],
+			"sourceConstraints" : [ ],
+			"timeStamp" : 1760381798667,
+			"type" : 0,
+			"id" : 2,
+			"value" : "equals!!Ljava/lang/Object;!:!0"
+		} ] }

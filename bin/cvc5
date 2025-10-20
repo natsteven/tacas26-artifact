@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec bin/cvc5-static-binary --produce-models $1

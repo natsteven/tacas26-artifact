@@ -1,0 +1,145 @@
+stages:
+  - imagesUser
+  - imagesTest
+  - tests
+
+include:
+  # Run CI for default branch, tags, and merge requests (not for other branches)
+  - template: 'Workflows/MergeRequest-Pipelines.gitlab-ci.yml'
+
+variables:
+  GIT_DEPTH: "1"
+  GIT_STRATEGY: fetch
+
+# have CI for both, branches and merge requests, but no duplicates
+# (i.e., do not run branch CI if there is a MR open)
+# https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS && $CI_PIPELINE_SOURCE == "push"'
+      when: never
+    - when: always
+
+# Static checks
+check-format:
+  stage: tests
+  image: python:latest
+  before_script:
+    - pip install black ruff
+  script:
+    - date --iso-8601=seconds
+    - black . --check --diff
+    - ruff check
+
+check-packages:
+  stage: tests
+  image: python:latest
+  script:
+    - date --iso-8601=seconds
+    # The first check prints the not-installed packages in the list of packages that should contain only installed packages, the second fails if not empty
+    - grep -v "\[installed" test/Ubuntu-packages.txt
+    - test $(grep -v "^\(/bin/bash\|WARNING\|-----\|$\)" test/Ubuntu-packages.txt | grep -v "\[installed" | wc -l) -eq 0
+
+# Dynamic checks
+unit-tests:
+  stage: tests
+  image: python:latest
+  before_script:
+    - pip install pyyaml benchexec werkzeug coloredlogs
+    - git clone https://gitlab.com/sosy-lab/benchmarking/fm-tools.git ../fm-tools || (cd ../fm-tools; git pull)
+  variables:
+    PYTHONPATH: "prepare_tables"
+  script:
+    - date --iso-8601=seconds
+    - python3 -m unittest discover -p "*_test.py"
+
+# Docker builds
+.build-docker:
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  variables:
+    EXTRA_ARGS: ""
+  script:
+    - mkdir -p /root/.docker
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --dockerfile $CI_PROJECT_DIR/$DOCKERFILE --destination $CI_REGISTRY_IMAGE/$IMAGE $EXTRA_ARGS
+  only:
+    refs:
+      - main
+      - schedules
+
+build-docker:python:latest:
+  extends: .build-docker
+  stage: imagesTest
+  variables:
+    DOCKERFILE: test/Dockerfile.python
+    IMAGE: python:latest
+  needs: []
+  only:
+    changes:
+      - "test/Dockerfile.python"
+
+build-docker:user:2025:
+  extends: .build-docker
+  stage: imagesUser
+  variables:
+    DOCKERFILE: test/Dockerfile.user.2025
+    IMAGE: user:2025
+    # For the next year's competition, create a new build job and make sure that
+    # the following line exists only in the job for the latest image.
+    EXTRA_ARGS: "--destination $CI_REGISTRY_IMAGE/user:latest"
+  only:
+    changes:
+      - "test/Dockerfile.user.2025"
+
+build-docker:user:2024:
+  extends: .build-docker
+  stage: imagesUser
+  variables:
+    DOCKERFILE: test/Dockerfile.user.2024
+    IMAGE: user:2024
+  only:
+    changes:
+      - "test/Dockerfile.user.2024"
+
+build-docker:user:2023:
+  extends: .build-docker
+  stage: imagesUser
+  variables:
+    DOCKERFILE: test/Dockerfile.user.2023
+    IMAGE: user:2023
+  only:
+    changes:
+      - "test/Dockerfile.user.2023"
+
+build-docker:user:2022:
+  extends: .build-docker
+  stage: imagesUser
+  variables:
+    DOCKERFILE: test/Dockerfile.user.2022
+    IMAGE: user:2022
+  only:
+    changes:
+      - "test/Dockerfile.user.2022"
+
+build-docker:user:2021:
+  extends: .build-docker
+  stage: imagesUser
+  variables:
+    DOCKERFILE: test/Dockerfile.user.2021
+    IMAGE: user:2021
+  only:
+    changes:
+      - "test/Dockerfile.user.2021"
+
+build-docker:test:latest:
+  extends: .build-docker
+  stage: imagesTest
+  variables:
+    DOCKERFILE: test/Dockerfile.test
+    IMAGE: test:latest
+  only:
+    changes:
+      - "test/Dockerfile*"
+

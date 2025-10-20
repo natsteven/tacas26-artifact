@@ -1,0 +1,12 @@
+{
+    "cmaesfuzz": {
+        "program": "rangesum.i",
+        "specification": "coverage-branches.prp"
+    },
+    "tracerx": {
+        "specification": "coverage-branches.prp"
+    },
+    "esbmc-kind": {
+        "program": "rangesum05.i"
+    }
+}

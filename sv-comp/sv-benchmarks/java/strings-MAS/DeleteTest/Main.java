@@ -1,0 +1,20 @@
+import org.sosy_lab.sv_benchmarks.Verifier;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String a1 = Verifier.nondetString();
+        test(a1);
+    }
+
+    public static void test(String s1) {
+        StringBuilder sb = new StringBuilder(s1);
+        if (sb.toString().equals("Hello")) {
+            System.out.println("s1 is Hello");
+        }
+        String s2= sb.delete(0, 1).toString(); // delete first character
+        if (s2.equals("ello")){
+            System.out.println("s2 ends with ello");
+        }
+    }
+}

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec bin/z3-noodler-static-binary model=true "$1"

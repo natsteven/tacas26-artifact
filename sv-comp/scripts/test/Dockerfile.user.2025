@@ -1,0 +1,51 @@
+# This file is part of the competition environment.
+#
+# SPDX-FileCopyrightText: 2011-2024 Dirk Beyer <https://www.sosy-lab.org>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# yq -r -s 'map([(.competition_participations[]? | select( .competition=="SV-COMP 2025" or .competition=="Test-Comp 2025") | .tool_version ) as $version  | .versions[] | select(.version == $version and (.full_container_images | length == 0)) | .required_ubuntu_packages ]) | flatten(2) | unique | join(" \\\n")' data/*.yml
+
+FROM ubuntu:24.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y tzdata
+RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+RUN dpkg --add-architecture i386
+RUN apt-get install -y \
+       clang \
+       clang-14 \
+       clang-format \
+       clang-tidy \
+       g++-multilib \
+       gcc \
+       lcov \
+       libc6-dev-i386 \
+       libclang-cpp-dev \
+       libclang-dev \
+       libflint-dev \
+       libgmp-dev \
+       libgomp1 \
+       libmpfr-dev \
+       libmpfr6 \
+       llvm \
+       llvm-14 \
+       llvm-dev \
+       make \
+       openjdk-11-jre-headless \
+       openjdk-17-jdk-headless \
+       openjdk-17-jre-headless \
+       openjdk-21-jre-headless \
+       openjdk-8-jdk-headless \
+       openjdk-8-jre-headless \
+       python3 \
+       python3-bitstring \
+       python3-clang \
+       python3-docker \
+       python3-graphviz \
+       python3-jsonschema \
+       python3-lxml \
+       python3-pycparser \
+       python3-requests \
+       python3-tqdm \
+       python3-yaml

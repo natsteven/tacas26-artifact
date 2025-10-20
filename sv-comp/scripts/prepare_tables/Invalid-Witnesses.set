@@ -1,0 +1,28 @@
+# One witness file per line, exactly as written in the linter output for "Witness File".
+# Comments like this are allowed.
+
+# Outvoted correct verdict (3:1)
+# Infeasible paths specified by the witness. Following the witness we have that cb == 0 at line 223 and
+# then the witness says to follow the true branch of (cb != 0), which is not feasible.
+../../results-verified/cpachecker.2024-11-30_06-09-11.files/SV-COMP25_unreach-call/s3_clnt_3.BV.c.cil-2a.yml/witness.yml
+
+# Outvoted correct verdict (3:1)
+# Memory error causing UB on all program paths descibed by the witness (line 3914).
+../../results-verified/cpachecker.2024-11-30_06-09-11.files/SV-COMP25_unreach-call/parport.i.cil-1.yml/witness.yml
+
+# Outvoted correct verdict (3:1)
+# Bad assumption: Assuming (a == 0) does not lead to a violation.
+../../results-verified/cpachecker.2024-11-30_06-09-11.files/SV-COMP25_unreach-call/cast_union_loose.yml/witness.yml
+../../results-verified/nacpa.2024-12-03_05-22-17.files/SV-COMP25_unreach-call/cast_union_loose.yml/witness.yml
+../../results-verified/cpachecker.2024-11-30_06-09-11.files/SV-COMP25_unreach-call/cast_union_tight.yml/witness.yml
+../../results-verified/nacpa.2024-12-03_05-22-17.files/SV-COMP25_unreach-call/cast_union_tight.yml/witness.yml
+
+# Outvoted correct verdict (3:1)
+# Memory error causing UB on all program paths described by the witness (line 1040).
+../../results-verified/cpachecker.2024-11-30_06-09-11.files/SV-COMP25_unreach-call/sll-01-2.yml/witness.yml
+../../results-verified/nacpa.2024-12-03_05-22-17.files/SV-COMP25_unreach-call/sll-01-2.yml/witness.yml
+
+# Outvoted correct verdict (3:1)
+# Memory error causing UB on all program paths described by the witness (line 4749).
+../../results-verified/cpachecker.2024-11-30_06-09-11.files/SV-COMP25_unreach-call/32_7_cilled_const_ok_linux-32_1-drivers--usb--image--microtek.ko-ldv_main0_sequence_infinite_withcheck_stateful.cil.out.yml/witness.yml
+../../results-verified/nacpa.2024-12-03_05-22-17.files/SV-COMP25_unreach-call/32_7_cilled_const_ok_linux-32_1-drivers--usb--image--microtek.ko-ldv_main0_sequence_infinite_withcheck_stateful.cil.out.yml/witness.yml

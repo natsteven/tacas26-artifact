@@ -1,0 +1,105 @@
+# This file is part of the competition environment.
+#
+# SPDX-FileCopyrightText: 2011-2020 Dirk Beyer <https://www.sosy-lab.org>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+FROM ubuntu:20.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y tzdata
+RUN ln -fs /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+RUN dpkg --add-architecture i386
+RUN apt-get install -y \
+       openjdk-11-jdk-headless \
+       gcc-multilib \
+       libgomp1 \
+       make \
+       clang \
+       clang-6.0 \
+       clang-9 \
+       clang-10 \
+       expect \
+       frama-c-base \
+       libwhy3-ocaml-dev \
+       llvm \
+       llvm-6.0 \
+       llvm-9 \
+       llvm-10 \
+       gcc-7-multilib \
+       g++-multilib \
+       lcov \
+       libc6-dev-i386 \
+       libtinfo5 \
+       openjdk-8-jdk-headless \
+       openmpi-bin \
+       python3-pandas \
+       python3-sklearn \
+       python3-lxml \
+       python3-mpi4py \
+       python3-numpy \
+       python3-setuptools \
+       sbcl \
+       python-is-python2 \
+       python2
+
+# Requirements from SV-COMP '21 and Test-Comp '21:
+#
+# (Fetch latest version from the Ansible configuration for the competition machines:
+#  https://gitlab.com/sosy-lab/admin/sysadmin/ansible/blob/master/roles/benchmarking/tasks/main.yml)
+#
+# Last synchronized: 2020-12-05 from commit 670c4eb
+#
+#      #- acpid
+#      #- graphviz
+#      - openjdk-11-jdk-headless
+#      - gcc-multilib # cpp, development headers
+#      - libgomp1 # for Z3
+#      - make # for fshellw2t
+#      - clang # Test-Comp'21 LibKluzzer
+#      #- clang-3.9 # SV-COMP'20 Dartagnan
+#      - clang-6.0 # SV-COMP'21 VeriAbs, Test-Comp'21 LibKluzzer
+#      - clang-9 # SV-COMP'21 Dartagnan, Test-Comp'21 Klee
+#      - clang-10 # SV-COMP'21 SMACK, Test-Comp'21 Klee
+#      - expect # SV-COMP'20 PredatorHP
+#      - frama-c-base
+#      #- libc6-dev # SV-COMP'20 Map2Check
+#      - libwhy3-ocaml-dev # for Frama-C
+#      #- lldb-3.9 # SV-COMP'20 Dartagnan
+#      - llvm # Test-Comp'21 LibKluzzer
+#      - llvm-6.0 # SV-COMP'21 VeriAbs, Test-Comp'21 LibKluzzer
+#      - llvm-9 # SV-COMP'21 Dartagnan, gazer-theta, Test-Comp'21 Klee
+#      - llvm-10 # Test-Comp'21 Klee
+#      #- mono-devel # SV-COMP'19 AProVE, SMACK
+#      #- gcc-5-multilib # SV-COMP'19 PredatorHP
+#      - gcc-7-multilib # SV-COMP'20 PredatorHP
+#      - g++-multilib # Test-Comp'20 LibKluzzer
+#      #- python-minimal # SV-COMP'20 Map2Check, Test-Comp'20 Tracer-X
+#      #- python-lxml # SV-COMP'20 Symbiotic
+#      - lcov # TestCov
+#      - libc6-dev-i386 # SV-COMP'21 VeriAbs, Test-Comp'21 VeriFuzz
+#      - libtinfo5 # Thomas L.: llvm2c
+#      #- linux-libc-dev:i386 # SV-COMP'20 CBMC
+#      - openjdk-8-jdk-headless # SV-COMP'20 Ultimate
+#      - openmpi-bin
+#      - python3-pandas # Test-Comp'21 VeriFuzz
+#      - python3-sklearn # Test-Comp'21 VeriFuzz
+#      #- python-pycparser # SV-COMP'19 CSeq
+#      - python3-lxml # Witnesslint
+#      - python3-mpi4py
+#      - python3-numpy # Gidon
+#      - python3-setuptools # SecC
+#      - sbcl # SV-COMP'20 GACAL
+#      #- unzip # SV-COMP'19 JBMC, Test-Comp'20 Tracer-X
+#      #- uncrustify
+#      #- exuberant-ctags
+#      #- libboost-graph1.58.0
+#      #- libz3-dev
+#      #- llvm
+#      #- libhtml-parser-perl
+#      #- libdigest-sha-perl
+
+#      - python-is-python2 # ESBMC, VeriAbs, PredatorHP
+#      - python2 # Test-Comp'21 VeriFuzz, PredatorHP
+
+
