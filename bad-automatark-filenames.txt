@@ -1,7 +1,0 @@
-instance00349.smt2
-instance00993.smt2
-instance01335.smt2
-instance02825.smt2
-instance02826.smt2
-instance04506.smt2
-instance14503.smt2

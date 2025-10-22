@@ -5,14 +5,14 @@ solver="$1"
 file="$2"
 benchset="$3"
 
-mkdir -p logs logs/"$solver" logs/"$solver"/"$benchset"
+mkdir -p smt-logs smt-logs/"$solver" smt-logs/"$solver"/"$benchset"
 
-log="logs/$solver/$benchset/$(basename "$file").log"
-performance_log="logs/$solver/$benchset/$(basename "$file").time"
+log="smt-logs/$solver/$benchset/$(basename "$file").log"
+performance_log="smt-logs/$solver/$benchset/$(basename "$file").time"
 rm -f "$log" "$performance_log"
-echo -n "$solver, $(basename "$file"), "
+# echo -n "$solver, $(basename "$file"), "
 
-start=$(date +%s.%3N)
+# start=$(date +%s.%3N)
 
 rc=0
 TIMEOUT_SECS=${TIMEOUT_SECS:-120}
@@ -22,11 +22,11 @@ TIMEOUT_SECS=${TIMEOUT_SECS:-120}
 
 if [ $rc -eq 124 ]; then
   echo "timeout" >> "$log"
-	echo "timeout" > "$performance_log"
+	echo "real=$TIMEOUT_SECS" > "$performance_log"
 elif [ $rc -eq 137 ]; then
   echo "memout" >> "$log"
   echo "memout" > "$performance_log"
 fi
 
-end=$(date +%s.%3N)
-echo "($end - $start)" | bc
+# end=$(date +%s.%3N)
+# echo "($end - $start)" | bc

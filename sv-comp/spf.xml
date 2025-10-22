@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE benchmark PUBLIC "+//IDN sosy-lab.org//DTD BenchExec benchmark 2.3//EN" "https://www.sosy-lab.org/benchexec/benchmark-2.3.dtd">
-<benchmark tool="spf" displayName="SPF" timelimit="30 s" memlimit="1 GB" cpuCores="2">
+<benchmark tool="spf" displayName="SPF" timelimit="30 s" memlimit="1 GB">
 
     <rundefinition name="String-MAS">
         <option>--string-dp</option>

@@ -27,8 +27,7 @@ fi
 "$SCRIPT_DIR"/execute_runs/execute-runcollection.sh \
 	  "benchexec/bin/benchexec" "$ARCHIVE" "$BENCHDEF" \
 	  "\"$WITNESSTARGET\"" "$(dirname "$0")/$RESULTSVERIFICATION/" \
-	  "$BENCHEXECOPTIONS $LIMIT_TIME $LIMIT_CORES $LIMIT_MEMORY"\
-	  "--numOfThreads 2"
+	  "$BENCHEXECOPTIONS $LIMIT_TIME $LIMIT_CORES $LIMIT_MEMORY"
 
 date -Iseconds
 
@@ -41,18 +40,7 @@ RESULTS="$(ls $RESULTSVERIFICATION/results.*.table.html)"
    DATETIME="${BASH_REMATCH[1]}"
  fi
 
-LOGDIR="$RESULTSVERIFICATION/$VERIFIER-results.$DATETIME"
-
-mkdir "$LOGDIR"
-mkdir "$LOGDIR/witnesses"
-mkdir "$LOGDIR/util"
-
-rm $RESULTSVERIFICATION/$VERIFIER.*.json
-unzip $RESULTSVERIFICATION/$VERIFIER.*.zip -d "$LOGDIR"
-rm $RESULTSVERIFICATION/$VERIFIER.*.zip
-mv $RESULTSVERIFICATION/$VERIFIER.*.files $LOGDIR/witnesses
-mv $RESULTSVERIFICATION/$VERIFIER.* "$LOGDIR/util"
-mv $RESULTSVERIFICATION/results.*.table.html "$LOGDIR"
-mv $RESULTSVERIFICATION/results.* "$LOGDIR/util"
+mv $RESULTSVERIFICATION/results.*.table.* ../results
+rm -rf $RESULTSVERIFICATION/*
 
 rm -rf bin/$VERIFIER*
