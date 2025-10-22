@@ -12,7 +12,7 @@ fi
 
 solvers=""
 benchsets=""
-TIMEOUT_SECS=${TIMEOUT_SECS:-120}
+TIMEOUT_SECS="120"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -36,7 +36,7 @@ if [[ ${#solver_arr[@]} -eq 0 || ${#bench_arr[@]} -eq 0 ]]; then
 fi
 
 if [[ ${#solver_arr[@]} -eq 1 && ${solver_arr[0]} == "all" ]]; then
-  solver_arr=("bass" "cvc5" "ostrich" "z3-noodler")
+  solver_arr=("a-str" "cvc5" "ostrich" "z3-noodler")
 fi
 
 export TIMEOUT_SECS
@@ -54,8 +54,8 @@ for benchset in "${bench_arr[@]}"; do
   for solver in "${solver_arr[@]}"; do
     for file in "${files[@]}"; do
       path="benchmarks"
-      if [[ $solver == "bass" ]]; then
-        path="${path}/bass/${benchset}/${file}.smt2.json"
+      if [[ $solver == "a-str" ]]; then
+        path="${path}/a-str/${benchset}/${file}.smt2.json"
       else
         if [[ $benchset == "real" || $benchset == "simple" ]]; then
           path="${path}/not_smt/${solver}/${benchset}/${file}.smt2"
@@ -69,7 +69,7 @@ for benchset in "${bench_arr[@]}"; do
         continue
       fi
 
-      scripts/run_solver.sh "$solver" "$path" "$benchset"
+      taskset -c 0 scripts/run_solver.sh "$solver" "$path" "$benchset"
     done
   done
 done

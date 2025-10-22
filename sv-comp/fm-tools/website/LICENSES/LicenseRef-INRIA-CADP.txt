@@ -1,0 +1,11 @@
+There are two different distribution procedures for the CADP software:
+
+- Industrial users can obtain a commercial license of CADP.
+- Academic users (i.e., employees of universities and public research centers) can obtain a personal,
+  free-of-charge license of CADP.
+  The terms and conditions of this academic-only license are available in French and in English.
+  English: https://cadp.inria.fr/registration/EN_LICENSE.pdf
+
+Further information can be found at https://cadp.inria.fr/registration/
+and questions should be addressed by e-mail to cadp@inria.fr.
+

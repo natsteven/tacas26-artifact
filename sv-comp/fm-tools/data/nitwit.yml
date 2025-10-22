@@ -1,0 +1,72 @@
+id: nitwit
+name: NITWIT
+input_languages:
+  - C
+project_url: https://github.com/moves-rwth/nitwit-validator/
+repository_url: https://github.com/moves-rwth/nitwit-validator/
+spdx_license_identifier: BSD-3-Clause
+benchexec_toolinfo_module: benchexec.tools.nitwit
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - blizzard4591
+
+maintainers:
+  - name: Jana (Philipp) Berger
+    institution: RWTH Aachen
+    country: Germany
+    orcid: 0000-0000-0000-0000
+    url: https://moves.rwth-aachen.de/people/berger/
+
+versions:
+  - version: "svcomp24-validation-violation"
+    doi: 10.5281/zenodo.10116345
+    benchexec_toolinfo_options: ["-w", "${witness}"]
+    required_ubuntu_packages:
+      - gcc-multilib
+      - g++-multilib
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp23-validation-violation"
+    doi: 10.5281/zenodo.10079221
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - gcc-multilib
+      - g++-multilib
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 1.0"
+    label:
+      - inactive
+    tool_version: "svcomp24-validation-violation"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp24-validation-violation"
+    jury_member:
+      name: Jana (Philipp) Berger
+      institution: RWTH Aachen
+      country: Germany
+      url: https://moves.rwth-aachen.de/people/berger/
+  - competition: "SV-COMP 2023"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp23-validation-violation"
+    jury_member:
+      name: Jana (Philipp) Berger
+      institution: RWTH Aachen
+      country: Germany
+      url: https://moves.rwth-aachen.de/people/berger/
+
+techniques:
+  - Explicit-Value Analysis
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-030-45190-5_3
+    title: "Interpretation-Based Violation Witness Validation for C: NITWIT"
+    year: 2020

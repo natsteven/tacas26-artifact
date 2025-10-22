@@ -1,0 +1,94 @@
+id: vercors
+name: VerCors
+description: |
+  The VerCors verifier is a tool for deductive verification of concurrent and parallel software. VerCors can reason about programs written in different programming languages, such as Java, C and OpenCL, where the specifications are written in terms of pre-post-condition contracts using permission-based separation logic. VerCors is able to reason about data-race freedom, memory safety, and functional correctness, and it has been applied on several realistic case studies. Several tools are being developed directly on top of VerCors by encoding their input languages to VerCors' internal representation, allowing reuse of the existing infrastructure for verification. These tools are Alpinist, Vesuv, and VeyMont.
+input_languages:
+  - C
+  - Java
+  - OpenCL
+  - CUDA
+  - LLVM-IR
+  - SYCL
+
+project_url: https://vercors.ewi.utwente.nl/
+repository_url: https://github.com/utwente-fmt/vercors
+spdx_license_identifier: MPL-2.0
+benchexec_toolinfo_module: ""
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - astekelenburg
+
+maintainers:
+  - name: Marieke Huisman
+    institution: University of Twente
+    country: The Netherlands
+    orcid: 0000-0003-4467-072X
+    url: https://mariekehuisman.personalweb.utwente.nl/
+  - name: Lukas Armborst
+    institution: University of Twente
+    country: The Netherlands
+    orcid: 0000-0001-7565-0954
+    url:
+  - name: Lars van den Haak
+    institution: Eindhoven University of Technology
+    country: The Netherlands
+    orcid: 0000-0002-0330-5016
+    url: https://research.tue.nl/nl/persons/lars-van-den-haak
+  - name: Robert Mensing
+    institution: University of Twente
+    country: The Netherlands
+    orcid: 0009-0007-2853-7650
+    url: https://people.utwente.nl/r.a.mensing
+  - name: Robert Rubbens
+    institution: University of Twente
+    country: The Netherlands
+    orcid: 0000-0002-5638-5945
+    url:
+  - name: Ömer Şakar
+    institution: University of Twente
+    country: The Netherlands
+    orcid: 0000-0003-3457-5446
+    url: https://people.utwente.nl/o.f.o.sakar
+  - name: Alexander Stekelenburg
+    institution: University of Twente
+    country: The Netherlands
+    orcid: 0009-0008-7305-038X
+    url: https://people.utwente.nl/a.v.stekelenburg
+  - name: Philip Tasche
+    institution: University of Twente
+    country: The Netherlands
+    orcid: 0000-0003-1518-4079
+    url: https://people.utwente.nl/p.b.h.tasche
+
+versions:
+  - version: "2.3.0"
+    url: "https://github.com/utwente-fmt/vercors/releases/tag/v2.3.0"
+    benchexec_toolinfo_options: []
+    base_container_images:
+      - docker.io/ubuntu:jammy
+    required_ubuntu_packages:
+      - openjdk-17-jre-headless
+      - clang
+      - libllvm15
+    full_container_images:
+      - docker.io/utwentefmt/vercors:2.3.0
+
+competition_participations: []
+
+techniques:
+  - Separation Logic
+  - Concurrency Support
+  - Deductive Verification
+
+frameworks_solvers:
+  - Viper
+  - Z3
+
+literature:
+  - doi: 10.1007/978-3-031-65630-9_1
+    title: "The VerCors Verifier: A Progress Report"
+    year: 2024
+  - doi: 10.1007/978-3-319-66845-1_7
+    title: "The VerCors Tool Set: Verification of Parallel and Concurrent Software"
+    year: 2017
+

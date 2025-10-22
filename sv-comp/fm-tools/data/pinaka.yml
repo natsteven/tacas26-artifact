@@ -1,0 +1,69 @@
+id: pinaka
+name: Pinaka
+input_languages:
+  - C
+project_url: https://github.com/sbjoshi/Pinaka
+repository_url: https://github.com/sbjoshi/Pinaka
+spdx_license_identifier: BSD-4-Clause
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/pinaka.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - akashbanerjeeab
+
+maintainers:
+  - name: Saurabh Joshi
+    institution: IIT Hyderabad
+    country: India
+    url:
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10407406
+    benchexec_toolinfo_options: ['--graphml-witness', 'witness.graphml']
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - Symbolic Execution
+  - Bounded Model Checking
+  - Bit-Precise Analysis
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-030-17502-3_20
+    title: "Pinaka: Symbolic Execution Meets Incremental Solving (Competition Contribution)"
+    year: 2019

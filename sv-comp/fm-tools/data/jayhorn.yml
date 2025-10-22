@@ -1,0 +1,71 @@
+id: jayhorn
+name: JayHorn
+input_languages:
+  - Java
+project_url: https://github.com/jayhorn/jayhorn
+repository_url: https://github.com/jayhorn/jayhorn
+spdx_license_identifier: LGPL-2.1-only
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/jayhorn.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Hassanmousavii
+
+maintainers:
+  - name: Hassan Mousavi
+    institution: University of Tehran, Tehran Institute for Advanced Studies
+    country: Iran
+    url: https://ir.linkedin.com/in/hassan-mousavi
+
+versions:
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10202537
+    benchexec_toolinfo_options: ['--graphml-witness', 'witness.graphml']
+    required_ubuntu_packages:
+      - openjdk-8-jdk-headless
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/jayhorn.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-8-jdk-headless
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hassan Mousavi
+      institution: University of Tehran, Tehran Institute for Advanced Studies
+      country: Iran
+      url: https://ir.linkedin.com/in/hassan-mousavi
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Property-Directed Reachability
+  - Numeric Interval Analysis
+  - Lazy Abstraction
+  - Interpolation
+
+frameworks_solvers: []

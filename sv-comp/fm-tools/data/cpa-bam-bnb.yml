@@ -1,0 +1,72 @@
+id: cpa-bam-bnb
+name: CPA-BAM-BnB
+input_languages:
+  - C
+project_url: https://cpachecker.sosy-lab.org
+repository_url: https://gitlab.com/sosy-lab/software/cpachecker
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/cpachecker.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - p.andrianov
+
+maintainers:
+  - name: Hors Concours
+    institution: --
+    country: --
+    url:
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10396208
+    benchexec_toolinfo_options: ["-svcomp21-bam-bnb", "-disable-java-assertions", "-heap", "10000m"]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Explicit-Value Analysis
+  - Bit-Precise Analysis
+  - ARG-Based Analysis
+  - Lazy Abstraction
+  - Interpolation
+
+frameworks_solvers:
+  - CPAchecker
+  - JavaSMT
+  - MathSAT

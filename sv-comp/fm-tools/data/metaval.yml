@@ -1,0 +1,132 @@
+id: metaval
+name: MetaVal
+description: |
+  MetaVal is an annotation-based witness validator that
+  uses an 'off-the-shelf' verifier
+  to re-establish the verification result 
+  using a program expressing the product
+  automaton of the witness and input program. 
+  From the verification verdict of the product program
+  the witness validation verdict is obtained.
+input_languages:
+  - C
+project_url: https://gitlab.com/sosy-lab/software/metaval
+repository_url: https://gitlab.com/sosy-lab/software/metaval
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.metaval
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Marianl
+  - dbeyer
+  - PhilippWendler
+
+maintainers:
+  - orcid: 0000-0003-4832-7662
+    name: Dirk Beyer
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/dbeyer/
+  - orcid: 0000-0002-8172-3184
+    name: Marian Lingsch-Rosenfeld
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - orcid: 0000-0002-9169-9130
+    name: Martin Spiessl
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/spiessl/
+
+versions:
+  - version: "svcomp25-correctness"
+    doi: 10.5281/zenodo.14170354
+    benchexec_toolinfo_options: ['--metavalWitness', '${witness}', '--metavalWitnessType', 'correctness_witness', '--metavalVerifierBackend', 'cpachecker', '--svcomp24', '--heap', '5000M', '--benchmark', '--timelimit', '900s']
+    required_ubuntu_packages: []
+  - version: "svcomp25-violation"
+    doi: 10.5281/zenodo.14170354
+    benchexec_toolinfo_options: ['--metavalWitness', '${witness}', '--metavalWitnessType', 'violation_witness', '--metavalVerifierBackend', 'cpachecker', '--predicateAnalysis', '--heap', '5000M', '--benchmark', '--timelimit', '90s']
+    required_ubuntu_packages: []
+  - version: "svcomp24-correctness"
+    doi: 10.5281/zenodo.10137150
+    benchexec_toolinfo_options: ['--metavalWitnessType', 'correctness_witness']
+    required_ubuntu_packages: []
+  - version: "svcomp24-violation"
+    doi: 10.5281/zenodo.10137150
+    benchexec_toolinfo_options: ['--metavalWitnessType', 'violation_witness']
+    required_ubuntu_packages: []
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10065455
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Validation of Correctness Witnesses 1.0"
+    tool_version: "svcomp25-correctness"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Correctness Witnesses 2.0"
+    tool_version: "svcomp25-correctness"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp25-violation"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 2.0"
+    tool_version: "svcomp25-violation"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Correctness Witnesses 1.0"
+    tool_version: "svcomp24-correctness"
+    jury_member:
+      orcid: 0000-0002-9169-9130
+      name: Martin Spiessl
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/spiessl/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp24-violation"
+    jury_member:
+      orcid: 0000-0002-9169-9130
+      name: Martin Spiessl
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/spiessl/
+
+techniques:
+  - Algorithm Selection
+  - Task Translation
+
+frameworks_solvers: []
+
+used_actors:
+  - actor_type: "Annotator"
+    description: |
+      Annotates invariants or state guards from software witnesses in the program as assertions or assumptions.
+
+literature:
+  - doi: 10.1007/978-3-030-53291-8_10
+    title: "MetaVal: Witness Validation via Verification"
+    year: 2020

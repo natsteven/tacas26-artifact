@@ -1,0 +1,122 @@
+id: goblint
+name: Goblint
+description: |
+  Goblint is an abstract interpretation framework that
+  is dedicated to the sound thread-modular analysis of multi-threaded
+  programs, especially for data races.
+input_languages:
+  - C
+project_url: https://goblint.in.tum.de/
+repository_url: https://github.com/goblint/analyzer
+spdx_license_identifier: MIT
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/goblint.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - sim642
+
+maintainers:
+  - orcid: 0000-0003-4553-1350
+    name: Simmo Saan
+    institution: University of Tartu
+    country: Estonia
+    url: https://sim642.eu/
+  - orcid: 0000-0002-9828-0308
+    name: Michael Schwarz
+    institution: Technische Universität München
+    country: Germany
+    url: https://michael-schwarz.github.io/
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14054652
+    benchexec_toolinfo_options: ["--conf", "conf/svcomp25.json"]
+    required_ubuntu_packages: []
+  - version: "svcomp25-validation-correctness"
+    doi: 10.5281/zenodo.14054652
+    benchexec_toolinfo_options: ["--witness.yaml.unassume", "${witness}", "--witness.yaml.validate", "${witness}", "--conf", "conf/svcomp25-validate.json"]
+    required_ubuntu_packages: []
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10202867
+    benchexec_toolinfo_options: ["--conf", "conf/svcomp24.json"]
+    required_ubuntu_packages: []
+  - version: "svcomp24-validation-correctness"
+    doi: 10.5281/zenodo.10202867
+    benchexec_toolinfo_options: ["--conf", "conf/svcomp24-validate.json"]
+    required_ubuntu_packages: []
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/goblint.zip"
+    benchexec_toolinfo_options: ["--conf", "conf/svcomp23.json"]
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0003-4553-1350
+      name: Simmo Saan
+      institution: University of Tartu
+      country: Estonia
+      url: https://sim642.eu/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Correctness Witnesses 2.0"
+    tool_version: "svcomp25-validation-correctness"
+    jury_member:
+      orcid: 0000-0003-4553-1350
+      name: Simmo Saan
+      institution: University of Tartu
+      country: Estonia
+      url: https://sim642.eu/
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0003-4553-1350
+      name: Simmo Saan
+      institution: University of Tartu
+      country: Estonia
+      url: https://sim642.eu/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Correctness Witnesses 2.0"
+    tool_version: "svcomp24-validation-correctness"
+    jury_member:
+      orcid: 0000-0003-4553-1350
+      name: Simmo Saan
+      institution: University of Tartu
+      country: Estonia
+      url: https://sim642.eu/
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0003-4553-1350
+      name: Simmo Saan
+      institution: University of Tartu
+      country: Estonia
+      url: https://sim642.eu/
+
+techniques:
+  - Numeric Interval Analysis
+  - Concurrency Support
+  - Algorithm Selection
+  - Floating-Point Arithmetics
+
+frameworks_solvers:
+  - Apron
+
+literature:
+  - doi: 10.1145/2970276.2970337
+    title: "Static race detection for device drivers: the Goblint approach"
+    year: 2016
+  - doi: 10.1007/978-3-031-57256-2_17
+    title: "Goblint Validator: Correctness Witness Validation by Abstract Interpretation (Competition Contribution)"
+    year: 2024
+  - doi: 10.1007/978-3-031-57256-2_25
+    title: "Goblint: Abstract Interpretation for Memory Safety and Termination (Competition Contribution)"
+    year: 2024
+  - doi: 10.1007/978-3-031-30820-8_34
+    title: "Goblint: Autotuning Thread-Modular Abstract Interpretation (Competition Contribution)"
+    year: 2023
+  - doi: 10.1007/978-3-030-72013-1_28
+    title: "Goblint: Thread-Modular Abstract Interpretation Using Side-Effecting Constraints (Competition Contribution)"
+    year: 2021

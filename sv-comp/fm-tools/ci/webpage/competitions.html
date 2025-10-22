@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- This file is part of fm-tools
+     https://gitlab.com/sosy-lab/benchmarking/fm-tools
+     SPDX-FileCopyrightText: 2024 Dirk Beyer <https://www.sosy-lab.org>
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+{% extends "_template.html" %}
+{% block title %}Tools for Formal Methods: Competitions{% endblock %}
+{% block content %}
+    <nav id="toc">
+      <h2>Table of Contents</h2>
+      <ul>
+      {% for competition in competitions %}
+        <li><a href="#competition-{{competition|lower|replace(' ', '-')}}">{{competition}}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+    <div id="tools">
+    {% for competition in competitions %}
+      <section id="competition-{{competition|lower|replace(' ', '-')}}" class="tool-description">
+        <h2>{{competition}}</h2>
+        <ul class="tool-details">
+          {% for tool in competitions[competition] %}
+            <li>
+              <a href="index.html#tool-{{tool|lower|replace(' (hc)', '')}}">{{tool}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+    </div>
+{% endblock %}

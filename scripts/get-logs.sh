@@ -12,7 +12,7 @@ cd "logs/$solver/$benchset" || exit
 out="$HOME/smt-bench/$solver-$benchset-logs.txt"
 rm "$out" 2>/dev/null
 
-if [ "$solver" == "bass" ]; then
+if [ "$solver" == "a-str" ]; then
     for file in *.log; do
         {
         filename="$(basename "$file" .json.log)"

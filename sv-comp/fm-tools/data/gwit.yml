@@ -1,0 +1,70 @@
+id: gwit
+name: GWIT
+input_languages:
+  - Java
+project_url: https://github.com/tudo-aqua/gwit
+repository_url: https://github.com/tudo-aqua/gwit
+spdx_license_identifier: LicenseRef-GWIT
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/gwit.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - fhowar
+  - mmuesly
+
+maintainers:
+  - name: Falk Howar
+    institution: TU Dortmund
+    country: Germany
+    orcid: 0000-0002-9524-4459
+    url: https://falkhowar.de
+
+versions:
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10059567"
+    benchexec_toolinfo_options: ["--witness", "${witness}"]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/val_gwit.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 1.0"
+    label:
+      - inactive
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0002-9524-4459
+      name: Falk Howar
+      institution: TU Dortmund
+      country: Germany
+      url: https://falkhowar.de
+  - competition: "SV-COMP 2023"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-9524-4459
+      name: Falk Howar
+      institution: TU Dortmund
+      country: Germany
+      url: https://falkhowar.de
+
+techniques:
+  - Symbolic Execution
+  - Bit-Precise Analysis
+  - Portfolio
+
+frameworks_solvers: []
+
+literature: []

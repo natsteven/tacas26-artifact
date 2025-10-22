@@ -1,0 +1,78 @@
+id: infer
+name: Infer
+input_languages:
+  - C
+project_url: https://fbinfer.com/
+repository_url: https://gitlab.com/sosy-lab/software/infer-sv
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/infer.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - matthiaskettl
+  - lemberger
+
+maintainers:
+  - orcid: 0000-0001-7365-5030
+    name: Matthias Kettl
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/kettl/
+
+versions:
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10079740
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/infer.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - Numeric Interval Analysis
+  - Shape Analysis
+  - Separation Logic
+  - Portfolio
+
+frameworks_solvers: []
+
+used_actors:
+  - actor_type: "Translator"
+    description: |
+      Translates from Java, C, C++ to SIL for verification.
+
+literature: []

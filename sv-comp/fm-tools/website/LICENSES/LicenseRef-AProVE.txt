@@ -1,0 +1,273 @@
+----------------------------------------------------------------
+License for AProVE (aprove.jar)
+----------------------------------------------------------------
+
+# AProVE SOFTWARE LICENSE AGREEMENT
+Nonexclusive Binary Code License
+
+Please read the terms and conditions of this software license agreement ("LICENSE") prior to downloading the AProVE software. By downloading you agree to be bound by the terms of this LICENSE.
+
+  1. General
+    The AProVE software and accompanying documentation, whether on disk, in read only memory, on any other media or in any other form, are licensed, not sold, to you by RWTH Aachen University. Accepting this nonexclusive license from RWTH Aachen University will permit you to download a copy of the AProVE program code in binary format ("APROVE") and the related documentation ("DOCUMENTATION") and to use the copy of the code and documentation in accordance with the following terms and conditions. RWTH Aachen University retains ownership of APROVE and DOCUMENTATION itself, which is protected by copyright law.
+  2. Use and Transfer of the Software
+    This LICENSE allows you to install and use copies of APROVE on your computer(s). You may not decompile, reverse engineer, disassemble or modify APROVE or parts thereof. Parts of APROVE which are third party software elements integrated into the program may fall under comparable restrictions by their respective licenses (refer to VI below). APROVE and its DOCUMENTATION are being licensed for non-commercial use only. Without executing an applicable commercial license with RWTH Aachen University, no part of APROVE may be sold, offered for sale, or made accessible via commercial services. However, APROVE may be made accessible to third parties on external computer networks for non-commercial use, provided that credit is given to RWTH Aachen University.
+  3. Disclaimer of Warranties
+    You acknowledge and agree that use of APROVE is at your own risk and that the entire risk as to satisfactory quality, performance, accuracy and effort is with you. RWTH Aachen University has no obligation to provide technical support for APROVE and/or its DOCUMENTATION under this LICENSE. RWTH Aachen University is licensing APROVE and accompanying documentation "as is", with no express or implied warranties of any kind, including, but not limited to, any implied warranties of merchantability or fitness for any particular purpose or warranties against infringement of any proprietary rights of a third party.
+  4. Limitation of Liability
+    RWTH Aachen University shall not be liable for any incidental, special, indirect or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or business interruption) arising out of or related to your use of or inability to use APROVE. This limitation of liability does not apply to personal injuries, injuries to life or health or to damages caused willfully or by gross negligence attributable to RWTH Aachen University.
+  5. Transfer of Interest
+    RWTH Aachen University may at any time assign or transfer all or part of its interest in any rights to APROVE and documentation, and to this license, to an affiliated or unaffiliated company or person.
+
+AProVE contains third party software and icons protected by copyright laws
+and provided under the terms of the following other licenses, not to be
+infringed by this LICENSE:
+
+- Under Lesser General Public License:
+  getopt, http://www.urbanophile.com/arenn/hacking/download.html
+  FindBugs, http://findbugs.sourceforge.net/
+- Under Berkeley Software Distribution:
+  ASM Bytecode Outline Plugin, http://andrei.gmxhome.de/bytecode/
+  ASM, http://forge.ow2.org/projects/asm/
+  Timing Framework, http://java.net/projects/timingframework
+  (see also VI. d) 3.)
+  ANTLR, http://www.antlr.org/
+- Under Mozilla Public License:
+  1. Saxon, http://saxon.sourceforge.net/
+- Under Apache:
+  Apache Commons, http://commons.apache.org/
+  JDOM, http://www.jdom.org/
+  Timing Framework, http://java.net/projects/timingframework
+- Under Eclipse Public License:
+  Eclipse icons, http://www.iconlet.com/
+  Albireo, http://wiki.eclipse.org/Albireo_Project
+  The Albireo source code is available for download at
+  http://aprove.informatik.rwth-aachen.de/downloads/org.eclipse.albireo.core_0.0.3.v20081031-src.zip
+
+AProVE uses two third party software packages provided under LGPL license which
+have been altered:
+
+- Sat4j, http://www.sat4j.org. The modified source code is available at
+  http://aprove.informatik.rwth-aachen.de/downloads/sat4j.tar.gz
+- ZGRViewer (part of ZVTM), http://zvtm.sourceforge.net.
+  The modified source code is available at
+  http://aprove.informatik.rwth-aachen.de/downloads/zgrviewer.tar.gz
+
+For licensing details please refer to
+http://aprove.informatik.rwth-aachen.de/download.
+
+------------------------------------------------------
+License for LoAT (bin/loat)
+------------------------------------------------------
+
+LoAT is licensed under GNU GENERAL PUBLIC LICENSE, Version 3. You can obtain a copy from
+https://www.gnu.de/documents/gpl-3.0.de.html.
+
+------------------------------------------------------
+License for KoAT2 (bin/koat2)
+------------------------------------------------------
+
+KoAT2 is licensed under GNU LESSER GENERAL PUBLIC LICENSE, Version 2.1. You can obtain a copy from
+https://www.gnu.de/documents/lgpl-2.1.de.html.
+
+-----------------------------------------------------------
+License for F# (bin/t2/FSharp.Core.dll, bin/t2/FsLexYacc.Runtime.dll)
+-----------------------------------------------------------
+
+F# is licensed under Apache License, Version 2.0. You can obtain a copy from
+http://www.apache.org/licenses/LICENSE-2.0.html.
+
+------------------------------------------------------
+License for z3 (bin/z3)
+------------------------------------------------------
+Copyright (c) Microsoft Corporation
+
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the ""Software""), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED *AS IS*, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-----------------------------------------------------
+License for MiniSat (bin/minisat)
+-----------------------------------------------------
+
+Copyright (c) 2003-2006, Niklas Een, Niklas Sorensson
+Copyright (c) 2007-2010  Niklas Sorensson
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-----------------------------------------------------
+License for Yices (bin/yices)
+-----------------------------------------------------
+
+SRI hereby grants to you a personal, non-exclusive, non-transferable,
+royalty-free license to access, use and modify the Software for your own
+internal, non-commercial purposes. You may also share or distribute copies
+of the Software or of derivative works you make of the Software, but solely
+if restricted to non-commercial use and subject to all terms of this EULA
+(End-User License Agreement). Teaching and academic research are typical
+examples of non-commercial use.
+
+The Software is licensed to you, and such license does not constitute a sale
+of the Software. SRI reserves the right to release the Software under
+different license terms or to stop distributing or providing access to the
+Software at any time.
+
+You may not use or distribute this Software, or any derivative works of this
+Software, for commercial purposes. Examples of commercial purposes include
+running business operations; licensing, leasing, or selling the Software;
+distributing the Software for use with commercial products; using the Software
+in the creation or use of commercial products; or any other activity whose
+purpose is to procure a commercial gain to you or others.
+
+You may not: (i) distribute, sublicense, rent or lease the Software, except
+as expressly permitted under the limited license above; or (ii) sell
+professional services or commercial products based on the use of this software
+or the interpretation of its results.
+
+SRI is the sole owner of the Software and the intellectual property rights
+therein. You agree that SRI retains title to and ownership of the Software
+and that you will keep confidential and use your best efforts to prevent and
+protect the Software from unauthorized access, use or disclosure.
+All trademarks, service marks, and trade names are proprietary to SRI.
+All rights not expressly granted herein are hereby reserved.
+
+The EULA is effective upon the date you first use the Software and shall
+continue until terminated as specified below.
+
+You may terminate the EULA at any time prior to the natural expiration date
+by destroying the Software and any and all related documentation and copies
+and installations thereof, whether made under the terms of these terms or
+otherwise. SRI may terminate the EULA if you fail to comply with any condition
+of the EULA or at SRI's discretion for good cause.If you sue anyone over
+patents that you think may apply to or read on the software or anyone's use
+of the software, this EULA (and your license and rights obtained herein)
+terminate automatically. Upon termination, you must destroy the Software in
+your possession, if any, and any and all copies thereof. In the event of
+termination for any reason, the provisions set forth under the paragraphs
+entitled DISCLAIMER OF ALL WARRANTIES, EXCLUSION OF ALL DAMAGES, and
+LIMITATION AND RELEASE OF LIABILITY shall survive.
+
+The Software is deemed to be "commercial software" and "commercial computer
+software documentation," respectively, pursuant to DFARS §227.7202 and
+FAR 12.212, as applicable. Any use, modification, reproduction, release,
+performance, display, or disclosure of the Software by the U.S. Government
+or any of its agencies or by a U.S. Government prime contractor or
+subcontractor (at any tier) shall be governed solely by the terms of this
+EULA, and shall be prohibited except to the extent expressly permitted by
+the terms of this EULA.
+
+SRI PROVIDES THE SOFTWARE "AS IS" AND WITH ALL FAULTS, AND HEREBY DISCLAIMS
+ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS, IMPLIED OR STATUTORY,
+INCLUDING BUT NOT LIMITED TO ANY (IF ANY) IMPLIED WARRANTIES OR CONDITIONS OF
+MERCHANTABILITY, OF FITNESS FOR A PARTICULAR PURPOSE, OF LACK OF VIRUSES AND
+OF LACK OF NEGLIGENCE OR LACK OF WORKMANLIKE EFFORT. ALSO, THERE IS NO
+WARRANTY OR CONDITION OF TITLE, OF QUIET ENJOYMENT OR OF NON-INFRINGEMENT.
+THE ENTIRE RISK ARISING OUT OF THE USE OR PERFORMANCE OF THE SOFTWARE IS WITH
+YOU.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL SRI BE
+LIABLE FOR ANY CONSEQUENTIAL, INCIDENTAL, DIRECT, INDIRECT, SPECIAL, PUNITIVE
+OR OTHER DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR ANY
+INJURY TO PERSON OR PROPERTY, DAMAGES FOR LOSS OF PROFITS, BUSINESS
+INTERRUPTION, LOSS OF BUSINESS INFORMATION, FOR LOSS OF PRIVACY FOR FAILURE
+TO MEET ANY DUTY INCLUDING OF GOOD FAITH OR OF REASONABLE CARE, FOR NEGLIGENCE
+AND FOR ANY PECUNIARY OR OTHER LOSS WHATSOEVER) ARISING OUT OF OR IN ANY WAY
+RELATED TO THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF SRI HAS BEEN
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS EXCLUSION OF DAMAGES SHALL
+BE EFFECTIVE EVEN IF ANY REMEDY FAILS OF ITS ESSENTIAL PURPOSE.
+
+SRI has included in this EULA terms that disclaim all warranties and liability
+for the Software. To the full extent allowed by law, YOU HEREBY RELEASE SRI
+FROM ANY AND ALL LIABILITY ARISING FROM OR RELATED TO ALL CLAIMS CONCERNING
+THE SOFTWARE OR ITS USE. If you do not wish to accept access to the Software
+under the terms of this EULA, do not access or use the Software. No refund
+will be made, because the Software was provided to you at no charge.
+Independent of, severable from, and to be enforced independently of any other
+provision of this EULA, UNDER NO CIRCUMSTANCE SHALL SRI'S AGGREGATE LIABILITY
+TO YOU (INCLUDING LIABILITY TO ANY THIRD PERSON OR PERSONS WHOSE CLAIM OR
+CLAIMS ARE BASED ON OR DERIVED FROM A RIGHT OR RIGHTS CLAIMED BY YOU), WITH
+RESPECT TO ANY AND ALL CLAIMS AT ANY AND ALL TIMES ARISING FROM OR RELATED TO
+THE SUBJECT MATTER OF THIS EULA, IN CONTRACT, TORT, OR OTHERWISE, EXCEED THE
+TOTAL AMOUNT, IF ANY, ACTUALLY PAID BY YOU TO SRI PURSUANT TO THIS EULA.
+
+This Software is controlled by SRI from its offices within the State of
+California. SRI makes no representation that the Software is appropriate or
+available for use in other locations. Those who choose to access this Software
+from other locations do so at their own initiative and are responsible for
+compliance with local laws, if and to the extent local laws are applicable.
+You hereby acknowledge that the rights and obligations of the EULA are subject
+to the laws and regulations of the United States relating to the export of
+products and technical information. Without limitation, you shall comply with
+all such laws and regulations, including the restriction that the Software
+may not be accessed from, used or otherwise exported or reexported (i) into
+(or to a national or resident of) any country to which the U.S. has embargoed
+goods; or (ii) to anyone on the U.S. Treasury Department's list of Specialty
+Designated Nationals or the U.S. Commerce Department's Table of Deny Orders.
+By accessing or using the Software, you represent and warrant that you are
+not located in, under the control of, or a national or resident of any such
+country on any such list.
+
+Pursuant to Title 17, United States Code, Section 512©(2), notifications of
+claimed copyright infringement should be sent to SRI International, Office
+of the General Counsel, 333 Ravenswood Ave., Menlo Park, CA 94025.
+
+The EULA does not grant you any rights to any software support, enhancements
+or updates. Any updates or new releases of the Software which SRI chooses at
+its own discretion to distribute or provide access to shall be subject to the
+terms hereof.
+
+The EULA constitutes the entire agreement between you and SRI and governs your
+access to and use of the Software. The EULA shall not be modified except in
+writing by both parties.
+
+The EULA shall be governed by and construed in accordance with the laws of the
+State of California, without regard to the conflicts of law principles thereof.
+Any litigation arising out of or relating to this EULA or the Software, shall
+be brought in the United States District Court for the Northern District of
+California, if in federal court, or in the San Mateo County Superior Court, if
+in state court, and the parties hereby waive any objections to personal
+jurisdiction and/or venue in such courts for the purpose of such action.
+
+If any provision of the EULA shall be deemed unlawful, void, or for any reason
+unenforceable, then that provision shall be deemed severable from these terms
+and shall not affect the validity and enforceability of any remaining
+provisions.
+
+In consideration of your use of the Software, you represent that you are of
+legal age to form a binding contract and are not a person barred from receiving
+services under the laws of the United States or other applicable jurisdiction.
+
+The failure of SRI to exercise or enforce any right or provision of the EULA
+shall not constitute a waiver of such right or provision.

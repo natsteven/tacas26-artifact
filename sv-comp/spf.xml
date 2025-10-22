@@ -6,7 +6,7 @@
         <option>--string-dp</option>
         <option>MAS</option>
         <tasks name="RuntimeException-Java">
-            <includesfile>quickRun.set</includesfile>
+            <includesfile>Strings.set</includesfile>
             <propertyfile>sv-benchmarks/java/properties/runtime-exception.prp</propertyfile>
         </tasks>
     </rundefinition>
@@ -15,7 +15,7 @@
         <option>--string-dp</option>
         <option>z3str3</option>
         <tasks name="RuntimeException-Java">
-            <includesfile>quickRun.set</includesfile>
+            <includesfile>Strings.set</includesfile>
             <propertyfile>sv-benchmarks/java/properties/runtime-exception.prp</propertyfile>
         </tasks>
     </rundefinition>

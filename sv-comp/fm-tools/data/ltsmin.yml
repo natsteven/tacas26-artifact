@@ -1,0 +1,58 @@
+id: ltsmin
+name: LTSmin
+description: |
+  LTSmin is a language-independent model-checking toolset supporting
+  multiple input languages and advanced state-space generation techniques via a unified PINS interface. 
+  It features modular architecture, symbolic/distributed/multi-core reachability,
+  and easy extensibility for new languages.
+input_languages:
+  - B
+  - DVE
+  - ETF
+  - Event-B
+  - MCRL
+  - MCRL2
+  - PNML
+  - Promela
+  - TLA+
+  - Z
+project_url: https://ltsmin.utwente.nl/
+repository_url: https://github.com/utwente-fmt/ltsmin
+spdx_license_identifier: BSD-3-Clause
+benchexec_toolinfo_module: "https://www.cip.ifi.lmu.de/~wachowitz/ltsmin.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - dbeyer
+  - ricffb
+
+maintainers:
+  - orcid: 0000-0002-2433-4174
+    name: Alfons Laarman
+    institution: Leiden Institute for Advanced Computer Science
+    country: Netherlands
+    url: https://alfons.laarman.com/
+
+versions:
+  - version: "pnml2lts-sym-3.0.2"
+    url: "https://github.com/utwente-fmt/ltsmin/releases/download/v3.0.2/ltsmin-v3.0.2-linux.tgz"
+    benchexec_toolinfo_options: ["pnml2lts-sym"]
+    required_ubuntu_packages: []
+    base_container_images: ["ubuntu:24.04"]
+
+competition_participations: []
+
+techniques: []
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-662-46681-0_61
+    title: "LTSmin: High-Performance Language-Independent Model Checking"
+    year: 2015
+  - doi: 10.1007/978-3-642-20398-5_40
+    title: "Multi-Core LTSmin: Marrying Modularity and Scalability"
+    year: 2011
+  - doi: 10.1007/978-3-642-14295-6_31
+    title: "LTSmin: Distributed and Symbolic Reachability"
+    year: 2010
+

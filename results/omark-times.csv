@@ -1,4 +1,4 @@
-,bass,,,,cvc5,,,,ostrich,,,,z3-noodler
+,a-str,,,,cvc5,,,,ostrich,,,,z3-noodler
 filename,real,user,sys,mem,real,user,sys,mem,real,user,sys,mem,real,user,sys,mem
 cloud-service-query-1,,,,,1.81,1.14,0.02,17860,,,,,1.01,0.13,0.03,36040,
 lyndon-schuetzenberg-1,0.52,0.45,0.05,61152,,,,,,,,,,,,,

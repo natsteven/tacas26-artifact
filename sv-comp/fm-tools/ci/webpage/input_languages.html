@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- This file is part of fm-tools
+     https://gitlab.com/sosy-lab/benchmarking/fm-tools
+     SPDX-FileCopyrightText: 2024 Dirk Beyer <https://www.sosy-lab.org>
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+{% extends "_template.html" %}
+{% block title %}Tools for Formal Methods: Languages and Supporting Tools{% endblock %}
+{% block content %}
+    <nav id="toc">
+      <h2>Table of Contents</h2>
+      <ul>
+      {% for language in input_languages %}
+        <li><a href="#language-{{language|lower|replace(' ', '-')}}">{{language}}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+    <div id="tools">
+    {% for language in input_languages %}
+      <section id="language-{{language|lower|replace(' ', '-')}}" class="tool-description">
+        <h2>{{language}}</h2>
+        <ul class="tool-details">
+          {% for tool in input_languages[language] %}
+            <li>
+              <a href="index.html#tool-{{tool|lower}}">{{tool}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+    </div>
+{% endblock %}

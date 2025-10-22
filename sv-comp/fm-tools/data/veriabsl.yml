@@ -1,0 +1,140 @@
+id: veriabsl
+name: VeriAbsL
+input_languages:
+  - C
+project_url: https://www.tcs.com
+repository_url: https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/veriabsl.zip
+spdx_license_identifier: LicenseRef-TCS-VeriAbsL
+benchexec_toolinfo_module: benchexec.tools.veriabsl
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - priyankadarke
+
+maintainers:
+  - orcid: 0000-0001-6104-9033
+    name: Priyanka Darke
+    institution: Tata Consultancy Services
+    country: India
+    url: https://www.tcs.com
+
+versions:
+  - version: "1.6.2"
+    doi: 10.5281/zenodo.14030454
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - libc6-dev-i386
+      - openjdk-11-jre-headless
+      - openjdk-17-jre-headless
+      - python3-absl
+      - python3-astunparse
+      - python3-flatbuffers
+      - python3-gast
+      - python3-h5py
+      - python3-packaging
+      - python3-termcolor
+      - python3-wrapt
+      - python3-typing-extensions
+      - python3-pandas
+      - python3-sklearn
+      - python3-certifi
+      - python3-idna
+      - python3-requests
+      - python3-urllib3
+      - clang-12
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10244458
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - libc6-dev-i386
+      - openjdk-11-jre-headless
+      - python3-absl
+      - python3-astunparse
+      - python3-flatbuffers
+      - python3-gast
+      - python3-h5py
+      - python3-packaging
+      - python3-termcolor
+      - python3-wrapt
+      - python3-typing-extensions
+      - python3-pandas
+      - python3-sklearn
+      - python3-certifi
+      - python3-idna
+      - python3-requests
+      - python3-urllib3
+      - clang-12
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/veriabsl.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - libc6-dev-i386
+      - openjdk-11-jre-headless
+      - python3-absl
+      - python3-astunparse
+      - python3-flatbuffers
+      - python3-gast
+      - python3-h5py
+      - python3-packaging
+      - python3-termcolor
+      - python3-wrapt
+      - python3-typing-extensions
+      - python3-pandas
+      - python3-sklearn
+      - python3-certifi
+      - python3-idna
+      - python3-requests
+      - python3-urllib3
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0001-6104-9033
+      name: Priyanka Darke
+      institution: Tata Consultancy Services
+      country: India
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0001-6104-9033
+      name: Priyanka Darke
+      institution: Tata Consultancy Services
+      country: India
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0001-6104-9033
+      name: Priyanka Darke
+      institution: Tata Consultancy Services
+      country: India
+      url:
+
+techniques:
+  - CEGAR
+  - Bounded Model Checking
+  - k-Induction
+  - Explicit-Value Analysis
+  - Numeric Interval Analysis
+  - Evolutionary Algorithms
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers:
+  - CPAchecker
+  - CProver
+  - Z3
+  - MiniSAT
+
+literature:
+  - doi: 10.1007/978-3-031-30820-8_41
+    title: "VeriAbsL: Scalable Verification by Abstraction and Strategy Prediction"
+    year: 2023

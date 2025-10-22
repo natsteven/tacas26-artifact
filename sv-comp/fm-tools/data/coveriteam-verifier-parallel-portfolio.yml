@@ -1,0 +1,90 @@
+id: coveriteam-verifier-parallel-portfolio
+name: CoVeriTeam-Verifier-ParallelPortfolio
+input_languages:
+  - C
+project_url: https://gitlab.com/sosy-lab/software/coveriteam
+repository_url: https://gitlab.com/sosy-lab/software/coveriteam
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: coveriteam-verifier-validator.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - ricffb
+  - skanav
+
+maintainers:
+  - orcid: 0000-0002-4768-4054
+    name: Henrik Wachowitz
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/wachowitz/
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10213624
+    benchexec_toolinfo_options: ["verifier-parallel-portfolio.cvt", "--cache-dir", "cache", "--no-cache-update"]
+    required_ubuntu_packages:
+      - python3-numpy
+      - clang
+      - python2
+      - openjdk-11-jre-headless
+      - python3-lxml
+      - gcc
+      - libc6-dev-i386
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+      - meta_tool
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+      - meta_tool
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Symbolic Execution
+  - Bounded Model Checking
+  - k-Induction
+  - Explicit-Value Analysis
+  - Numeric Interval Analysis
+  - Shape Analysis
+  - Bit-Precise Analysis
+  - ARG-Based Analysis
+  - Lazy Abstraction
+  - Interpolation
+  - Concurrency Support
+  - Ranking Functions
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers:
+  - CPAchecker
+  - CProver
+  - ESBMC
+  - Ultimate
+  - JavaSMT
+  - MathSAT
+  - MiniSAT
+
+literature:
+  - doi: 10.1007/978-3-030-99429-7_3
+    title: "Construction of Verifier Combinations Based on Off-the-shelf Verifiers"
+    year: 2022

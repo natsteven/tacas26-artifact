@@ -1,0 +1,102 @@
+id: ukojak
+name: UKojak
+description: |
+  Kojak analyses programs using an extension of the Lazy Interpolants CEGAR 
+  scheme.
+input_languages:
+  - C
+project_url: https://ultimate-pa.org
+repository_url: https://github.com/ultimate-pa/ultimate
+spdx_license_identifier: LGPL-3.0-or-later
+benchexec_toolinfo_module: ultimatekojak.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - danieldietsch
+
+maintainers:
+  - orcid: 0009-0003-4794-958X
+    name: Manuel Bentele
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/bentele
+  - orcid: 0000-0003-4252-3558
+    name: Matthias Heizmann
+    institution: University of Stuttgart
+    country: Germany
+    url: https://www.iste.uni-stuttgart.de/de/institut/team/Heizmann/
+  - orcid: 0000-0003-4885-0728
+    name: Dominik Klumpp
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/klumpp
+  - orcid: 0000-0002-5656-306X
+    name: Frank Schüssele
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/schuessele
+  - orcid: 0000-0002-8947-5373
+    name: Daniel Dietsch
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/dietsch
+
+versions:
+  - version: svcomp25
+    doi: 10.5281/zenodo.14209044
+    benchexec_toolinfo_options: [--full-output]
+    required_ubuntu_packages:
+      - openjdk-21-jre-headless
+  - version: svcomp24
+    doi: 10.5281/zenodo.10203546
+    benchexec_toolinfo_options: [--full-output]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+  - version: svcomp23
+    url: https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/ukojak.zip
+    benchexec_toolinfo_options: [--full-output]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+
+competition_participations:
+  - competition: SV-COMP 2025
+    track: Verification
+    tool_version: svcomp25
+    jury_member:
+      orcid: 0009-0003-4794-958X
+      name: Manuel Bentele
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/bentele
+  - competition: SV-COMP 2024
+    track: Verification
+    tool_version: svcomp24
+    jury_member:
+      name: Frank Schüssele
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/schuessele
+  - competition: SV-COMP 2023
+    track: Verification
+    tool_version: svcomp23
+    jury_member:
+      name: Frank Schüssele
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/schuessele
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Bit-Precise Analysis
+  - Lazy Abstraction
+  - Interpolation
+
+frameworks_solvers:
+  - Ultimate
+  - SMTinterpol
+  - Z3
+
+literature:
+  - doi: 10.1007/978-3-662-46681-0_44
+    title: ULTIMATE KOJAK with Memory Safety Checks (Competition Contribution)
+    year: 2015

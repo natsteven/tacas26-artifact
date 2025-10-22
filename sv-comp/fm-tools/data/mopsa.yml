@@ -1,0 +1,148 @@
+id: mopsa
+name: Mopsa
+input_languages:
+  - C
+project_url: https://gitlab.com/mopsa/mopsa-analyzer
+repository_url: https://gitlab.com/mopsa/mopsa-analyzer
+spdx_license_identifier: LGPL-3.0-or-later
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/mopsa.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - antoine_mine
+  - aouadjaout
+  - rmonat
+
+maintainers:
+  - orcid: 0000-0001-8487-0326
+    name: Raphaël Monat
+    institution: Inria and University of Lille
+    country: France
+    url: https://rmonat.fr
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14208644
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - clang
+      - libc6-dev-i386
+      - libclang-cpp-dev
+      - libclang-dev
+      - libgmp-dev
+      - libmpfr-dev
+      - llvm
+      - llvm-dev
+      - libflint-dev
+  - version: "svcomp25-validation-correctness"
+    doi: 10.5281/zenodo.14208644
+    benchexec_toolinfo_options: ["--validate_yaml_witness", "${witness}"]
+    required_ubuntu_packages:
+      - clang
+      - libc6-dev-i386
+      - libclang-cpp-dev
+      - libclang-dev
+      - libgmp-dev
+      - libmpfr-dev
+      - llvm
+      - llvm-dev
+      - libflint-dev
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10198570
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - clang
+      - libc6-dev-i386
+      - libclang-cpp-dev
+      - libclang-dev
+      - libgmp-dev
+      - libmpfr-dev
+      - llvm
+      - llvm-dev
+  - version: "svcomp24-validation-correctness"
+    doi: 10.5281/zenodo.10198570
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - clang
+      - libc6-dev-i386
+      - libclang-cpp-dev
+      - libclang-dev
+      - libgmp-dev
+      - libmpfr-dev
+      - llvm
+      - llvm-dev
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/mopsa.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - clang
+      - libc6-dev-i386
+      - libclang-cpp-dev
+      - libclang-dev
+      - libgmp-dev
+      - libmpfr-dev
+      - llvm
+      - llvm-dev
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0001-8487-0326
+      name: Raphaël Monat
+      institution: Inria and University of Lille
+      country: France
+      url: https://rmonat.fr
+  - competition: "SV-COMP 2025"
+    track: 'Validation of Correctness Witnesses 2.0'
+    tool_version: "svcomp25-validation-correctness"
+    jury_member:
+      orcid: 0000-0001-8487-0326
+      name: Raphaël Monat
+      institution: Inria and University of Lille
+      country: France
+      url: https://rmonat.fr
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0001-8487-0326
+      name: Raphaël Monat
+      institution: Inria and University of Lille
+      country: France
+      url: https://rmonat.fr
+  - competition: "SV-COMP 2024"
+    track: 'Validation of Correctness Witnesses 2.0'
+    tool_version: "svcomp24-validation-correctness"
+    jury_member:
+      orcid: 0000-0001-8487-0326
+      name: Raphaël Monat
+      institution: Inria and University of Lille
+      country: France
+      url: https://rmonat.fr
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0001-8487-0326
+      name: Raphaël Monat
+      institution: Inria and University of Lille
+      country: France
+      url: https://rmonat.fr
+
+techniques:
+  - Numeric Interval Analysis
+
+frameworks_solvers:
+  - Apron
+
+literature:
+  - doi: 10.1007/978-3-030-41600-3_1
+    title: "Combinations of Reusable Abstract Domains for a Multilingual Static Analyzer"
+    year: 2020
+  - doi: 10.1007/978-3-031-30820-8_37
+    title: "Mopsa-C: Modular Domains and Relational Abstract Interpretation for C Programs (Competition Contribution)"
+    year: 2023
+  - doi: 10.1007/978-3-031-57256-2_26
+    title: "Mopsa-C: Improved Verification for C Programs, Simple Validation of Correctness Witnesses (Competition Contribution)"
+    year: 2024

@@ -1,0 +1,62 @@
+id: kleef
+name: KLEEF
+input_languages:
+  - C
+project_url: https://toolchain-labs.com/projects/kleef.html
+repository_url: https://github.com/UnitTestBot/klee
+spdx_license_identifier: NCSA
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/kleef.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - misonijnik
+
+maintainers:
+  - name: Aleksandr Misonizhnik
+    orcid: 0000-0002-5907-0324
+    institution: Independent Researcher
+    country: Neutral
+    url:
+
+versions:
+  - version: "testcomp25"
+    doi: "10.5281/zenodo.14354572"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+  - version: "testcomp24"
+    doi: "10.5281/zenodo.10202734"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "Test-Comp 2025"
+    track: "Test Generation"
+    tool_version: "testcomp25"
+    jury_member:
+      name: Aleksandr Misonizhnik
+      orcid: 0000-0002-5907-0324
+      institution: Independent Researcher
+      country: Neutral
+      url:
+  - competition: "Test-Comp 2024"
+    track: "Test Generation"
+    tool_version: "testcomp24"
+    jury_member:
+      name: Yurii Kostyukov
+      institution: RnD Toolchain Labs, Huawei
+      country: China
+      url: https://toolchain-labs.com
+
+
+techniques:
+  - Symbolic Execution
+  - Bit-Precise Analysis
+  - Floating-Point Arithmetics
+  - Targeted Input Generation
+  - Guidance by Coverage Measures
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-031-57259-3_18
+    title: "KLEEF: Symbolic Execution Engine (Competition Contribution)"
+    year: 2024

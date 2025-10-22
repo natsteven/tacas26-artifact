@@ -1,0 +1,114 @@
+id: 2ls
+name: 2LS
+description: |
+  2LS ("tools") is a verification tool for C programs, built upon the CPROVER framework. 
+  It allows one to verify user-specified assertions, undefined behaviour, memory leaks, 
+  and termination properties. The analysis is performed by translating the verification 
+  task into a second-order logic formula over bitvector, array, and floating-point
+  arithmetic theories. The formula is solved by a modular combination of algorithms 
+  involving unfolding and template-based invariant synthesis with the help of
+  incremental SAT solving.
+input_languages:
+  - C
+project_url: https://github.com/diffblue/2ls
+repository_url: https://github.com/diffblue/2ls
+spdx_license_identifier: BSD-4-Clause
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/two_ls.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - viktor.malik
+  - FrNecas
+  - peterschrammel
+
+maintainers:
+  - orcid: 0000-0002-0608-0748
+    name: Viktor Malík
+    institution: Brno University of Technology
+    country: Czechia
+    url: https://www.fit.vut.cz/person/imalik/.en
+
+versions:
+  - version: "svcomp25"
+    doi: "10.5281/zenodo.10184626"
+    benchexec_toolinfo_options: ['--graphml-witness', 'witness.graphml']
+    required_ubuntu_packages: []
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10184626"
+    benchexec_toolinfo_options: ['--graphml-witness', 'witness.graphml']
+    required_ubuntu_packages: []
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/2ls.zip"
+    benchexec_toolinfo_options: ['--graphml-witness', 'witness.graphml']
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-0608-0748
+      name: Viktor Malík
+      institution: Brno University of Technology
+      country: Czechia
+      url: https://www.fit.vut.cz/person/imalik/.en
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0002-0608-0748
+      name: Viktor Malík
+      institution: Brno University of Technology
+      country: Czechia
+      url: https://www.fit.vut.cz/person/imalik/.en
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-0608-0748
+      name: Viktor Malík
+      institution: Brno University of Technology
+      country: Czechia
+      url: https://www.fit.vut.cz/person/imalik/.en
+
+techniques:
+  - Bounded Model Checking
+  - k-Induction
+  - Numeric Interval Analysis
+  - Shape Analysis
+  - Bit-Precise Analysis
+  - Ranking Functions
+  - Template-Based Predicate Inference
+
+frameworks_solvers:
+  - CProver
+  - MiniSAT
+  - Glucose
+
+literature:
+  - doi: 10.1007/978-3-662-48288-9_9
+    title: "Safety Verification and Refutation by k-Invariants and k-Induction"
+    year: 2015
+  - doi: 10.1007/978-3-662-49674-9_56
+    title: "2LS for Program Analysis (Competition Contribution)"
+    year: 2016
+  - doi: 10.1145/3121136
+    title: Bit-Precise Procedure-Modular Termination Analysis
+    year: 2018
+  - doi: 10.1007/978-3-319-89963-3_24
+    title: "2LS: Memory Safety and Non-termination - (Competition Contribution)"
+    year: 2018
+  - doi: 10.23919/FMCAD.2018.8603009
+    title: Template-Based Verification of Heap-Manipulating Programs
+    year: 2019
+  - doi: 10.1007/978-3-030-45237-7_22
+    title: "2LS: Heap Analysis and Memory Safety (Competition Contribution)"
+    year: 2020
+  - doi: 10.1007/978-3-031-30820-8_31
+    title: "2LS: Arrays and Loop Unwinding (Competition Contribution)"
+    year: 2023
+  - doi: 10.48550/arXiv.2302.02380
+    title: "2LS for Program Analysis"
+    year: 2023
+  - doi: 10.1007/978-3-031-56222-8_12
+    title: Template-Based Verification of Array-Manipulating Programs
+    year: 2024

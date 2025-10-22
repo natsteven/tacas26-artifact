@@ -1,4 +1,4 @@
-,bass,,,,cvc5,,,,ostrich,,,,z3-noodler
+,a-str,,,,cvc5,,,,ostrich,,,,z3-noodler
 filename,real,user,sys,mem,real,user,sys,mem,real,user,sys,mem,real,user,sys,mem
 sub-matching-unsat-12,1.87,1.68,0.12,404084,17.54,16.43,1.05,1691176,,,,,25.34,18.17,7.10,32388,
 sub-matching-sat-13,9.07,8.55,0.28,1159280,9.13,8.39,0.71,1139132,,,,,15.79,10.58,5.17,30520,

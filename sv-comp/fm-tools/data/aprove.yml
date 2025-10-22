@@ -1,0 +1,74 @@
+id: aprove
+name: AProVE (KoAT + LoAT)
+description: AProVE (KoAT + LoAT) is a system for automated termination proofs for C / LLVM programs. To (dis)prove termination of C programs, AProVE uses symbolic execution to transform the program's LLVM code into an integer transition system (ITS). These ITSs are analyzed by our backend tools KoAT (for termination) and LoAT (for non-termination).
+input_languages:
+  - C
+project_url: https://aprove.informatik.rwth-aachen.de/
+spdx_license_identifier: LicenseRef-AProVE
+benchexec_toolinfo_module: benchexec.tools.aprove
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - nilslommen
+  - JCKassing
+
+maintainers:
+  - orcid: 0000-0003-3187-9217
+    name: Nils Lommen
+    institution: RWTH Aachen
+    country: Germany
+    url: https://verify.rwth-aachen.de/nlommen/
+  - orcid: 0009-0001-9972-2470
+    name: Jan-Christoph Kassing
+    institution: RWTH Aachen
+    country: Germany
+    url: https://verify.rwth-aachen.de/jckassing/
+
+versions:
+  - version: "svcomp25"
+    doi: "10.5281/zenodo.14192730"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-17-jre-headless
+    base_container_images:
+      - docker.io/ubuntu:20.04
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2022
+  - version: "svcomp22"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2022/raw/svcomp22/2022/aprove.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+    base_container_images:
+      - docker.io/ubuntu:20.04
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2022
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0003-3187-9217
+      name: Nils Lommen
+      institution: RWTH Aachen
+      country: Germany
+      url: https://verify.rwth-aachen.de/nlommen/
+  - competition: "SV-COMP 2022"
+    track: "Verification"
+    tool_version: "svcomp22"
+    jury_member:
+      orcid: 0000-0003-2852-9830
+      name: Jera Hensel
+      institution: RWTH Aachen
+      country: Germany
+      url: https://verify.rwth-aachen.de/jhensel/
+
+techniques:
+  - Ranking Functions
+
+frameworks_solvers:
+  - Z3
+
+literature:
+  - doi: 10.1007/978-3-030-99527-0_21
+    title: "AProVE: Non-Termination Witnesses for C Programs (Competition Contribution)"
+    year: 2022

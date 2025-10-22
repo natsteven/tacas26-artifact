@@ -1,0 +1,53 @@
+id: cooperace
+name: CoOpeRace
+input_languages:
+  - C
+project_url: https://github.com/sws-lab/cooperace
+repository_url: https://github.com/sws-lab/cooperace
+spdx_license_identifier: MIT
+benchexec_toolinfo_module: cooperace.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - vesal.vojdani
+
+maintainers:
+  - orcid: 0009-0009-1203-923X
+    name: Chris Matsiselts
+    institution: University of Tartu
+    country: Estonia
+    url:
+  - orcid: 0000-0003-4336-7980
+    name: Vesal Vojdani
+    institution: University of Tartu
+    country: Estonia
+    url:
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14509733
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - clang-14
+      - llvm-14
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - meta_tool
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0003-4336-7980
+      name: Vesal Vojdani
+      institution: University of Tartu
+      country: Estonia
+      url:
+
+techniques:
+  - Concurrency Support
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers: []
+
+literature: []

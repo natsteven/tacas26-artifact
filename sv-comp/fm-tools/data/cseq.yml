@@ -1,0 +1,79 @@
+id: cseq
+name: CSeq
+input_languages:
+  - C
+project_url: https://www.southampton.ac.uk/~gp1y10/cseq/cseq.html
+spdx_license_identifier: BSD-4-Clause
+benchexec_toolinfo_module: benchexec.tools.lazycseq
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - emersonwds
+
+maintainers:
+  - orcid: 0000-0001-5606-9216
+    name: Emerson Sales
+    institution: Gran Sasso Science Institute
+    country: Italy
+    url: https://github.com/Emersonwds
+
+versions:
+  - version: "svcomp22"
+    doi: 10.5281/zenodo.10396733
+    benchexec_toolinfo_options: ['--witness', 'error-witness.graphml']
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2022
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp22"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp22"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url: https://github.com/Emersonwds
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp22"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url: https://github.com/Emersonwds
+
+techniques:
+  - Bounded Model Checking
+  - Bit-Precise Analysis
+  - Concurrency Support
+
+frameworks_solvers:
+  - CProver
+  - MiniSAT
+
+used_actors:
+  - actor_type: "Specification Transformer"
+    description: |
+      Transforms from concurrent programs to sequential programs by limiting context switches.
+
+literature:
+  - doi: 10.1145/3478536
+    title: "Bounded Verification of Multi-threaded Programs via Lazy Sequentialization"
+    year: 2022
+  - doi: 10.1007/978-3-030-99527-0_23
+    title: "A Prototype for Data Race Detection in CSeq 3 (Competition Contribution)"
+    year: 2022

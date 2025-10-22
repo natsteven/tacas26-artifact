@@ -1,0 +1,67 @@
+id: frama-c-sv
+name: Frama-C-SV
+input_languages:
+  - C
+project_url: https://gitlab.com/sosy-lab/software/frama-c-sv
+repository_url: https://gitlab.com/sosy-lab/software/frama-c-sv
+spdx_license_identifier: "Apache-2.0 AND LGPL-2.0"
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/frama-c-sv.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - dbeyer
+  - masp
+
+maintainers:
+  - name: Martin Spiessl
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/spiessl/
+
+versions:
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10125011
+    benchexec_toolinfo_options: ["--reach-as-overflow", "--allow-unsafe"]
+    required_ubuntu_packages:
+      - python3-pycparser
+      - python3-pandas
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/frama-c-sv.zip"
+    benchexec_toolinfo_options: ["--reach-as-overflow", "--allow-unsafe"]
+    required_ubuntu_packages:
+      - python3-pycparser
+      - python3-pandas
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      name: Martin Spiessl
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/spiessl/
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      name: Martin Spiessl
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/spiessl/
+
+techniques:
+  - Numeric Interval Analysis
+
+frameworks_solvers: []

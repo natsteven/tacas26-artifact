@@ -1,0 +1,74 @@
+id: mlb
+name: MLB
+input_languages:
+  - Java
+project_url: https://github.com/MLB-SE/Experiment
+repository_url: https://github.com/MLB-SE/Experiment
+spdx_license_identifier: MIT
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/mlb.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - MLB-SE
+
+maintainers:
+  - orcid: 0000-0003-0517-7801
+    name: Lei Bu
+    institution: Nanjing University
+    country: China
+    url:
+
+versions:
+  - version: "svcomp25"
+    doi: "10.5281/zenodo.14229077"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-8-jre-headless
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10210608"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-8-jre-headless
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/mlb.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-8-jre-headless
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0003-0517-7801
+      name: Lei Bu
+      institution: Nanjing University
+      country: China
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      name: Lei Bu
+      institution: Nanjing University
+      country: China
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      name: Lei Bu
+      institution: Nanjing University
+      country: China
+      url:
+
+techniques:
+  - Symbolic Execution
+  - Bit-Precise Analysis
+  - Portfolio
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/s00165-021-00538-3
+    title: "Machine learning steered symbolic execution framework for complex software code"
+    year: 2021

@@ -1,0 +1,78 @@
+id: key
+name: KeY
+description: |
+  KeY is a tool for deductive verification to
+  prove the correctness of Java programs.
+input_languages:
+  - Java
+project_url: https://www.key-project.org/
+repository_url: https://github.com/KeYProject/key
+spdx_license_identifier: GPL-2.0
+benchexec_toolinfo_module: "benchexec.tools.key_cli"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - ricffb
+
+maintainers:
+  - orcid: 0000-0002-5671-2555
+    name: Wolfgang Ahrendt
+    institution: Chalmers University of Technology
+    country: Sweden
+    url: https://www.cse.chalmers.se/~ahrendt/
+  - orcid: 0000-0002-9672-3291
+    name: Bernhard Beckert
+    institution: Karlsruhe Institute of Technology
+    country: Germany
+    url: https://formal.kastel.kit.edu/beckert/
+  - orcid: 0009-0003-4847-4707
+    name: Richard Bubel
+    institution: TU Darmstadt
+    country: Germany
+    url: https://www.informatik.tu-darmstadt.de/se/gruppenmitglieder/groupmembers_detailseite_51008.en.jsp
+  - orcid: 0000-0001-8000-7613
+    name: Reiner Hähnle
+    institution: TU Darmstadt
+    country: Germany
+    url: https://www.informatik.tu-darmstadt.de/se/gruppenmitglieder/groupmembers_detailseite_30784.en.jsp
+  - orcid: 0000-0002-2350-1831
+    name: Mattias Ulbrich
+    institution: Karlsruhe Institute of Technology
+    country: Germany
+    url: https://formal.kastel.kit.edu/ulbrich/
+  - orcid: 0000-0001-8446-4598
+    name: Alexander Weigl
+    institution: Karlsruhe Institute of Technology
+    country: Germany
+    url: https://formal.kastel.kit.edu/weigl/
+
+versions:
+  - version: "2.13"
+    doi: 10.5281/zenodo.12945286
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-21-jre-headless
+    base_container_images:
+      - ubuntu:22.04
+
+competition_participations: []
+
+techniques: []
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-030-64354-6
+    title: "Deductive Software Verification: Future Perspectives - Reflections on the Occasion of 20 Years of KeY"
+    year: 2020
+  - doi: 10.1007/978-3-319-49812-6
+    title: "Deductive Software Verification - The KeY Book - From Theory to Practice"
+    year: 2016
+  - doi: 10.1007/978-3-319-12154-3_4
+    title: "The KeY Platform for Verification and Analysis of Java Programs"
+    year: 2014
+  - doi: 10.1007/s10270-004-0058-x
+    title: "The KeY Tool"
+    year: 2005
+  - doi: 10.1007/3-540-40006-0_3
+    title: "The KeY Approach: Integrating Object Oriented Design and Formal Verification"
+    year: 2000

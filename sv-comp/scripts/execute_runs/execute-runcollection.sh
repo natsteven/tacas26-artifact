@@ -75,7 +75,7 @@ echo ""
 echo "  Executing $TOOL"
 
 TMP_FILE=$(mktemp --suffix=-provenance.txt)
-"$SCRIPTS_DIR/mkProvenanceInfo.sh" "$TOOL_ARCHIVE" > "$TMP_FILE"
+# "$SCRIPTS_DIR/mkProvenanceInfo.sh" "$TOOL_ARCHIVE" > "$TMP_FILE"
 
 pushd "$TOOL_DIR" || exit
 if [[ ! -e $OUTPUT_DIR ]]; then

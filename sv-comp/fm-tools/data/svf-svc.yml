@@ -1,0 +1,55 @@
+id: svf-svc
+name: SVF-SVC
+description: |
+  SVF-SVC is an SV-COMP compatibility wrapper around the 
+  Static Value-Flow Analysis Framework (SVF) which leverages 
+  sparse and on-demand analysis to check for software 
+  vulnerabilities and verify program invariants.
+input_languages:
+  - C
+project_url: https://github.com/Lasagnenator/svf-svc-comp/
+repository_url: https://github.com/Lasagnenator/svf-svc-comp/
+spdx_license_identifier: AGPL-3.0-or-later
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/svf-svc.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - ConstantlyRecompiling
+
+maintainers:
+  - orcid: 0000-0000-0000-0000
+    name: Matthew Richards
+    institution: University of New South Wales
+    country: Australia
+    url:
+  - orcid: 0009-0000-9983-9401
+    name: Cameron McGowan
+    institution: University of New South Wales
+    country: Australia
+    url:
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14208597
+    benchexec_toolinfo_options: ["--witness", "witness.graphml"]
+    required_ubuntu_packages: ["python3-yaml"]
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0000-0000-0000
+      name: Matthew Richards
+      institution: University of New South Wales
+      country: Australia
+      url:
+
+techniques:
+  - Symbolic Execution
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1145/3597503.3639220
+    title: Precise Sparse Abstract Execution via Cross-Domain Interaction
+    year: 2024

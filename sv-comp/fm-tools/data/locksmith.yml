@@ -1,0 +1,60 @@
+id: locksmith
+name: Locksmith
+input_languages:
+  - C
+project_url: http://www.cs.umd.edu/projects/PL/locksmith/
+repository_url: http://www.cs.umd.edu/projects/PL/locksmith/download.html
+spdx_license_identifier: BSD-3-Clause
+benchexec_toolinfo_module: locksmith.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - vesal.vojdani
+
+maintainers:
+  - name: Vesal Vojdani
+    institution: University of Tartu
+    country: Estonia
+    url:
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10407379
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      name: Vesal Vojdani
+      institution: University of Tartu
+      country: Estonia
+      url:
+
+techniques:
+  - Concurrency Support
+
+frameworks_solvers: []

@@ -1,0 +1,35 @@
+{
+    "predatorhp": {
+        "specification": "valid-memsafety.prp"
+    },
+    "verifuzz": {
+        "program": "array-2.c"
+    },
+    "gdart": {
+        "program": "Ackermann01"
+    },
+    "ebf": {
+        "program": "18_read_write_lock.i"
+    },
+    "locksmith": {
+        "specification": "no-data-race.prp"
+    },
+    "verioover": {
+        "program": "jain_1-1.c",
+        "specification": "no-overflow.prp"
+    },
+    "java-ranger": {
+        "program": "const1"
+    },
+    "cpv": {
+        "program": "even.c"
+    },
+    "sv-sanitizers": {
+        "specification": "no-data-race.prp",
+        "program": "18_read_write_lock.i"
+    },
+    "relay-sv": {
+        "specification": "no-data-race.prp",
+        "program": "18_read_write_lock.i"
+    }
+}

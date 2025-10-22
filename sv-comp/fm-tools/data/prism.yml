@@ -1,0 +1,67 @@
+id: prism
+name: PRISM
+description: |
+  PRISM is a probabilistic model checker.
+  It has been developed and maintained at Oxford University over the past 25 years.
+  At its core, the tool supports formal modeling and analysis of systems with random or probabilistic behavior,
+  and it can analyze a wide spectrum of models based on Markov chains and probabilistic automata.
+input_languages: []
+project_url: http://www.prismmodelchecker.org/
+repository_url: https://github.com/prismmodelchecker/prism
+spdx_license_identifier: GPL-2.0-only
+benchexec_toolinfo_module: ""
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - dbeyer
+
+maintainers:
+  - orcid: 0000-0001-9022-7599
+    name: Marta Kwiatkowska
+    institution: University of Oxford
+    country: UK
+    url: https://www.cs.ox.ac.uk/people/marta.kwiatkowska/
+  - orcid: 0000-0001-9326-4344
+    name: Gethin Norman
+    institution: University of Glasgow
+    country: UK
+    url: https://www.gla.ac.uk/schools/computing/staff/gethinnorman/
+  - orcid: 0000-0003-4137-8862
+    name: David Parker
+    institution: University of Birmingham
+    country: UK
+    url: https://www.cs.bham.ac.uk/~parkerdx/
+
+versions: []
+
+competition_participations: []
+
+techniques: []
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/11691372_29
+    title: "PRISM: A Tool for Automatic Verification of Probabilistic Systems"
+    year: 2006
+  - doi: 10.1007/3-540-46419-0_27
+    title: "Symbolic Model Checking of Probabilistic Processes Using MTBDDs and the Kronecker Representation"
+    year: 2007
+  - doi: 10.1007/3-540-46002-0_5
+    title: "Probabilistic Symbolic Model Checking with PRISM: A Hybrid Approach"
+    year: 2007
+  - doi: 10.1007/978-3-642-22110-1_47
+    title: "PRISM 4.0: Verification of Probabilistic Real-Time Systems"
+    year: 2011
+  - doi: 10.1007/978-3-540-24730-2_4
+    title: "Numerical vs. Statistical Probabilistic Model Checking: An Empirical Study"
+    year: 2010
+  - doi: 10.1007/978-3-642-19835-9_11
+    title: "Quantitative Multi-objective Verification for Probabilistic Systems"
+    year: 2011
+  - doi: 10.1007/978-3-642-28756-5_22
+    title: "Automatic Verification of Competitive Stochastic Systems"
+    year: 2012
+  - doi: 10.1007/978-3-642-36742-7_13
+    title: "PRISM-games: A Model Checker for Stochastic Multi-Player Games"
+    year: 2013
+

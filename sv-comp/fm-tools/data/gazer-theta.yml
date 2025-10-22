@@ -1,0 +1,79 @@
+id: gazer-theta
+name: Gazer-Theta
+input_languages:
+  - C
+project_url: https://github.com/ftsrg/gazer
+repository_url: https://github.com/ftsrg/gazer
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/gazer-theta.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - AdamZsofi
+
+maintainers:
+  - name: Zsófia Ádám
+    institution: Budapest University of Technology and Economics
+    country: Hungary
+    url:
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10396776
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - libtinfo5
+      - python3
+      - openjdk-11-jre-headless
+      - libgomp1
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Bounded Model Checking
+  - Explicit-Value Analysis
+  - Bit-Precise Analysis
+  - ARG-Based Analysis
+  - Lazy Abstraction
+  - Interpolation
+  - Portfolio
+
+literature:
+  - doi: 10.1007/978-3-030-72013-1_27
+    title: "Gazer-Theta: LLVM-based Verifier Portfolio with BMC/CEGAR (Competition Contribution)"
+    year: 2021
+
+frameworks_solvers: []

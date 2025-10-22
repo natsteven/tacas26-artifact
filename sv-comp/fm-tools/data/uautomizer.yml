@@ -1,0 +1,219 @@
+id: uautomizer
+name: UAutomizer
+description: |
+  Ultimate Automizer is a software model checker that
+  is based on automata-based techniques and interpolation
+  to check for software errors and to verify program properties.
+input_languages:
+  - C
+project_url: https://ultimate-pa.org
+repository_url: https://github.com/ultimate-pa/ultimate
+spdx_license_identifier: LGPL-3.0-or-later
+benchexec_toolinfo_module: ultimateautomizer.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - danieldietsch
+
+maintainers:
+  - orcid: 0009-0004-9216-1801
+    name: Marcel Ebbinghaus
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/ebbinghaus
+  - orcid: 0000-0003-4252-3558
+    name: Matthias Heizmann
+    institution: University of Stuttgart
+    country: Germany
+    url: https://www.iste.uni-stuttgart.de/de/institut/team/Heizmann/
+  - orcid: 0000-0003-4885-0728
+    name: Dominik Klumpp
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/klumpp
+  - orcid: 0000-0002-5656-306X
+    name: Frank Schüssele
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/schuessele
+  - orcid: 0000-0002-8947-5373
+    name: Daniel Dietsch
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/dietsch
+versions:
+  - version: svcomp25
+    doi: 10.5281/zenodo.14209043
+    benchexec_toolinfo_options: [--full-output]
+    required_ubuntu_packages:
+      - openjdk-21-jre-headless
+  - version: svcomp25-correctness
+    doi: 10.5281/zenodo.14209043
+    benchexec_toolinfo_options: ["--validate", "${witness}", "--full-output", "--witness-type", "correctness_witness"]
+    required_ubuntu_packages:
+      - openjdk-21-jre-headless
+  - version: svcomp25-violation
+    doi: 10.5281/zenodo.14209043
+    benchexec_toolinfo_options: ["--validate", "${witness}", --full-output, --witness-type, violation_witness]
+    required_ubuntu_packages:
+      - openjdk-21-jre-headless
+
+  - version: svcomp24-correctness-post-deadline-yaml-wrapper-fix
+    doi: 10.5281/zenodo.10223333
+    benchexec_toolinfo_options: [--full-output, --witness-type, correctness_witness]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+    base_container_images:
+      - docker.io/ubuntu:22.04
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: svcomp24
+    doi: 10.5281/zenodo.10203545
+    benchexec_toolinfo_options: [--full-output]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+    base_container_images:
+      - docker.io/ubuntu:22.04
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: svcomp24-correctness
+    doi: 10.5281/zenodo.10203545
+    benchexec_toolinfo_options: [--full-output, --witness-type, correctness_witness]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+    base_container_images:
+      - docker.io/ubuntu:22.04
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: svcomp24-violation
+    doi: 10.5281/zenodo.10203545
+    benchexec_toolinfo_options: [--full-output, --witness-type, violation_witness]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+    base_container_images:
+      - docker.io/ubuntu:22.04
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: svcomp23
+    url: https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/uautomizer.zip
+    benchexec_toolinfo_options: [--full-output]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+
+competition_participations:
+  - competition: SV-COMP 2025
+    track: Verification
+    tool_version: svcomp25
+    jury_member:
+      orcid: 0000-0003-4252-3558
+      name: Matthias Heizmann
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/heizmann
+  - competition: SV-COMP 2025
+    track: Validation of Correctness Witnesses 1.0
+    tool_version: svcomp25-correctness
+    jury_member:
+      orcid: 0009-0004-9216-1801
+      name: Marcel Ebbinghaus
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/ebbinghaus
+  - competition: SV-COMP 2025
+    track: Validation of Correctness Witnesses 2.0
+    tool_version: svcomp25-correctness
+    jury_member:
+      orcid: 0009-0004-9216-1801
+      name: Marcel Ebbinghaus
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/ebbinghaus
+  - competition: SV-COMP 2025
+    track: Validation of Violation Witnesses 1.0
+    tool_version: svcomp25-violation
+    jury_member:
+      orcid: 0009-0004-9216-1801
+      name: Marcel Ebbinghaus
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/ebbinghaus
+  - competition: SV-COMP 2025
+    track: Validation of Violation Witnesses 2.0
+    tool_version: svcomp25-violation
+    jury_member:
+      orcid: 0009-0004-9216-1801
+      name: Marcel Ebbinghaus
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/ebbinghaus
+
+  - competition: SV-COMP 2024
+    track: Verification
+    tool_version: svcomp24
+    jury_member:
+      orcid: 0000-0003-4252-3558
+      name: Matthias Heizmann
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/heizmann
+  - competition: SV-COMP 2024
+    track: Validation of Correctness Witnesses 1.0
+    tool_version: svcomp24-correctness
+    jury_member:
+      orcid: 0000-0003-4252-3558
+      name: Matthias Heizmann
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/heizmann
+  - competition: SV-COMP 2024
+    track: Validation of Correctness Witnesses 2.0
+    tool_version: svcomp24-correctness-post-deadline-yaml-wrapper-fix
+    jury_member:
+      orcid: 0000-0003-4252-3558
+      name: Matthias Heizmann
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/heizmann
+  - competition: SV-COMP 2024
+    track: Validation of Violation Witnesses 1.0
+    tool_version: svcomp24-violation
+    jury_member:
+      orcid: 0000-0003-4252-3558
+      name: Matthias Heizmann
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/heizmann
+  - competition: SV-COMP 2023
+    track: Verification
+    tool_version: svcomp23
+    jury_member:
+      orcid: 0000-0003-4252-3558
+      name: Matthias Heizmann
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/heizmann
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Bit-Precise Analysis
+  - Lazy Abstraction
+  - Interpolation
+  - Automata-Based Analysis
+  - Concurrency Support
+  - Ranking Functions
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers:
+  - Ultimate
+  - MathSAT
+  - CVC
+  - SMTinterpol
+  - Z3
+
+literature:
+  - doi: 10.1007/978-3-642-39799-8_2
+    title: Software Model Checking for People Who Love Automata
+    year: 2013
+  - doi: 10.1007/978-3-031-30820-8_39
+    title: Ultimate Automizer 2023 (Competition Contribution)
+    year: 2023

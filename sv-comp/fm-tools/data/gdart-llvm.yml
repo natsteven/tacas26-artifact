@@ -1,0 +1,64 @@
+id: gdart-llvm
+name: GDart-LLVM
+input_languages:
+  - C
+project_url: https://github.com/tudo-aqua/gdart-llvm
+repository_url: https://github.com/tudo-aqua/gdart-llvm
+spdx_license_identifier: LGPL-2.0-only
+benchexec_toolinfo_module: gdart.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - fhowar
+  - mmuesly
+  - simon.dierl
+
+maintainers:
+  - name: Falk Howar
+    institution: TU Dortmund
+    country: Germany
+    url: https://falkhowar.de
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10397137
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      name: Falk Howar
+      institution: TU Dortmund
+      country: Germany
+      url: https://falkhowar.de
+
+techniques:
+  - Symbolic Execution
+  - Bit-Precise Analysis
+
+frameworks_solvers:
+  - Z3

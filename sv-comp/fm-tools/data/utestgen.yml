@@ -1,0 +1,79 @@
+id: utestgen
+name: UTestGen
+description: |
+  Ultimate TestGen is a tool for automatic test-case generation. It checks the 
+  (un)reachability of test goals and generates test cases from counterexamples 
+  by extending trace abstraction with error automata.
+input_languages:
+  - C
+project_url: https://ultimate.informatik.uni-freiburg.de
+repository_url: https://github.com/ultimate-pa/ultimate
+spdx_license_identifier: "LGPL-3.0-or-later"
+benchexec_toolinfo_module: "ultimatetestgen.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - danieldietsch
+  - MaxBarth95
+
+maintainers:
+  - name: Max Barth
+    orcid: 0009-0002-7716-3898
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/barth/
+
+versions:
+  - version: "testcomp25"
+    doi: 10.5281/zenodo.14185070
+    benchexec_toolinfo_options: ["--traceabstraction.test.generation.mode", "Standard", "--rcfgbuilder.reuse.mode.for.test.generation", "ReuseUNSATmatchPrefix", "--full-output"]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+  - version: "testcomp24"
+    doi: 10.5281/zenodo.10071568
+    benchexec_toolinfo_options: ["--traceabstraction.test.generation.mode", "Standard", "--full-output"]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+
+competition_participations:
+  - competition: "Test-Comp 2025"
+    track: "Test Generation"
+    tool_version: "testcomp25"
+    jury_member:
+      orcid: 0009-0002-7716-3898
+      name: Max Barth
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/barth/
+  - competition: "Test-Comp 2024"
+    track: "Test Generation"
+    tool_version: "testcomp24"
+    jury_member:
+      orcid: 0009-0002-7716-3898
+      name: Max Barth
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/barth/
+
+techniques:
+  - CEGAR
+  - Interpolation
+  - Automata-Based Analysis
+  - Portfolio
+
+frameworks_solvers:
+  - Ultimate
+  - MathSAT
+  - CVC
+  - SMTinterpol
+  - Z3
+
+literature:
+  - doi: 10.1007/978-3-031-66149-5_14
+    title: "Test-Case Generation with Automata-Based Software Model Checking"
+    year: 2024
+  - doi: 10.1007/978-3-031-72044-4_3
+    title: "Refining CEGAR-Based Test-Case Generation with Feasibility Annotations"
+    year: 2024
+  - doi: 10.1007/978-3-031-57259-3_20
+    title: "Ultimate TestGen: Test-Case Generation with Automata-based Software Model Checking (Competition Contribution)"
+    year: 2024

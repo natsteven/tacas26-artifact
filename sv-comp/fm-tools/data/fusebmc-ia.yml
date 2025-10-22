@@ -1,0 +1,71 @@
+id: fusebmc-ia
+name: FuSeBMC-AI
+input_languages:
+  - C
+project_url: https://github.com/Mohannad-Aldughaim/FuSeBMC_IA
+repository_url: https://github.com/Mohannad-Aldughaim/FuSeBMC_IA
+spdx_license_identifier: MIT
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/fusebmc.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Mohannad-Aldughaim
+  - kaled-alshmrany
+
+maintainers:
+  - name: Mohannad Aldughaim
+    institution: University of Manchester / King Saud University
+    country: UK / Saudi Arabia
+    url: https://www.research.manchester.ac.uk/portal/mohannad.aldughaim.html
+  - name: Kaled Alshmrany
+    institution: University of Manchester / Institute of Public Administration
+    country: UK / Saudi Arabia
+    url: https://research.manchester.ac.uk/en/persons/kaled.alshmrany
+
+versions:
+  - version: "testcomp24"
+    doi: "10.5281/zenodo.10199336"
+    benchexec_toolinfo_options: ["-s", "incr"]
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "testcomp23"
+    url: "https://gitlab.com/sosy-lab/test-comp/archives-2023/-/raw/testcomp23/2023/FuSeBMC_IA.zip"
+    benchexec_toolinfo_options: ["-s", "incr"]
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "Test-Comp 2025"
+    track: "Test Generation"
+    label:
+      - inactive
+    tool_version: "testcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "Test-Comp 2024"
+    track: "Test Generation"
+    tool_version: "testcomp24"
+    jury_member:
+      name: Mohannad Aldughaim
+      institution: University of Manchester / King Saud University
+      country: UK / Saudi Arabia
+      url: https://www.research.manchester.ac.uk/portal/mohannad.aldughaim.html
+  - competition: "Test-Comp 2023"
+    track: "Test Generation"
+    tool_version: "testcomp23"
+    jury_member:
+      name: Mohannad Aldughaim
+      institution: University of Manchester / King Saud University
+      country: UK / Saudi Arabia
+      url: https://www.research.manchester.ac.uk/portal/mohannad.aldughaim.html
+
+techniques:
+  - Bounded Model Checking
+  - Floating-Point Arithmetics
+  - Guidance by Coverage Measures
+  - Targeted Input Generation
+  - Portfolio
+
+frameworks_solvers: []

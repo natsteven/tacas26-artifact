@@ -9,6 +9,6 @@ fi
 
 benchset=$1
 
-for solver in bass cvc5 ostrich z3-noodler; do
+for solver in a-str cvc5 ostrich z3-noodler; do
   ./util/get-logs.sh "$solver" "$benchset"
 done

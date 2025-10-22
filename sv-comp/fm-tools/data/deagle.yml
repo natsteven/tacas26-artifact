@@ -1,0 +1,88 @@
+id: deagle
+name: Deagle
+description: |
+  Deagle is an partial-order-based bounded model checker for concurrent program verification.
+  It is built on top of CBMC-5 (front-end) and MiniSAT-2.2.1 (back-end),
+  majorly enhancing them with an ordering consistency theory
+  which handles ordering relations over shared memory accesses in concurrent programs.
+input_languages:
+  - C
+project_url: https://github.com/thufv/Deagle
+repository_url: https://github.com/thufv/Deagle
+spdx_license_identifier: "GPL-3.0-or-later"
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/deagle.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Misasasa
+
+maintainers:
+  - orcid: 0000-0002-4266-875X
+    name: Fei He
+    institution: Tsinghua University
+    country: China
+    url: https://feihe.github.io/
+  - orcid: 0000-0002-3787-0144
+    name: Zhihang Sun
+    institution: Tsinghua University
+    country: China
+    url: https://thufv.github.io/team/
+  - orcid: 0009-0007-0437-9141
+    name: Pei Wang
+    institution: Tsinghua University
+    country: China
+    url: https://thufv.github.io/team/
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14189745
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10207348
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/deagle.zip"
+    benchexec_toolinfo_options: ["--no-unwinding-assertions", "--closure"]
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-4266-875X
+      name: Fei He
+      institution: Tsinghua University
+      country: China
+      url: https://feihe.github.io/
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0002-4266-875X
+      name: Fei He
+      institution: Tsinghua University
+      country: China
+      url: https://feihe.github.io/
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-4266-875X
+      name: Fei He
+      institution: Tsinghua University
+      country: China
+      url: https://feihe.github.io/
+
+techniques:
+  - Bounded Model Checking
+  - Concurrency Support
+
+frameworks_solvers:
+  - MiniSAT
+
+literature:
+  - doi: 10.1007/978-3-030-99527-0_25
+    title: "Deagle: An SMT-based Verifier for Multi-threaded Programs (Competition Contribution)"
+    year: 2022

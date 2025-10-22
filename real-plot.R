@@ -3,7 +3,7 @@ library(ggplot2)
 real_results <- read.csv("results/real-times-cleaned.csv", fill=TRUE, header=TRUE)
 
 real_ostrich <- data.frame(
-  bass = real_results$bass_time,
+  a-str = real_results$a-str_time,
   ostrich = real_results$ostrich_time
 )
 
@@ -35,7 +35,7 @@ combined_data <- bind_rows(
 )
 
 # Create the plot
-plot_ostrich <- ggplot(combined_data, aes(x = bass, y = ostrich, shape = factor(subset))) +
+plot_ostrich <- ggplot(combined_data, aes(x = a-str, y = ostrich, shape = factor(subset))) +
   geom_point() +
   geom_abline(intercept = 0, slope = 1,color="red", linetype = "dashed") +
   xlab("MAS Solve Time (s)") +
@@ -55,7 +55,7 @@ plot_ostrich <- ggplot(combined_data, aes(x = bass, y = ostrich, shape = factor(
 ggsave("plots/real-ostrich-plot.png", plot=plot_ostrich, device="png", width=12, height = 8)
 
 real_cvc5 <- data.frame(
-  bass = real_results$bass_time,
+  a-str = real_results$a-str_time,
   cvc5 = real_results$cvc5_time
 )
 
@@ -69,10 +69,10 @@ combined_data_cvc5 <- bind_rows(
   mutate(sub3, subset = 3)
 )
 
-plot_cvc5 <- ggplot(combined_data_cvc5, aes(x = bass, y = cvc5, shape = factor(subset))) +
+plot_cvc5 <- ggplot(combined_data_cvc5, aes(x = a-str, y = cvc5, shape = factor(subset))) +
   geom_point() +
   geom_abline(intercept = 0, slope = 1,color="red", linetype = "dashed") +
-  xlab("BASS Solve Time (s)") +
+  xlab("a-str Solve Time (s)") +
   ylab("CVC5 Solve Time (s)") +
   scale_x_log10() +
   scale_y_log10() +
@@ -88,7 +88,7 @@ plot_cvc5 <- ggplot(combined_data_cvc5, aes(x = bass, y = cvc5, shape = factor(s
 ggsave("plots/real-cvc5-plot.png", plot=plot_cvc5, device="png", width=12, height = 8)
 
 real_z3 <- data.frame(
-  bass = real_results$bass_time,
+  a-str = real_results$a-str_time,
   z3 = real_results$z3_time
 )
 
@@ -102,10 +102,10 @@ combined_data_z3 <- bind_rows(
 	mutate(sub3, subset = 3)
 )
 
-plot_z3 <- ggplot(combined_data_z3, aes(x = bass, y = z3, shape = factor(subset))) +
+plot_z3 <- ggplot(combined_data_z3, aes(x = a-str, y = z3, shape = factor(subset))) +
 	geom_point() +
 	geom_abline(intercept = 0, slope = 1,color="red", linetype = "dashed") +
-	xlab("BASS Solve Time (s)") +
+	xlab("a-str Solve Time (s)") +
 	ylab("Z3-Noodler Solve Time (s)") +
 	scale_x_log10() +
 	scale_y_log10() +
@@ -123,7 +123,7 @@ ggsave("plots/real-z3-plot.png", plot=plot_z3, device="png", width=12, height = 
 
 library(tidyr)
 
-real_results$cs_bass <- cumsum(real_results$bass_time)
+real_results$cs_a-str <- cumsum(real_results$a-str_time)
 real_results$cs_cvc5 <- cumsum(real_results$cvc5_time)
 real_results$cs_ostrich <- cumsum(real_results$ostrich_time)
 real_results$cs_z3 <- cumsum(real_results$z3_time)
@@ -132,15 +132,15 @@ real_results$bench_id <- 1:nrow(real_results)
 # Reshape to long format for ggplot2
 smt_long <- pivot_longer(
   real_results,
-  cols = c(cs_bass, cs_cvc5, cs_ostrich, cs_z3),
+  cols = c(cs_a-str, cs_cvc5, cs_ostrich, cs_z3),
   names_to = "solver",
   values_to = "cumulative_time"
 )
 # Set custom labels using factor levels (order matters!)
 smt_long$solver <- factor(
   smt_long$solver,
-  levels = c("cs_z3", "cs_cvc5", "cs_ostrich", "cs_bass"),
-  labels = c("Z3-Noodler", "CVC5", "Ostrich", "BASS")
+  levels = c("cs_z3", "cs_cvc5", "cs_ostrich", "cs_a-str"),
+  labels = c("Z3-Noodler", "CVC5", "Ostrich", "a-str")
 )
 
 ggplot(smt_long, aes(x = bench_id, y = cumulative_time, color = solver)) +

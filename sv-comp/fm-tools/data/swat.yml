@@ -1,0 +1,67 @@
+id: swat
+name: SWAT
+input_languages:
+  - Java
+project_url: https://www.its.uni-luebeck.de/en/research/tools/swat/
+repository_url: https://github.com/SWAT-project/SWAT
+spdx_license_identifier: BSD-2-Clause
+benchexec_toolinfo_module: benchexec.tools.swat
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - loose.nils
+  - felixmaechtle
+
+maintainers:
+  - orcid: 0009-0003-6243-1623
+    name: Nils Loose
+    institution: University of Luebeck
+    country: Germany
+    url:
+  - orcid: 0009-0009-2431-0322
+    name: Felix Maechtle
+    institution: University of Luebeck
+    country: Germany
+    url:
+
+versions:
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10206092
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-17-jdk-headless
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14214662
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-17-jdk-headless
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0009-0003-6243-1623
+      name: Nils Loose
+      institution: University of Luebeck
+      country: Germany
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0009-0003-6243-1623
+      name: Nils Loose
+      institution: University of Luebeck
+      country: Germany
+      url:
+
+techniques:
+  - Symbolic Execution
+
+frameworks_solvers:
+  - Z3
+
+literature:
+  - doi: 10.1007/978-3-031-57256-2_28
+    title: "SWAT: Modular Dynamic Symbolic Execution for Java Applications Using Dynamic Instrumentation (Competition Contribution)"
+    year: 2024

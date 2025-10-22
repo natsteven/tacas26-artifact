@@ -1,0 +1,77 @@
+id: emergentheta
+name: EmergenTheta
+description: |
+  EmergenTheta is a variant of Theta utilizing emerging techniques previously missing from Theta. 
+  We step away from Theta's conventional, abstraction-based techniques and use a portfolio of BMC, IMC, k-induction, and saturation based techniques, with possible implicit predicate abstraction.
+input_languages:
+  - C
+project_url: https://github.com/ftsrg/theta
+repository_url: https://github.com/ftsrg/theta
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.theta
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - levente.bajczi
+
+maintainers:
+  - name: Levente Bajczi
+    orcid: 0000-0002-6551-5860
+    institution: Budapest University of Technology and Economics
+    country: Hungary
+    url: http://mit.bme.hu/~bajczi
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14194484
+    benchexec_toolinfo_options: ["--svcomp", "--portfolio", "EMERGENT", "--loglevel", "RESULT"]
+    required_ubuntu_packages:
+      - openjdk-17-jre-headless
+      - libgomp1
+      - libmpfr6
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10198872
+    benchexec_toolinfo_options: ['--witness-only', '--backend', 'IMC_THEN_KIND', '--loglevel', 'RESULT']
+    required_ubuntu_packages:
+      - openjdk-17-jre-headless
+      - libgomp1
+      - libmpfr6
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-6551-5860
+      name: Levente Bajczi
+      institution: Budapest University of Technology and Economics
+      country: Hungary
+      url: http://mit.bme.hu/~bajczi
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      name: Levente Bajczi
+      institution: Budapest University of Technology and Economics
+      country: Hungary
+      url: http://mit.bme.hu/~bajczi
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Bounded Model Checking
+  - k-Induction
+  - Bit-Precise Analysis
+  - Interpolation
+  - Algorithm Selection
+  - Portfolio
+  - Interpolation-Based Model Checking
+  - Task Translation
+  - Floating-Point Arithmetics
+
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-031-57256-2_23
+    title: "EmergenTheta: Verification Beyond Abstraction Refinement (Competition Contribution)"
+    year: 2024

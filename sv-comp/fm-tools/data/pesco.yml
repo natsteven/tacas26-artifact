@@ -1,0 +1,86 @@
+id: pesco
+name: PeSCo-CPA
+input_languages:
+  - C
+project_url: https://github.com/cedricrupb/pesco
+repository_url: https://github.com/cedricrupb/pesco
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/pesco.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - cedricrupb
+
+
+maintainers:
+  - name: Cedric Richter
+    institution: University of Oldenburg
+    country: Germany
+    url: https://uol.de/en/computingscience/groups/formal-methods/team/cedric-richter
+
+versions:
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10203346"
+    benchexec_toolinfo_options: ['--memory', '10000M', '--timelimit', '900']
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/pesco.zip"
+    benchexec_toolinfo_options: ['-svcomp20-pesco', '-heap', '10000M', '-stack', '2048k', '-benchmark', '-timelimit', '900 s']
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+      - meta_tool
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+      - meta_tool
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - meta_tool
+    tool_version: "svcomp23"
+    jury_member:
+      name: Cedric Richter
+      institution: University of Oldenburg
+      country: Germany
+      url: https://uol.de/en/computingscience/groups/formal-methods/team/cedric-richter
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Bounded Model Checking
+  - k-Induction
+  - Explicit-Value Analysis
+  - Numeric Interval Analysis
+  - Shape Analysis
+  - Bit-Precise Analysis
+  - ARG-Based Analysis
+  - Lazy Abstraction
+  - Interpolation
+  - Concurrency Support
+  - Ranking Functions
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers:
+  - CPAchecker
+  - JavaSMT
+  - MathSAT

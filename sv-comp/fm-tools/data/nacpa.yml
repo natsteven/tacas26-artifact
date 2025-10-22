@@ -1,0 +1,58 @@
+id: nacpa
+name: Nacpa
+description: |
+  Nacpa is a meta-verifier for C programs.
+  It is based on strategy selection, parallel portfolios,
+  and native compilation of Java.
+input_languages:
+  - C
+project_url: https://gitlab.com/sosy-lab/software/nacpa
+repository_url: https://gitlab.com/sosy-lab/software/nacpa
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.nacpa
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - ricffb
+  - lemberger
+
+maintainers:
+  - orcid: 0000-0003-0291-815X
+    name: Thomas Lemberger
+    institution: LMU Munich
+    country: Germany
+    url: https://thomaslemberger.com/
+  - orcid: 0000-0002-4768-4054
+    name: Henrik Wachowitz
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/wachowitz/
+
+versions:
+  - version: "1.0.0"
+    doi: "10.5281/zenodo.14203473"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+    full_container_images:
+      - docker.io/ubuntu:24.04
+
+competition_participations:
+  - competition: SV-COMP 2025
+    track: "Verification"
+    label:
+      - meta_tool
+    tool_version: "1.0.0"
+    jury_member:
+      orcid: 0000-0002-4768-4054
+      name: Henrik Wachowitz
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/wachowitz/
+
+techniques:
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers:
+  - CPAchecker
+
+literature: []

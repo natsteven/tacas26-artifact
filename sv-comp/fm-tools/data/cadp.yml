@@ -1,0 +1,95 @@
+id: cadp
+name: CADP
+description: |
+  CADP is a verification toolbox developed initially at Verimag, then at INRIA Grenoble.
+  It provides compilers for concurrent languages (message-passing communication),
+  as well as tools for model checking (value-passing modal mu-calculus),
+  equivalence checking (bisimulations and behavioural preorders),
+  simulation, and test-case generation.
+  The first version of CADP was released in 1989.
+input_languages: []
+project_url: http://cadp.inria.fr
+repository_url: ""
+spdx_license_identifier: LicenseRef-INRIA-CADP
+benchexec_toolinfo_module: ""
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - dbeyer
+
+maintainers:
+  - orcid: 0009-0000-5304-8081
+    name: Hubert Garavel
+    institution: INRIA
+    country: France
+    url: http://convecs.inria.fr/people/Hubert.Garavel/
+  - orcid: 0000-0002-5221-3353
+    name: Frédéric Lang
+    institution: INRIA
+    country: France
+    url: http://convecs.inria.fr/people/Frederic.Lang/
+  - orcid: 0000-0000-0000-0000
+    name: Radu Mateescu
+    institution: INRIA
+    country: France
+    url: http://convecs.inria.fr/people/Radu.Mateescu/
+  - orcid: 0000-0000-0000-0000
+    name: Wendelin Serwe
+    institution: INRIA
+    country: France
+    url: http://www.inrialpes.fr/vasy/people/Wendelin.Serwe/
+
+versions: []
+
+competition_participations: []
+
+techniques: []
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/BFb0054165
+    title: "OPEN/CÆSAR: An open software architecture for verification, simulation, and testing"
+    year: 2006
+  - doi: 10.1007/3-540-46419-0_18
+    title: "Efficient Diagnostic Generation for Boolean Equation Systems"
+    year: 2007
+  - doi: 10.1007/3-540-45937-5_3
+    title: "Compiler Construction Using LOTOS NT"
+    year: 2007
+  - doi: 10.1007/3-540-46002-0_20
+    title: "Local Model-Checking of Modal Mu-Calculus on Acyclic Labeled Transition Systems"
+    year: 2007
+  - doi: 10.1007/3-540-46002-0_33
+    title: "Compositional Verification Using SVL Scripts"
+    year: 2007
+  - doi: 10.1007/3-540-36577-X_7
+    title: "A Generic On-the-Fly Solver for Alternation-Free Boolean Equation Systems"
+    year: 2010
+  - doi: 10.1007/978-3-540-31980-1_42
+    title: "BISIMULATOR: A Modular Tool for On-the-Fly Equivalence Checking"
+    year: 2010
+  - doi: 10.1007/11691372_30
+    title: "DISTRIBUTOR and BCG_MERGE: Tools for Distributed Explicit State Space Generation"
+    year: 2006
+  - doi: 10.1007/978-3-642-00768-2_21
+    title: "Hierarchical Adaptive State Space Caching Based on Level Sampling"
+    year: 2009
+  - doi: 10.1007/978-3-642-19811-3_9
+    title: "Smart Reduction"
+    year: 2011
+  - doi: 10.1007/978-3-642-19835-9_33
+    title: "CADP 2010: A Toolbox for the Construction and Analysis of Distributed Processes"
+    year: 2011
+  - doi: 10.1007/978-3-642-28756-5_11
+    title: "Partial Model Checking Using Networks of Labelled Transition Systems and Boolean Equation Systems"
+    year: 2012
+  - doi: 10.1007/978-3-642-36742-7_14
+    title: "PIC2LNT: Model Transformation for Model Checking an Applied Pi-Calculus"
+    year: 2013
+  - doi: 10.1007/978-3-319-89963-3_13
+    title: "TESTOR: A Modular Tool for On-the-Fly Conformance Test Case Generation"
+    year: 2018
+  - doi: 10.1007/978-3-030-45237-7_4
+    title: "Sharp Congruences Adequate with Temporal Logics Combining Weak and Strong Modalities"
+    year: 2020
+

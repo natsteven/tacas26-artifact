@@ -1,4 +1,4 @@
-bench,bass_time,cvc5_time,ostrich_time,z3_time
+bench,a-str_time,cvc5_time,ostrich_time,z3_time
 beasties01.smt2,1.12,1.11,6.94,120
 beasties02.smt2,1.22,1.07,7.25,120
 beasties03.smt2,1.4,4.55,25.34,120

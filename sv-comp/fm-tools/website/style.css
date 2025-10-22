@@ -1,0 +1,279 @@
+:root {
+    --color-accent: #2C5C6D;
+    --color-accent-strong: #AF4793;
+    --color-bg-focus: #F1F6F9;
+    --color-links: #4793AF;
+    --color-nav-link: var(--color-accent);
+    --color-bg-blocks: #F1F6F9;
+    --color-bg-blocks-strong: #DAEFFC;
+    --header-height: calc(4em + 20px);
+    --left-content-margin: 10px;
+    --nav-width: 300px;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+:focus {
+    background-color: var(--color-bg-focus);
+    outline: 2px dotted var(--color-accent);
+}
+
+#tools {
+    margin: 10px;
+    max-width: 900px;
+}
+
+/* Slightly indent every tool description */
+.tool-description {
+    margin-left: var(--left-content-margin);
+    padding-bottom: 5px;
+}
+
+.tool-description h2 {
+    margin-bottom: 10px;
+    padding-top: 15px;
+}
+
+.nobreak { display: inline-block; }
+
+ul.tool-details,ul.tool-details > li ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* By default, make all lists in tool details inline
+ * their elements.
+ * For example, we do not want this because it takes up so much space
+ * and is more difficult to read:
+ * ```
+ * Supported techniques: * Bit-Precise Analysis
+ *                       * Concurrency Support
+ *                       * Portfolio
+ *                       * Ranking Functions
+ *                       * Symbolic Execution
+ * ```
+ * Instead we want this condensed:
+ * ```
+ * Supported techniques: * Bit-Precise Analysis * Concurrency Support,
+ *                       * Portfolio * Ranking Functions * Symbolic Execution
+ * ```
+ */
+ul.tool-details > li ul li {
+  display: inline-block;
+}
+/* While the default list in tool details should be condensed,
+ * we want some entries to be listed on separate lines.
+ */
+ul.tool-details > li ul.traditional-list li {
+  display: list-item;
+  margin-left: 1em; /* simulate list indent together with li:before below */
+}
+ul.tool-details > li ul.traditional-list > li:before {
+  margin-left: -1em; /* simulate list indent together with li above */
+}
+ul.dense-list > li:before,ul.tool-details > li ul.traditional-list > li:before {
+  content: "•";
+  color: gray;
+  padding-right: 2pt;
+}
+
+ul.traditional-list {
+  font-weight: normal;
+}
+
+li.literature-entry {
+    width: 100%;
+}
+
+.literature-entry .doi {
+  font-size: 0.8em;
+}
+
+.tool-details li {
+    padding-bottom: 5px;
+}
+
+.tool-details > li {
+  display: flex;
+  flex-direction: row;
+  gap: 1ex;
+}
+
+
+.tool-details li a {
+  /* wrap overlong links */
+  word-break: break-word;
+}
+
+ul.dense-list {
+    padding-left: 0pt;
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin-top: 10px;
+    margin-left: var(--left-content-margin);
+    margin-bottom: 10px;
+}
+
+#code-link {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2px;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+header a:hover {
+    background-color: var(--color-bg-blocks-strong);
+}
+
+header #code-link img {
+    height: 1em;
+}
+
+header a {
+    color: var(--color-nav-link);
+}
+header a:hover {
+  /* Do not color header items differently on hover */
+  color: var(--color-nav-link);
+}
+
+#quicklinks,#toc {
+    margin-top: 2em;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+#quicklinks ul,#toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#quicklinks li a,#toc li a {
+    display: block;
+    font-size: 1em;
+    color: var(--color-nav-link);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    /* Necessary so that unicode character doesn't change line height */
+    line-height: 1.1em;
+    padding-left: var(--left-content-margin);
+}
+
+#quicklinks h2,#toc h2 {
+    font-size: 1.3em;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+a {
+    color: var(--color-links);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-accent-strong);
+    background-color: var(--color-bg-focus);
+    border-radius: 3px;
+}
+
+span.literature-title {
+    font-style: italic;
+}
+
+span.entry-key {
+    font-weight: bold;
+    /* Only reduce width of key if there really is no space */
+    flex-basis: max-content;
+    /* But don't add unnecessary whitespace */
+    /* db 2024-08-30: Changed from `999` to `1` because `Used actors / components:` was broken into 3 lines like`Used actors \n / \n components:` */
+    flex-shrink: 1;
+}
+
+@media only screen and (min-width: 850px) {
+    html {
+        scroll-padding-top: calc(var(--header-height) + 10px);
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: var(--header-height);
+        width: 100%;
+        background-color: var(--color-bg-blocks);
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+
+    /* Quicklinks in header instead of as list */
+    #quicklinks h2 {
+      /* hide the quicklinks caption in the header */
+      display: none;
+    }
+    #quicklinks {
+      padding: 0;
+      margin: 0;
+      /* Keep some space to the header-bottom */
+      margin-bottom: 10px;
+      /* Align with h1 element in header. -10px because quicklinks li a has 10px padding */
+      margin-left: calc(var(--left-content-margin)-10px);
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    #quicklinks ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: flex-start;
+    }
+
+    #quicklinks li a {
+      padding: 2px 10px;
+    }
+
+    /* Align code-link in the vertical center of the header */
+    #code-link {
+      grid-column: 2;
+      grid-row: 2;
+      /* Same bottom-alignment as quicklinks */
+      margin-bottom: 10px;
+    }
+    #code-link a {
+      padding-right: var(--left-content-margin);
+    }
+
+    #toc {
+        position: fixed;
+        top: var(--header-height);
+        overflow: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-bg-blocks) transparent;
+        height: calc(100vh - var(--header-height));
+        margin: 0;
+        width: var(--nav-width);
+    }
+
+    #tools {
+        position: absolute;
+        top: var(--header-height);
+        left: calc(var(--nav-width) + 10px);
+    }
+}

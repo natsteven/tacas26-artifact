@@ -1,0 +1,63 @@
+id: aise
+name: aise
+description: |
+  AISE is a software verifer that verifes C programs with respect to reachability properties. 
+  The key idea of AISE is to synergize symbolic execution (SE) and abstract interpretation (AI).
+input_languages:
+  - C
+project_url: https://github.com/zbchen/aise-verifier
+repository_url: https://github.com/zbchen/aise-verifier
+spdx_license_identifier: GPL-3.0-or-later
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/aise.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - liar1007
+
+maintainers:
+  - orcid: 0000-0002-4066-7892
+    name: Zhenbang Chen
+    institution: National University of Defense Technology
+    country: China
+    url: https://zbchen.github.io/
+
+versions:
+  - version: "svcomp25"
+    doi: "10.5281/zenodo.14203693"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10201159"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-4066-7892
+      name: Zhenbang Chen
+      institution: National University of Defense Technology
+      country: China
+      url: https://zbchen.github.io/
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0002-4066-7892
+      name: Zhenbang Chen
+      institution: National University of Defense Technology
+      country: China
+      url: https://zbchen.github.io/
+
+techniques:
+  - Symbolic Execution
+
+frameworks_solvers:
+  - CVC
+  - Z3
+
+literature:
+  - doi: 10.1007/978-3-031-57256-2_19
+    title: "AISE: A Symbolic Verifier by Synergizing Abstract Interpretation and Symbolic Execution (Competition Contribution)"
+    year: 2024

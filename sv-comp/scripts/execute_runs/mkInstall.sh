@@ -13,7 +13,7 @@ set -euo pipefail
 
 TOOL_ARCHIVE="$(realpath "$(dirname "$0")/../../${1:-}")"
 TOOL_DIR="${2:-}"
-YEAR=$(yq --raw-output '.year' benchmark-defs/category-structure.yml)
+# YEAR=$(yq --raw-output '.year' benchmark-defs/category-structure.yml)
 
 if [[ -z "$TOOL_ARCHIVE" || -z "$TOOL_DIR" ]]; then
   echo "Usage: $0 <tool> <install directory>"
@@ -33,7 +33,8 @@ fi
 # Unzip
 echo "Installing $TOOL_ARCHIVE ..."
 cd "$TOOL_DIR" || exit
-unzip "$TOOL_ARCHIVE"
+echo "Unzipping archive ..."
+unzip "$TOOL_ARCHIVE" > /dev/null
 # Check structure
 if [[ $(find . -mindepth 1 -maxdepth 1 | wc -l) == 1 ]]; then
   echo "Info: One folder found in archive."

@@ -1,0 +1,278 @@
+stages:
+  - format
+  - checks
+  - lib-test
+  - lib-build
+  - lib-deploy
+
+variables:
+  GIT_SUBMODULE_STRATEGY: normal
+
+# have CI for both, branches and merge requests, but no duplicates
+# (i.e., do not run branch CI if there is a MR open)
+# https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS && $CI_PIPELINE_SOURCE == "push"'
+      when: never
+    - when: always
+
+check-data-schema:
+  stage: format
+  image: python:3.12
+  before_script:
+    - apt-get update
+    - apt-get install -y git
+    - pip install --requirement ci/requirements.txt
+    - source ci/set-changed-files.sh
+  script:
+    - date -Iseconds
+    - echo "Check that changed tool files adhere to the schema"
+    - echo $CHANGED_YML_FILES | xargs --no-run-if-empty --max-args=1 ./ci/check-data.py --schema data/schema.yml --year 2024 --fm-data
+    - echo $CHANGED_YML_FILES | xargs --no-run-if-empty --max-args=1 ./ci/check-data.py --schema data/schema.yml --year 2025 --fm-data
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+check-data-format:
+  stage: format
+  image: python:latest
+  before_script:
+    - apt-get update
+    - pip install ruamel.yaml
+  script:
+    - date -Iseconds
+    - ./ci/format_data.py --directory ./data/ --check
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+check-scripts-format:
+  stage: format
+  image: python:latest
+  before_script:
+    - apt-get update
+    - apt-get install -y shellcheck
+    - pip install black ruff
+  script:
+    - date -Iseconds
+    - black ci/ --check --diff
+    - shellcheck ci/*.sh
+    - ruff check --extend-ignore E501
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+check-dois:
+  image: python:3.12
+  stage: format
+  before_script:
+    - pip install --requirement ci/requirements.txt
+  script:
+    - ci/check_dois.py
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+
+check-file-conventions:
+  image: python:3.12
+  stage: format
+  script:
+    - ci/check_file_conventions.py
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+check-file-reuse:
+  image:
+    name: fsfe/reuse:3
+    entrypoint: [""]
+  stage: format
+  script:
+    - reuse --suppress-deprecation --root ./ lint
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+.check-valid-required-packages: &check-valid-required-packages
+  stage: checks
+  # This large image is not actually necessary, but it is currently the easiest way
+  # to get an image with the correct Ubuntu version and some required utilities.
+  image: registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:$YEAR
+  needs:
+    - check-scripts-format
+  # no submodules required
+  before_script:
+    - apt-get update
+    - apt-get install -y git jq moreutils python3-pip
+    - apt-get install -y yq || pip3 install yq
+    - source ci/set-changed-files.sh
+  script:
+    - echo "Checking if all required packages are valid and available for the Ubuntu version used for the competition ..."
+    - for DATA_FILE in $CHANGED_YML_FILES; do echo "Checking $DATA_FILE"; yq --raw-output '[(.competition_participations[]? | select( .competition=="SV-COMP '$YEAR'" or .competition=="Test-Comp '$YEAR'") | .tool_version ) as $version  | .versions[] | select(.version == $version and (.full_container_images | length == 0)) | .required_ubuntu_packages] | flatten(1) | unique []' $DATA_FILE | xargs --no-run-if-empty --max-args=1 chronic apt-cache show -q=0; done
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+check-valid-required-packages-2025:
+  <<: *check-valid-required-packages
+  variables:
+    YEAR: 2025
+
+check-valid-required-packages-2024:
+  <<: *check-valid-required-packages
+  variables:
+    YEAR: 2024
+
+check-valid-required-packages-2023:
+  <<: *check-valid-required-packages
+  variables:
+    YEAR: 2023
+
+.check-installed-required-packages: &check-installed-required-packages
+  stage: checks
+  # This large image is not actually necessary, but it is currently the easiest way
+  # to get an image with the correct Ubuntu version and some required utilities.
+  image: registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:$YEAR
+  needs:
+    - check-scripts-format
+  # no submodules required
+  before_script:
+    - apt-get update
+    - apt-get install -y --no-install-recommends git jq
+    - apt-get install -y --no-install-recommends yq || (apt-get install -y --no-install-recommends python3-pip; pip3 install yq)
+    - source ci/set-changed-files.sh
+  script:
+    - echo "Checking if all required packages are installed in the competition installation ..."
+    - for DATA_FILE in $CHANGED_YML_FILES; do echo "Requested packages by $DATA_FILE:"; yq --raw-output '[(.competition_participations[]? | select( .competition=="SV-COMP '$YEAR'" or .competition=="Test-Comp '$YEAR'") | .tool_version ) as $version  | .versions[] | select(.version == $version and (.full_container_images | length == 0)) | .required_ubuntu_packages] | flatten(1) | unique []' $DATA_FILE; done
+    # The first check prints missing required packages, then second check makes the CI fail
+    - for DATA_FILE in $CHANGED_YML_FILES; do echo "Checking $DATA_FILE"; yq --raw-output '[(.competition_participations[]? | select( .competition=="SV-COMP '$YEAR'" or .competition=="Test-Comp '$YEAR'") | .tool_version ) as $version  | .versions[] | select(.version == $version and (.full_container_images | length == 0)) | .required_ubuntu_packages] | flatten(1) | unique []' $DATA_FILE | xargs --no-run-if-empty --max-args=1 dpkg --get-selections 2>&1 >/dev/null; done
+    - for DATA_FILE in $CHANGED_YML_FILES; do yq --raw-output '[(.competition_participations[]? | select( .competition=="SV-COMP '$YEAR'" or .competition=="Test-Comp '$YEAR'") | .tool_version ) as $version  | .versions[] | select(.version == $version and (.full_container_images | length == 0)) | .required_ubuntu_packages] | flatten(1) | unique []' $DATA_FILE; done | while read PKG; do dpkg --get-selections $PKG | grep install || exit 1; done
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+check-installed-required-packages-2025:
+  <<: *check-installed-required-packages
+  variables:
+    YEAR: 2025
+
+check-installed-required-packages-2024:
+  <<: *check-installed-required-packages
+  variables:
+    YEAR: 2024
+
+.check-archives: &check-archives
+  stage: checks
+  image: registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:$YEAR
+  needs:
+    - check-scripts-format
+  before_script:
+    - apt-get purge -y python3-jsonschema python3-tqdm
+    - apt-get update && apt-get install -y python3 python3-pip python3-yaml git jq make moreutils wget unzip lsb-release
+    - pip3 install $PIP_ARGS --requirement ci/requirements.txt
+    - git clone https://gitlab.com/sosy-lab/software/benchexec.git
+    - source ci/set-changed-files.sh
+  script:
+    - date -Iseconds
+    - pwd
+    - ls
+    - benchexec/bin/benchexec --version
+    - lsb_release -a
+    - for DATA_FILE in $CHANGED_YML_FILES; do PYTHONPATH=benchexec ci/check-archives.sh "SV-COMP $YEAR" $(echo "$DATA_FILE" | sed -e "s/^data\///" -e "s/\.yml$//"); done
+    - for DATA_FILE in $CHANGED_YML_FILES; do PYTHONPATH=benchexec ci/check-archives.sh "Test-Comp $YEAR" $(echo "$DATA_FILE" | sed -e "s/^data\///" -e "s/\.yml$//"); done
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+check-archives-2025:
+  <<: *check-archives
+  variables:
+    YEAR: 2025
+    PIP_ARGS: "--break-system-packages"
+
+check-archives-2024:
+  <<: *check-archives
+  variables:
+    YEAR: 2024
+    PIP_ARGS: ""
+
+check_archives_with_coveriteam_service:
+  image: registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/test:latest
+  stage: checks
+  variables:
+    EXCLUDE_FROM_COVERITEAM_SERVICE_CHECK: "graves-par cpv cseq locksmith"
+  allow_failure: true
+  needs:
+    - check-scripts-format
+  script:
+    - apt install python3-requests -y
+    - git fetch origin main
+    - python3 ci/check_archives_with_service.py
+  artifacts:
+    when: always
+    paths:
+      - output-*.zip
+    expire_in: "1 week"
+  only:
+    - merge_requests
+
+build-pages:
+  image: python:3.12
+  stage: format
+  before_script:
+    - pip install json-schema-for-humans==0.41.8 Jinja2==3.1.2 markdown>=3.3.6
+  script:
+    - ci/generate_html.py
+    - generate-schema-doc --config-file ci/webpage/jsfh.yml data/schema.yml website/schema.html
+    - cp -r logos/ website/
+  artifacts:
+    paths:
+      - website
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+check-pages:
+  image: python:latest
+  stage: checks
+  dependencies:
+    - build-pages
+  needs:
+    - build-pages
+  before_script:
+    - pip install linkchecker>=10.1.0
+  allow_failure: true
+  script:
+    - linkchecker --threads=10 --check-extern --no-warnings --ignore-url 'doi.org' --ignore-url 'dl.acm.org/doi/pdf' website/index.html
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+deploy-pages:
+  image: python:latest
+  stage: checks
+  dependencies:
+    - build-pages
+  needs:
+    - build-pages
+  script:
+    - ci/deploy-pages.sh
+  rules:
+    # We perform this job only if
+    # - we are on the default branch (`main`),
+    # - we are in the original project, not a fork, and
+    # - we are not in a Merged-Result Pipeline or Merge-Train Pipeline.
+    - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH && $CI_PROJECT_PATH == "sosy-lab/benchmarking/fm-tools" && $CI_MERGE_REQUEST_SOURCE_PROJECT_PATH == null'
+
+## Library CI
+
+include:
+  - local: lib-fm-tools/python/.gitlab-ci.yml # The path is relative to the repository root

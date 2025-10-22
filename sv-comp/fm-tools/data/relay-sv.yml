@@ -1,0 +1,52 @@
+id: relay-sv
+name: RELAY-SV
+input_languages:
+  - C
+project_url: https://cseweb.ucsd.edu/~jvoung/race
+repository_url: https://github.com/vesalvojdani/relay-sv
+spdx_license_identifier: BSD-3-Clause
+benchexec_toolinfo_module: benchexec.tools.relay-sv
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - vesal.vojdani
+
+maintainers:
+  - orcid: 0000-0003-4336-7980
+    name: Vesal Vojdani
+    institution: University of Tartu
+    country: Estonia
+    url:
+
+versions:
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10066462
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - m4
+      - psmisc
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    label:
+      - unqualified
+    jury_member:
+      orcid: 0000-0003-4336-7980
+      name: Vesal Vojdani
+      institution: University of Tartu
+      country: Estonia
+      url:
+
+techniques:
+  - Concurrency Support
+  - Symbolic Execution
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1145/1287624.1287654
+    title: "RELAY: static race detection on millions of lines of code"
+    year: 2007

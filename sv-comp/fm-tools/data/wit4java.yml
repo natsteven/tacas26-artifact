@@ -1,0 +1,70 @@
+id: wit4java
+name: Wit4Java
+input_languages:
+  - Java
+project_url: https://github.com/Anthonysdu/wit4java
+repository_url: https://github.com/Anthonysdu/wit4java
+spdx_license_identifier: BSD-4-Clause
+benchexec_toolinfo_module: benchexec.tools.wit4java
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Anthonysdu
+
+maintainers:
+  - orcid: 0000-0002-0986-4150
+    name: Tong Wu
+    institution: University of Manchester
+    country: UK
+    url:
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14261105
+    benchexec_toolinfo_options: ["--witness", "${witness}", "--local-dir"]
+    required_ubuntu_packages: []
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10206747
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - python3-networkx
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-0986-4150
+      name: Tong Wu
+      institution: University of Manchester
+      country: UK
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 1.0"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-0986-4150
+      name: Tong Wu
+      institution: University of Manchester
+      country: UK
+      url:
+
+techniques: []
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-030-99527-0_36
+    title: "Wit4Java: A Violation-Witness Validator for Java Verifiers (Competition Contribution)"
+    year: 2022

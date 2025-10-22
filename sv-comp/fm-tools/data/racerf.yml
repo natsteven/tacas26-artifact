@@ -1,0 +1,58 @@
+id: racerf
+name: RacerF
+description: |
+  RacerF is a static analyser for detection of data races in multithreaded C
+  programs implemented as a plugin of the Frama-C platform. The tool is based
+  on a combination of under- and over-approximation techniques to provide fast
+  and scalable analysis, without sacrificing too much precision.
+input_languages:
+  - C
+project_url: https://github.com/TDacik/Deadlock_Racer
+repository_url: https://github.com/TDacik/Deadlock_Racer
+spdx_license_identifier: MIT
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/racerf.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - TDacik
+
+maintainers:
+  - orcid: 0000-0003-4083-8943
+    name: Tomáš Dacík
+    institution: Brno University of Technology
+    country: Czechia
+    url: https://www.fit.vut.cz/person/idacik/.en
+  - orcid: 0000-0002-2746-8792
+    name: Tomáš Vojnar
+    institution: Masaryk University, Brno University of Technology
+    country: Czechia
+    url: https://www.muni.cz/en/people/134390-tomas-vojnar
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14507645
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - gcc
+      - python3
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0003-4083-8943
+      name: Tomáš Dacík
+      institution: Brno University of Technology
+      country: Czechia
+      url: https://www.fit.vut.cz/person/idacik/.en
+
+techniques:
+  - Concurrency Support
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.48550/arXiv.2502.04905
+    title: "RacerF: Lightweight Static Data Race Detection for C Code"
+    year: 2025
+

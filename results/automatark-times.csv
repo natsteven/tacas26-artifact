@@ -1,4 +1,4 @@
-,bass,,,,cvc5,,,,ostrich,,,,z3-noodler
+,a-str,,,,cvc5,,,,ostrich,,,,z3-noodler
 filename,real,user,sys,mem,real,user,sys,mem,real,user,sys,mem,real,user,sys,mem
 instance00022,0.62,0.54,0.03,66956,0.04,0.01,0.01,7136,1.89,1.80,0.08,221060,0.06,0.04,0.01,26268,
 instance00049,0.59,0.54,0.03,66496,0.03,0.01,0.00,7136,1.79,1.64,0.12,216928,0.07,0.04,0.01,26268,

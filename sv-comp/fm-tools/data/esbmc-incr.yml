@@ -1,0 +1,90 @@
+id: esbmc-incr
+name: ESBMC-incr
+input_languages:
+  - C
+project_url: http://esbmc.org/
+repository_url: "https://github.com/esbmc/esbmc"
+spdx_license_identifier: "Apache-2.0"
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/esbmc.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - lucasccordeiro81
+  - ChenfengWei1
+
+maintainers:
+  - orcid: 0000-0002-6235-4272
+    name: Lucas C. Cordeiro
+    institution: University of Manchester
+    country: UK
+    url:
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14185854
+    benchexec_toolinfo_options: ['-s', 'incr', '--concurrency']
+    required_ubuntu_packages: []
+  - version: "svcomp22"
+    doi: 10.5281/zenodo.10396755
+    benchexec_toolinfo_options: ['-s', 'incr', '--concurrency']
+    required_ubuntu_packages: []
+  - version: "testcomp25"
+    doi: 10.5281/zenodo.14340851
+    benchexec_toolinfo_options: ["-s", "incr", "-o", "condition"]
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-6235-4272
+      name: Tong Wu
+      institution: University of Manchester
+      country: UK
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp22"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp22"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "Test-Comp 2025"
+    track: "Test Generation"
+    tool_version: "testcomp25"
+    jury_member:
+      name: Chenfeng Wei
+      institution: University of Manchester
+      country: UK
+      url:
+
+techniques:
+  - Bounded Model Checking
+  - k-Induction
+  - Bit-Precise Analysis
+  - Concurrency Support
+
+frameworks_solvers:
+  - ESBMC
+  - MathSAT
+
+literature:
+  - doi: 10.1145/1985793.1985839
+    title: "Verifying Multi-threaded Software Using SMT-Based Context-Bounded Model Checking"
+    year: 2011
+  - doi: 10.1007/978-3-642-28756-5_42
+    title: "Context-Bounded Model Checking with ESBMC 1.17 (Competition Contribution)"
+    year: 2012

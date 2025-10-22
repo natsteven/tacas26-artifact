@@ -1,0 +1,64 @@
+id: ebf
+name: EBF
+input_languages:
+  - C
+project_url: https://github.com/fatimahkj/EBF
+repository_url: https://github.com/fatimahkj/EBF
+spdx_license_identifier: "MIT"
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/ebf.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - fatimahaljaafari
+
+maintainers:
+  - name: Fatimah Aljaafari
+    institution: University of Manchester
+    country: UK
+    url:
+
+versions:
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10171482"
+    required_ubuntu_packages: []
+    benchexec_toolinfo_options: ["-s", "kinduction"]
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/ebf.zip"
+    benchexec_toolinfo_options: ["-s", "kinduction"]
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      name: Fatimah Aljaafari
+      institution: University of Manchester
+      country: UK
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      name: Fatimah Aljaafari
+      institution: University of Manchester
+      country: UK
+      url:
+
+techniques:
+  - Bounded Model Checking
+
+frameworks_solvers:
+  - ESBMC
+  - MathSAT

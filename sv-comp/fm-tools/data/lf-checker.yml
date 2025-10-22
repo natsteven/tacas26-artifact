@@ -1,0 +1,60 @@
+id: lf-checker
+name: LF-checker
+input_languages:
+  - C
+project_url: https://github.com/Anthonysdu/lf-checker
+repository_url: https://github.com/Anthonysdu/lf-checker
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: esbmc.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Anthonysdu
+
+maintainers:
+  - name: Tong Wu
+    institution: University of Manchester
+    country: UK
+    url:
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10397206
+    benchexec_toolinfo_options: ['--concurrencyFlagPredictor', 'DT2.sav']
+    required_ubuntu_packages:
+      - clang
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      name: Tong Wu
+      institution: University of Manchester
+      country: UK
+      url:
+
+techniques: []
+
+frameworks_solvers: []

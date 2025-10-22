@@ -1,0 +1,70 @@
+id: cetfuzz
+name: cetfuzz
+input_languages:
+  - C
+project_url: https://gitlab.com/Sarathkrishnan/cetfuzz
+repository_url: https://gitlab.com/Sarathkrishnan/cetfuzz
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: "cetfuzz"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Sarathkrishnan
+  - sethshajigeorge
+  - m.raveendra.kumar
+
+maintainers:
+  - name: Sarath Krishnan G S
+    institution: College of Enigneeirng Trivandrum
+    country: India
+    url: https://gitlab.com/Sarathkrishnan
+  - name: Seth Shaji George
+    institution: College of Enigneeirng Trivandrum
+    country: India
+    url: https://gitlab.com/sethshajigeorge
+  - name: Raveendra Kumar Medicherla
+    institution: Tata Consultancy Services
+    country: India
+    url: https://www.tcs.com/
+
+versions:
+  - version: "testcomp24"
+    doi: 10.5281/zenodo.10207018
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - build-essential
+      - clang-14
+      - gcc
+      - gcc-multilib
+      - llvm-runtime
+      - lld-14
+      - python3-pandas
+      - python3-pycparser
+      - python3-sklearn
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "Test-Comp 2025"
+    track: "Test Generation"
+    label:
+      - inactive
+    tool_version: "testcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "Test-Comp 2024"
+    track: "Test Generation"
+    tool_version: "testcomp24"
+    jury_member:
+      name: Sumesh Divakaran
+      institution: College of Engineering Trivandrum
+      country: India
+      url: https://www.cet.ac.in/dr-sumesh-divakaran/
+
+techniques:
+  - Evolutionary Algorithms
+  - Algorithm Selection
+
+frameworks_solvers: []

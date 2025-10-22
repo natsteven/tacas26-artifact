@@ -1,0 +1,71 @@
+id: divine
+name: DIVINE
+input_languages:
+  - C
+project_url: https://divine.fi.muni.cz/
+repository_url: ""
+spdx_license_identifier: ISC
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/divine4.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - xlauko
+
+maintainers:
+  - orcid: 0000-0002-5422-5884
+    name: Henrich Lauko
+    institution: Masaryk University, Brno
+    country: Czechia
+    url:
+
+versions:
+  - version: "svcomp22"
+    doi: 10.5281/zenodo.10396745
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2022
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp22"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp22"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp22"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - Symbolic Execution
+  - Explicit-Value Analysis
+  - Bit-Precise Analysis
+  - Concurrency Support
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers: []
+
+literature: []
+

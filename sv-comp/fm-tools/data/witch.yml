@@ -1,0 +1,65 @@
+id: witch
+description: |
+  Witch is a tool validating violation witnesses 
+  of verification results in the witness format 2.0. The tool 
+  uses some components of Symbiotic and (a fork of) Klee.
+name: Witch
+input_languages:
+  - C
+project_url: https://github.com/ayazip/witch-klee
+repository_url: https://github.com/ayazip/witch-klee
+spdx_license_identifier: "MIT"
+benchexec_toolinfo_module: "symbiotic-witch.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - payazi
+
+maintainers:
+  - orcid: 0000-0003-1072-8137
+    name: Paulína Ayaziová
+    institution: Masaryk University, Brno
+    country: Czechia
+    url:
+
+versions:
+  - version: "svcomp25"
+    benchexec_toolinfo_options: ['--sv-comp', '--witness-check', "${witness}"]
+    required_ubuntu_packages:
+      - python3
+      - llvm-14
+    doi: "10.5281/zenodo.14207188"
+  - version: "svcomp24"
+    benchexec_toolinfo_options: ['--sv-comp']
+    required_ubuntu_packages:
+      - python3
+    doi: "10.5281/zenodo.10064512"
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 2.0"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0003-1072-8137
+      name: Paulína Ayaziová
+      institution: Masaryk University, Brno
+      country: Czechia
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 2.0"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0003-1072-8137
+      name: Paulína Ayaziová
+      institution: Masaryk University, Brno
+      country: Czechia
+      url:
+
+techniques:
+  - Symbolic Execution
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-031-57256-2_18
+    title: "Witch 3: Validation of Violation Witnesses in the Witness Format 2.0 (Competition Contribution)"
+    year: 2024

@@ -1,0 +1,66 @@
+id: verifuzz
+name: VeriFuzz
+input_languages:
+  - C
+project_url: https://www.tcs.com
+spdx_license_identifier: LicenseRef-TCS-VeriFuzz
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/verifuzz.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - m.raveendra.kumar
+
+maintainers:
+  - orcid: 0000-0002-9162-4825
+    name: Raveendra Kumar Medicherla
+    institution: Tata Consultancy Services
+    country: India
+    url:
+
+versions:
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/verifuzz.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - clang-12
+      - gcc-multilib
+      - libc6-dev-i386
+      - llvm-12
+      - openjdk-8-jdk-headless
+      - python2
+      - python3-sklearn
+      - python3-pandas
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-9162-4825
+      name: Raveendra Kumar Medicherla
+      institution: Tata Consultancy Services
+      country: India
+      url:
+
+techniques:
+  - Bounded Model Checking
+  - Numeric Interval Analysis
+  - Evolutionary Algorithms
+  - Explicit-Value Analysis
+  - Floating-Point Arithmetics
+  - Guidance by Coverage Measures
+  - Random Execution
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-031-30820-8_42
+    title: "VeriFuzz 1.4: Checking for (Non-)termination (Competition Contribution)"
+    year: 2023
+  - doi: 10.1007/978-3-030-99429-7_20
+    title: "VeriFuzz: Good Seeds for Fuzzing (Competition Contribution)"
+    year: 2022
+  - doi: 10.1007/978-3-030-17502-3_22
+    title: "VeriFuzz: Program Aware Fuzzing"
+    year: 2019

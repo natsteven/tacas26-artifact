@@ -1,0 +1,69 @@
+id: jdart
+name: JDart
+input_languages:
+  - Java
+project_url: https://github.com/tudo-aqua/jdart
+repository_url: https://github.com/tudo-aqua/jdart
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/jdart.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - fhowar
+  - mmuesly
+
+maintainers:
+  - name: Malte Mues
+    institution: TU Dortmund
+    country: Germany
+    url:
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10397175
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - Symbolic Execution
+  - Bit-Precise Analysis
+  - Portfolio
+
+frameworks_solvers:
+  - JPF
+  - CVC
+  - Z3

@@ -11,7 +11,7 @@ for bench in automatark matching omark rna-sat rna-unsat woorpje; do
   mv "$bench"-times.csv results/
 done
 
-for solver in bass cvc5 ostrich z3-noodler; do
+for solver in a-str cvc5 ostrich z3-noodler; do
   mv "$solver"-*-logs.csv results/"$solver"
 done
 

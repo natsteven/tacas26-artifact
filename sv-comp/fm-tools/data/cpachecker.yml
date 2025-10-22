@@ -1,0 +1,267 @@
+id: cpachecker
+name: CPAchecker
+description: |
+  CPAchecker is a configurable framework for software verification that
+  is based on configurable program analysis and
+  implements many model-checking algorithms
+  to check for software errors and to verify program properties.
+input_languages:
+  - C
+project_url: https://cpachecker.sosy-lab.org
+repository_url: https://gitlab.com/sosy-lab/software/cpachecker
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.cpachecker
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - dbeyer
+  - ricffb
+  - PhilippWendler
+
+maintainers:
+  - orcid: 0000-0003-4832-7662
+    name: Dirk Beyer
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/dbeyer/
+  - orcid: 0000-0002-5139-341X
+    name: Philipp Wendler
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/wendler/
+
+versions:
+  - version: "4.0"
+    doi: 10.5281/zenodo.14203369
+    benchexec_toolinfo_options: ["--svcomp25", "--heap", "10000M", "--benchmark", "--timelimit", "900 s"]
+    required_ubuntu_packages:
+      - openjdk-17-jdk-headless
+    base_container_images:
+      - docker.io/ubuntu:24.04
+  - version: "4.0-validation-correctness"
+    doi: 10.5281/zenodo.14203369
+    benchexec_toolinfo_options: ["--witness", "${witness}", "--correctness-witness-validation", "--heap", "5000m", "--benchmark", "--option", "witness.checkProgramHash=false", "--option", "cpa.predicate.memoryAllocationsAlwaysSucceed=true"]
+    required_ubuntu_packages:
+      - openjdk-17-jdk-headless
+    base_container_images:
+      - docker.io/ubuntu:22.04
+  - version: "4.0-validation-violation"
+    doi: 10.5281/zenodo.14203369
+    benchexec_toolinfo_options: ["--witness", "${witness}", "--violation-witness-validation", "--heap", "5000m", "--benchmark", "--option", "witness.checkProgramHash=false", "--option", "cpa.predicate.memoryAllocationsAlwaysSucceed=true", "--option", "cpa.smg.memoryAllocationFunctions=malloc,__kmalloc,kmalloc,kzalloc,kzalloc_node,ldv_zalloc,ldv_malloc", "--option", "cpa.smg.arrayAllocationFunctions=calloc,kmalloc_array,kcalloc", "--option", "cpa.smg.zeroingMemoryAllocation=calloc,kzalloc,kcalloc,kzalloc_node,ldv_zalloc", "--option", "cpa.smg.deallocationFunctions=free,kfree,kfree_const"]
+    required_ubuntu_packages:
+      - openjdk-17-jdk-headless
+    base_container_images:
+      - docker.io/ubuntu:22.04
+  - version: "2.3.1"
+    doi: 10.5281/zenodo.11074229
+    benchexec_toolinfo_options: ["-svcomp24", "-heap", "10000M", "-benchmark", "-timelimit", "900 s"]
+    required_ubuntu_packages:
+      - openjdk-17-jdk-headless
+    base_container_images:
+      - docker.io/ubuntu:22.04
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/software/cpachecker:2.3.1
+  - version: "2.3"
+    doi: 10.5281/zenodo.10203297
+    benchexec_toolinfo_options: ["-svcomp24", "-heap", "10000M", "-benchmark", "-timelimit", "900 s"]
+    required_ubuntu_packages:
+      - openjdk-17-jdk-headless
+    base_container_images:
+      - docker.io/ubuntu:22.04
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp24-correctness"
+    doi: 10.5281/zenodo.10203297
+    benchexec_toolinfo_options: ["-setprop", "witness.checkProgramHash=false", "-heap", "5000m", "-benchmark", "-setprop", "cpa.predicate.memoryAllocationsAlwaysSucceed=true"]
+    required_ubuntu_packages:
+      - openjdk-17-jdk-headless
+    base_container_images:
+      - docker.io/ubuntu:22.04
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp24-violation"
+    doi: 10.5281/zenodo.10203297
+    benchexec_toolinfo_options: ["-violation-witness-validation", "-setprop", "witness.checkProgramHash=false", "-heap", "5000m", "-benchmark", "-setprop", "cpa.predicate.memoryAllocationsAlwaysSucceed=true", "-setprop", "cpa.smg.memoryAllocationFunctions=malloc,__kmalloc,kmalloc,kzalloc,kzalloc_node,ldv_zalloc,ldv_malloc", "-setprop", "cpa.smg.arrayAllocationFunctions=calloc,kmalloc_array,kcalloc", "-setprop", "cpa.smg.zeroingMemoryAllocation=calloc,kzalloc,kcalloc,kzalloc_node,ldv_zalloc", "-setprop", "cpa.smg.deallocationFunctions=free,kfree,kfree_const"]
+    required_ubuntu_packages:
+      - openjdk-17-jdk-headless
+    base_container_images:
+      - docker.io/ubuntu:22.04
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "2.2"
+    doi: 10.5281/zenodo.7700944
+    benchexec_toolinfo_options: ["-svcomp23", "-heap", "10000M", "-benchmark", "-timelimit", "900 s"]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+  - version: "svcomp22"
+    url: https://gitlab.com/sosy-lab/sv-comp/archives-2022/-/raw/main/2022/cpachecker.zip
+    benchexec_toolinfo_options: ["-svcomp22", "-heap", "10000M", "-benchmark", "-timelimit", "900 s"]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+  - version: "2.1"
+    doi: 10.5281/zenodo.5720557
+    benchexec_toolinfo_options: ["-svcomp22", "-heap", "10000M", "-benchmark", "-timelimit", "900 s"]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "4.0"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Correctness Witnesses 1.0"
+    tool_version: "4.0-validation-correctness"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Correctness Witnesses 2.0"
+    tool_version: "4.0-validation-correctness"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "4.0-validation-violation"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 2.0"
+    tool_version: "4.0-validation-violation"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "2.3"
+    jury_member:
+      orcid: 0000-0001-9116-1974
+      name: Daniel Baier
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/baier/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Correctness Witnesses 1.0"
+    tool_version: "svcomp24-correctness"
+    jury_member:
+      orcid: 0000-0001-9116-1974
+      name: Daniel Baier
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/baier/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Correctness Witnesses 2.0"
+    tool_version: "svcomp24-correctness"
+    jury_member:
+      orcid: 0000-0001-9116-1974
+      name: Daniel Baier
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/baier/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp24-violation"
+    jury_member:
+      orcid: 0000-0001-9116-1974
+      name: Daniel Baier
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/baier/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 2.0"
+    tool_version: "svcomp24-violation"
+    jury_member:
+      orcid: 0000-0001-9116-1974
+      name: Daniel Baier
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/baier/
+  - competition: SV-COMP 2023
+    track: "Verification"
+    tool_version: "2.2"
+    jury_member:
+      orcid: 0000-0002-4768-4054
+      name: Henrik Wachowitz
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/wachowitz/
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Symbolic Execution
+  - Bounded Model Checking
+  - k-Induction
+  - Property-Directed Reachability
+  - Explicit-Value Analysis
+  - Numeric Interval Analysis
+  - Shape Analysis
+  - Separation Logic
+  - Bit-Precise Analysis
+  - ARG-Based Analysis
+  - Lazy Abstraction
+  - Interpolation
+  - Automata-Based Analysis
+  - Concurrency Support
+  - Ranking Functions
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers:
+  - CPAchecker
+  - JavaSMT
+  - MathSAT
+  - Apron
+
+literature:
+  - doi: 10.1007/978-3-031-71177-0_30
+    title: "Software Verification with CPAchecker 3.0: Tutorial and User Guide"
+    year: 2024
+  - doi: 10.1007/978-3-642-22110-1_16
+    title: "CPAchecker: A Tool for Configurable Software Verification"
+    year: 2011
+  - doi: 10.1007/s10817-017-9432-6
+    title: "A Unifying View on SMT-Based Software Verification"
+    year: 2018
+  - doi: 10.1007/978-3-031-57256-2_21
+    title: "CPAchecker 2.3 with Strategy Selection (Competition Contribution)"
+    year: 2024
+  - doi: 10.1007/978-3-662-49674-9_59
+    title: "CPA-RefSel: CPAchecker with Refinement Selection (Competition Contribution)"
+    year: 2016
+  - doi: 10.1007/978-3-662-46681-0_34
+    title: "CPAchecker with Support for Recursive Programs and Floating-Point Arithmetic (Competition Contribution)"
+    year: 2015
+  - doi: 10.1007/978-3-642-54862-8_27
+    title: "CPAchecker with Sequential Combination of Explicit-Value Analyses and Predicate Analyses (Competition Contribution)"
+    year: 2014
+  - doi: 10.1007/978-3-642-54862-8_28
+    title: "CPAlien: Shape Analyzer for CPAchecker (Competition Contribution)"
+    year: 2014
+  - doi: 10.1007/978-3-642-36742-7_45
+    title: "CPAchecker with Sequential Combination of Explicit-State Analysis and Predicate Analysis (Competition Contribution)"
+    year: 2013
+  - doi: 10.1007/978-3-642-28756-5_41
+    title: "Block Abstraction Memoization for CPAchecker (Competition Contribution)"
+    year: 2012
+  - doi: 10.1007/978-3-642-28756-5_40
+    title: "CPAchecker with Adjustable Predicate Analysis (Competition Contribution)"
+    year: 2012

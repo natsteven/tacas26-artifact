@@ -1,0 +1,82 @@
+id: ureferee
+name: UReferee
+description: |
+  Ultimate Referee is a correctness witness validator.
+input_languages:
+  - C
+project_url: https://ultimate-pa.org
+repository_url: https://github.com/ultimate-pa/ultimate
+spdx_license_identifier: LGPL-3.0-or-later
+benchexec_toolinfo_module: ultimatereferee.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - danieldietsch
+
+maintainers:
+  - orcid: 0000-0003-4252-3558
+    name: Matthias Heizmann
+    institution: University of Stuttgart
+    country: Germany
+    url: https://www.iste.uni-stuttgart.de/de/institut/team/Heizmann/
+  - orcid: 0000-0003-4885-0728
+    name: Dominik Klumpp
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/klumpp
+  - orcid: 0000-0002-5656-306X
+    name: Frank Schüssele
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/schuessele
+  - orcid: 0000-0002-8947-5373
+    name: Daniel Dietsch
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/dietsch
+versions:
+  - version: svcomp25-correctness
+    doi: 10.5281/zenodo.14209067
+    benchexec_toolinfo_options: ["--validate", "${witness}", "--full-output", "--witness-type", "correctness_witness"]
+    required_ubuntu_packages:
+      - openjdk-21-jre-headless
+
+competition_participations:
+  - competition: SV-COMP 2025
+    track: Validation of Correctness Witnesses 1.0
+    tool_version: svcomp25-correctness
+    jury_member:
+      orcid: 0000-0002-5656-306X
+      name: Frank Schüssele
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/schuessele
+  - competition: SV-COMP 2025
+    track: Validation of Correctness Witnesses 2.0
+    tool_version: svcomp25-correctness
+    jury_member:
+      orcid: 0000-0002-5656-306X
+      name: Frank Schüssele
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/schuessele
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Bit-Precise Analysis
+  - Lazy Abstraction
+  - Interpolation
+  - Automata-Based Analysis
+  - Concurrency Support
+  - Ranking Functions
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers:
+  - Ultimate
+  - MathSAT
+  - CVC
+  - SMTinterpol
+  - Z3
+
+literature: []

@@ -1,0 +1,176 @@
+id: symbiotic
+name: Symbiotic
+description: |
+  Symbiotic is a configurable framework for program analysis and verification
+  combining static analyses, program slicing, and several tools as
+  verification engines, in particular (a fork of) Klee and Slowbeast. 
+input_languages:
+  - C
+project_url: https://github.com/staticafi/symbiotic
+repository_url: https://github.com/staticafi/symbiotic
+spdx_license_identifier: "MIT"
+benchexec_toolinfo_module: "symbiotic.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - jonasmartin
+
+maintainers:
+  - orcid: 0000-0003-4703-0795
+    name: Martin Jonáš
+    institution: Masaryk University, Brno
+    country: Czechia
+    url: "https://www.fi.muni.cz/~xjonas/"
+
+versions:
+  - version: "svcomp25"
+    doi: "10.5281/zenodo.14230101"
+    benchexec_toolinfo_options: ['--witness', 'witness.graphml', '--sv-comp']
+    required_ubuntu_packages:
+      - python3
+      - python3-lxml
+      - python3-clang
+  - version: "testcomp25"
+    doi: "10.5281/zenodo.14230101"
+    benchexec_toolinfo_options: ['--test-comp']
+    required_ubuntu_packages:
+      - python3
+      - python3-lxml
+      - python3-clang
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10202594"
+    benchexec_toolinfo_options: ['--witness', 'witness.graphml', '--sv-comp']
+    required_ubuntu_packages:
+      - python3
+      - python3-lxml
+  - version: "testcomp24"
+    doi: "10.5281/zenodo.10202594"
+    benchexec_toolinfo_options: ['--test-comp']
+    required_ubuntu_packages:
+      - python3
+      - python3-lxml
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/symbiotic.zip"
+    benchexec_toolinfo_options: ['--witness', 'witness.graphml', '--sv-comp']
+    required_ubuntu_packages:
+      - python3
+      - python3-lxml
+  - version: "testcomp23"
+    url: "https://gitlab.com/sosy-lab/test-comp/archives-2023/-/raw/testcomp23/2023/symbiotic.zip"
+    benchexec_toolinfo_options: ['--test-comp']
+    required_ubuntu_packages:
+      - python3
+      - python3-lxml
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0003-4703-0795
+      name: Martin Jonáš
+      institution: Masaryk University, Brno
+      country: Czechia
+      url: "https://www.fi.muni.cz/~xjonas/"
+  - competition: "Test-Comp 2025"
+    track: "Test Generation"
+    tool_version: "testcomp25"
+    jury_member:
+      orcid: 0000-0003-4703-0795
+      name: Martin Jonáš
+      institution: Masaryk University, Brno
+      country: Czechia
+      url: "https://www.fi.muni.cz/~xjonas/"
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0003-4703-0795
+      name: Martin Jonáš
+      institution: Masaryk University, Brno
+      country: Czechia
+      url: "https://www.fi.muni.cz/~xjonas/"
+  - competition: "Test-Comp 2024"
+    track: "Test Generation"
+    tool_version: "testcomp24"
+    jury_member:
+      orcid: 0000-0003-4703-0795
+      name: Martin Jonáš
+      institution: Masaryk University, Brno
+      country: Czechia
+      url: "https://www.fi.muni.cz/~xjonas/"
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0009-0009-6122-9574
+      name: Marek Trtík
+      institution: Masaryk University, Brno
+      country: Czechia
+      url:
+  - competition: "Test-Comp 2023"
+    track: "Test Generation"
+    tool_version: "testcomp23"
+    jury_member:
+      orcid: 0009-0009-6122-9574
+      name: Marek Trtík
+      institution: Masaryk University, Brno
+      country: Czechia
+      url:
+
+techniques:
+  - Symbolic Execution
+  - k-Induction
+  - Numeric Interval Analysis
+  - Shape Analysis
+  - Bit-Precise Analysis
+  - Concurrency Support
+  - Portfolio
+  - Floating-Point Arithmetics
+  - Guidance by Coverage Measures
+  - Targeted Input Generation
+
+frameworks_solvers:
+  - Z3
+
+used_actors:
+  - actor_type: "Slicer"
+    description: |
+      Slices the program before symbolic execution.
+  - actor_type: "Instrumentor"
+    description: |
+      Instruments the program to track allocated memory regions for memory-safety analysis.
+
+literature:
+  - doi: 10.1007/978-3-031-57256-2_29
+    title: "Symbiotic 10: Lazy Memory Initialization and Compact Symbolic Execution (Competition Contribution)"
+    year: 2024
+  - doi: 10.1007/978-3-030-99527-0_32
+    title: "Symbiotic 9: String Analysis and Backward Symbolic Execution with Loop Folding (Competition Contribution)"
+    year: 2022
+  - doi: 10.1007/978-3-030-71500-7_20
+    title: "Symbiotic 8: Parallel and Targeted Test Generation (Competition Contribution)"
+    year: 2021
+  - doi: 10.1007/978-3-030-72013-1_31
+    title: "Symbiotic 8: Beyond Symbolic Execution (Competition Contribution)"
+    year: 2021
+  - doi: 10.1007/978-3-030-45237-7_31
+    title: "Symbiotic 7: Integration of Predator and More (Competition Contribution)"
+    year: 2020
+  - doi: 10.1007/s10009-020-00573-0
+    title: "Symbiotic 6: generating test cases by slicing and symbolic execution"
+    year: 2021
+  - doi: 10.1007/978-3-319-89963-3_29
+    title: "Symbiotic 5: Boosted Instrumentation (Competition Contribution)"
+    year: 2018
+  - doi: 10.1007/978-3-662-54580-5_28
+    title: "Symbiotic 4: Beyond Reachability (Competition Contribution)"
+    year: 2017
+  - doi: 10.1007/978-3-662-49674-9_67
+    title: "Symbiotic 3: New Slicer and Error-Witness Generation (Competition Contribution)"
+    year: 2016
+  - doi: 10.1007/978-3-642-54862-8_34
+    title: "Symbiotic 2: More Precise Slicing (Competition Contribution)"
+    year: 2014
+  - doi: 10.1007/978-3-642-36742-7_50
+    title: "Symbiotic: Synergy of Instrumentation, Slicing, and Symbolic Execution (Competition Contribution)"
+    year: 2013

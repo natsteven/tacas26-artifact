@@ -1,0 +1,43 @@
+id: sikraken
+name: Sikraken
+input_languages:
+  - C
+project_url: https://github.com/echancrure/Sikraken
+repository_url: https://github.com/echancrure/Sikraken
+spdx_license_identifier: LGPL-3.0-only
+benchexec_toolinfo_module: "sikraken.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - echancrure
+
+maintainers:
+  - orcid: 0000-0001-6338-6367
+    name: Christophe Meudec
+    institution: South East Technological University
+    country: Ireland
+    url: https://www.setu.ie/staff/chris-meudec
+
+
+versions:
+  - version: "1.0.8"
+    benchexec_toolinfo_options: ["release", "budget[900]"]
+    required_ubuntu_packages: []
+    doi: "10.5281/zenodo.14343769"
+
+competition_participations:
+  - competition: "Test-Comp 2025"
+    track: "Test Generation"
+    tool_version: "1.0.8"
+    jury_member:
+      orcid: 0000-0001-6338-6367
+      name: Christophe Meudec
+      institution: South East Technological University
+      country: Ireland
+      url: https://www.setu.ie/staff/chris-meudec
+
+techniques:
+  - Symbolic Execution
+
+frameworks_solvers: []
+
+literature: []

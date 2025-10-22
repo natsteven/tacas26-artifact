@@ -1,0 +1,49 @@
+id: thorn
+name: Thorn
+description: |
+  Thorn is a variant of Theta, utilizing CHC solvers as backends instead of the conventional model checking algorithms of Theta. 
+input_languages:
+  - C
+project_url: https://github.com/ftsrg/theta
+repository_url: https://github.com/ftsrg/theta
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.theta
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - levente.bajczi
+
+maintainers:
+  - name: Levente Bajczi
+    orcid: 0000-0002-6551-5860
+    institution: Budapest University of Technology and Economics
+    country: Hungary
+    url: http://mit.bme.hu/~bajczi
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14194485
+    benchexec_toolinfo_options: ["--svcomp", "--portfolio", "HORN", "--loglevel", "RESULT"]
+    required_ubuntu_packages:
+      - openjdk-17-jre-headless
+      - libgomp1
+      - libmpfr6
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-6551-5860
+      name: Levente Bajczi
+      institution: Budapest University of Technology and Economics
+      country: Hungary
+      url: http://mit.bme.hu/~bajczi
+
+techniques:
+  - Predicate Abstraction
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers: []
+
+literature: []

@@ -1,0 +1,58 @@
+id: blast
+name: BLAST
+input_languages:
+  - C
+project_url: http://forge.ispras.ru/projects/blast
+repository_url: https://forge.ispras.ru/projects/blast/repository
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/blast.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - dbeyer
+
+maintainers:
+  - orcid: 0000-0003-3097-8512
+    name: Vadim Mutilin
+    institution: ISP RAS
+    country: Russia
+    url: http://forge.ispras.ru/users/29
+
+versions:
+  - version: "svcomp17-zip"
+    doi: 10.5281/zenodo.14535214
+    benchexec_toolinfo_options: ["-alias", "empty", "-enable-recursion", "-noprofile", "-cref", "-sv-comp", "-lattice", "-include-lattice", "symb", "-nosserr", "-svcomp-witness", "error-witness.graphml"]
+    required_ubuntu_packages: []
+    full_container_images: []
+
+competition_participations:
+  - competition: "SV-COMP 2017"
+    track: "Verification"
+    tool_version: "svcomp17-zip"
+    jury_member:
+      orcid: 0000-0003-3097-8512
+      name: Vadim Mutilin
+      institution: ISP RAS
+      country: Russia
+      url: http://forge.ispras.ru/users/29
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Explicit-Value Analysis
+  - ARG-Based Analysis
+  - Lazy Abstraction
+  - Interpolation
+
+frameworks_solvers:
+  - CSIsat
+
+literature:
+  - doi: 10.1007/s10009-007-0044-z
+    title: "The software model checker Blast"
+    year: 2007
+  - doi: 10.1134/S0361768812030061
+    title: "Experience of improving the blast static verification tool"
+    year: 2012
+  - doi: 10.1007/978-3-642-28756-5_39
+    title: "Predicate Analysis with BLAST 2.7 (Competition Contribution)"
+    year: 2012

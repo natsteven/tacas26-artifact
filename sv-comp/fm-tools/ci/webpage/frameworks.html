@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- This file is part of fm-tools
+     https://gitlab.com/sosy-lab/benchmarking/fm-tools
+     SPDX-FileCopyrightText: 2024 Dirk Beyer <https://www.sosy-lab.org>
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+{% extends "_template.html" %}
+{% block title %}Tools for Formal Methods: Frameworks{% endblock %}
+{% block content %}
+    <nav id="toc">
+      <h2>Table of Contents</h2>
+      <ul>
+      {% for framework in frameworks %}
+        <li><a href="#framework-{{framework|lower|replace(' ', '-')}}">{{framework}}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+    <div id="tools">
+    {% for framework in frameworks %}
+      <section id="framework-{{framework|lower|replace(' ', '-')}}" class="tool-description">
+        <h2>{{framework}}</h2>
+        <p>{{frameworks[framework].description}}</p>
+        <p>Tools:</p>
+        <ul class="tool-details">
+          {% for tool in frameworks[framework].tools %}
+            <li>
+              <a href="index.html#tool-{{tool|lower}}">{{tool}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+    </div>
+{% endblock %}

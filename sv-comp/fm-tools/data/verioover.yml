@@ -1,0 +1,59 @@
+id: verioover
+name: VeriOover
+input_languages:
+  - C
+project_url: https://github.com/PaperSheeper/VeriOover-SV
+repository_url: https://github.com/PaperSheeper/VeriOover-SV
+spdx_license_identifier: MIT
+benchexec_toolinfo_module: benchexec.tools.verioover
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - hobooe
+
+maintainers:
+  - name: HaiPeng Qu
+    institution: Ocean University of China
+    country: China
+    url:
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10407457
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      name: HaiPeng Qu
+      institution: Ocean University of China
+      country: China
+      url:
+
+techniques: []
+
+frameworks_solvers: []

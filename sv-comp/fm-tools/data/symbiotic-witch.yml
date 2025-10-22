@@ -1,0 +1,85 @@
+id: symbiotic-witch
+name: Symbiotic-Witch
+description: |
+  Symbiotic-Witch is a tool validating violation witnesses 
+  of verification results in the witness format 1.0. The tool 
+  uses some components of Symbiotic and (a fork of) Klee.
+input_languages:
+  - C
+project_url: https://github.com/ayazip/witch-klee
+repository_url: https://github.com/ayazip/witch-klee
+spdx_license_identifier: "MIT"
+benchexec_toolinfo_module: "symbiotic-witch.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - payazi
+
+maintainers:
+  - orcid: 0000-0003-1072-8137
+    name: Paulína Ayaziová
+    institution: Masaryk University, Brno
+    country: Czechia
+    url:
+
+versions:
+  - version: "svcomp25"
+    benchexec_toolinfo_options: ["--witness-check", "${witness}"]
+    required_ubuntu_packages:
+      - python3
+      - python3-lxml
+      - llvm-14
+    doi: "10.5281/zenodo.14207464"
+  - version: "svcomp24"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - python3
+      - python3-lxml
+    doi: "10.5281/zenodo.10211062"
+  - version: "svcomp23"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - python3
+      - python3-lxml
+    doi: "10.5281/zenodo.7630406"
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0003-1072-8137
+      name: Paulína Ayaziová
+      institution: Masaryk University, Brno
+      country: Czechia
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0003-1072-8137
+      name: Paulína Ayaziová
+      institution: Masaryk University, Brno
+      country: Czechia
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0003-1072-8137
+      name: Paulína Ayaziová
+      institution: Masaryk University, Brno
+      country: Czechia
+      url:
+
+techniques:
+  - Symbolic Execution
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-031-30820-8_30
+    title: "Symbiotic-Witch 2: More Efficient Algorithm and Witness Refutation (Competition Contribution)"
+    year: 2023
+  - doi: 10.1007/978-3-030-99527-0_33
+    title: "Symbiotic-Witch: A Klee-Based Violation Witness Checker (Competition Contribution)"
+    year: 2022

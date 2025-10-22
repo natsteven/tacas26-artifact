@@ -1,0 +1,106 @@
+[Participants]
+CODEOWNERS @dbeyer
+data/schema.yml @dbeyer
+data/2ls.yml @FrNecas @peterschrammel @viktor.malik
+data/aise.yml @liar1007
+data/aprove.yml @JCKassing @nilslommen
+data/brick.yml @brick-tool-dev
+data/bubaak-split.yml @cedricrupb @mchalupa
+data/bubaak.yml @mchalupa
+data/cbmc.yml @tautschnig
+data/cetfuzz.yml @Sarathkrishnan @m.raveendra.kumar @sethshajigeorge
+data/coastal.yml @jacogeld
+data/concurrentwitness2test.yml @levente.bajczi
+data/cooperace.yml @vesal.vojdani
+data/coveriteam-verifier-algo-selection.yml @ricffb @skanav
+data/coveriteam-verifier-parallel-portfolio.yml @ricffb @skanav
+data/coveritest.yml @mjakobs
+data/cpa-bam-bnb.yml @p.andrianov
+data/cpa-bam-smg.yml @Druidos
+data/cpa-lockator.yml @p.andrianov
+data/cpa-witness2test.yml @dbeyer @lemberger @ricffb
+data/cpachecker.yml @PhilippWendler @dbeyer @ricffb
+data/cpv.yml @Po-Chun-Chien @nianzelee
+data/crux.yml @RyanGlScott
+data/cseq.yml @emersonwds
+data/dartagnan.yml @hernanponcedeleon
+data/deagle.yml @Misasasa
+data/divine.yml @xlauko
+data/ebf.yml @fatimahaljaafari
+data/emergentheta.yml @levente.bajczi
+data/esbmc-incr.yml @ChenfengWei1 @lucasccordeiro81
+data/esbmc-kind.yml @fbrausse @rafaelsamenezes
+data/fdse.yml @passengerzgf
+data/fizzer.yml @trtikm
+data/frama-c-sv.yml @dbeyer @masp
+data/fshell-witness2test.yml @tautschnig
+data/fusebmc-ia.yml @Mohannad-Aldughaim @kaled-alshmrany
+data/fusebmc.yml @kaled-alshmrany
+data/gazer-theta.yml @AdamZsofi
+data/gdart-llvm.yml @fhowar @mmuesly @simon.dierl
+data/gdart.yml @fhowar @mmuesly
+data/goblint.yml @sim642
+data/graves-par.yml @mgerrard
+data/graves.yml @will-leeson
+data/gwit.yml @fhowar @mmuesly
+data/hornix.yml @jan.kofron
+data/hybridtiger.yml @sruland
+data/infer.yml @lemberger @matthiaskettl
+data/java-ranger.yml @soha3
+data/jayhorn.yml @Hassanmousavii
+data/jbmc.yml @peterschrammel
+data/jcwit.yml @Chriszai
+data/jdart.yml @fhowar @mmuesly
+data/key.yml @ricffb
+data/klee.yml @mnowack
+data/kleef.yml @misonijnik
+data/korn.yml @gernst
+data/lazycseq.yml @omainv
+data/legion-symcc.yml @gernst
+data/legion.yml @gernst
+data/lf-checker.yml @Anthonysdu
+data/liv.yml @Marianl @PhilippWendler @dbeyer
+data/locksmith.yml @vesal.vojdani
+data/metaval++.yml @Marianl @PhilippWendler @dbeyer
+data/metaval.yml @Marianl @PhilippWendler @dbeyer
+data/mlb.yml @MLB-SE
+data/mopsa.yml @antoine_mine @aouadjaout @rmonat
+data/nacpa.yml @lemberger @ricffb
+data/nitwit.yml @blizzard4591
+data/owic.yml @filipeom @oopale
+data/pesco.yml @cedricrupb
+data/pichecker.yml @Lapulatos
+data/pinaka.yml @akashbanerjeeab
+data/predatorhp.yml @versokova
+data/proton.yml @r.metta
+data/prtest.yml @lemberger
+data/racerf.yml @TDacik
+data/relay-sv.yml @vesal.vojdani
+data/rizzer.yml @adamstafa
+data/sikraken.yml @echancrure
+data/spf.yml @yannicnoller
+data/sv-sanitizers.yml @sim642
+data/svf-svc.yml @ConstantlyRecompiling
+data/swat.yml @felixmaechtle @loose.nils
+data/symbiotic-witch.yml @payazi
+data/symbiotic.yml @jonasmartin
+data/testcov.yml @dbeyer @lemberger @matthiaskettl
+data/theta.yml @levente.bajczi
+data/thorn.yml @levente.bajczi
+data/tracerx-wp.yml @arpitad10j @sajjadrsm @sanghu1790
+data/tracerx.yml @arpitad10j @sajjadrsm @sanghu1790
+data/uautomizer.yml @danieldietsch
+data/ugemcutter.yml @danieldietsch
+data/ukojak.yml @danieldietsch
+data/ureferee.yml @danieldietsch
+data/utaipan.yml @danieldietsch
+data/utestgen.yml @MaxBarth95 @danieldietsch
+data/veriabs.yml @priyankadarke
+data/veriabsl.yml @priyankadarke
+data/verifuzz.yml @m.raveendra.kumar
+data/verioover.yml @hobooe
+data/wasp-c.yml @filipeom
+data/wit4java.yml @Anthonysdu
+data/witch.yml @payazi
+data/witnesslint.yml @Marianl @PhilippWendler @dbeyer
+data/witnessmap.yml @Marianl @PhilippWendler @dbeyer

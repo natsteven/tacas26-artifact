@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- This file is part of fm-tools
+     https://gitlab.com/sosy-lab/benchmarking/fm-tools
+     SPDX-FileCopyrightText: 2024 Dirk Beyer <https://www.sosy-lab.org>
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+{% extends "_template.html" %}
+{% block title %}Tools for Formal Methods: Tools{% endblock %}
+{% block content %}
+    <nav id="toc">
+      <h2>Table of Contents</h2>
+      <ul>
+      {% for tool in tool_data %}
+        <li><a href="#tool-{{tool.id}}">{{tool.name}}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+    <div id="tools">
+    {% for tool in tool_data %}
+      <section id="tool-{{tool.id}}" class="tool-description">
+        {% if tool.logos is defined and tool.logos %}
+            {% for logo_file in tool.logos %}
+            <h2>{{tool.name}}{{ get_hyper_ref_logo("logos", logo_file) }}</h2>
+            {% endfor %}
+        {% else %}
+        <h2>{{tool.name}}</h2>
+        {% endif %}
+        {% if tool.description is defined and tool.description %}
+        <p>{{ tool.description }}</p>
+        {% endif %}
+        <ul class="tool-details">
+          <li><span class="entry-key">Project URL:</span> <span class="project-url">{{ get_hyper_ref(tool.project_url) }}</span></li>
+          {% if tool.repository_url is defined and tool.project_url != tool.repository_url %}
+          <li><span class="entry-key">Repository URL:</span> <span class="repo-url">{{ get_hyper_ref(tool.repository_url) }}</span></li>
+          {% endif %}
+          {% if tool.maintainers is defined and tool.maintainers and "Hors Concours" not in (tool.maintainers|join(", ", attribute="name")) %}
+          <li><span class="entry-key">Maintainers:</span>
+            <ul class="dense-list">
+              {% for maintainer in tool.maintainers %}
+                <li>
+                {% if maintainer.orcid is defined %}
+                  {{ get_hyper_ref_orcid(maintainer.orcid, maintainer.name) }}
+                {% else %}
+                  {{ maintainer.name }}
+                {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
+          {% if tool.input_languages is defined and tool.input_languages %}
+          <li><span class="entry-key">Supported input languages:</span>
+            <ul class="dense-list">
+              {% for language in tool.input_languages %}
+                <li><a href="input_languages.html#language-{{language|lower|replace(' ', '-')}}">{{ language }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
+          <li><span class="entry-key">License:</span>
+            <ul class="dense-list">
+            {% for license in tool.spdx_license_identifier.split(" AND ") %}
+              <li>
+              {% if license.startswith('LicenseRef-') %}
+                    <a href="LICENSES/{{ license }}.txt">
+              {% else %}
+                    <a href="https://spdx.org/licenses/{{ license }}">
+              {% endif %}
+              {{ license }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          </li>
+          {% if tool.techniques is defined and tool.techniques %}
+          <li><span class="entry-key">Supported techniques:</span>
+            <ul class="dense-list">
+              {% for technique in tool.techniques|sort %}
+                <li><a href="techniques.html#technique-{{technique|lower|replace(' ', '-')}}">{{ technique }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
+          {% if tool.frameworks_solvers is defined and tool.frameworks_solvers %}
+          <li><span class="entry-key">Used frameworks / solvers:</span>
+            <ul class="dense-list">
+              {% for framework in tool.frameworks_solvers|sort %}
+                <li><a href="frameworks.html#framework-{{framework|lower|replace(' ', '-')}}">{{ framework }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
+          {% if tool.used_actors is defined and tool.used_actors %}
+          <li><span class="entry-key">Used actors / components:</span>
+            <ul class="dense-list">
+              {% for actor in tool.used_actors %}
+                <li>{{ actor.actor_type }}: {{ actor.description }}</li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
+          {% if tool.versions is defined and tool.versions %}
+          <li><span class="entry-key">Releases:</span>
+            <ul class="dense-list">
+              {% for version in tool.versions %}
+                  <li>
+                    {% if version.doi is defined and version.doi %}
+                      <a href="https://doi.org/{{ version.doi }}">{{ version.version }}</a>
+                    {% elif version.url is defined and version.url %}
+                      <a href="{{version.url}}">{{ version.version }}</a>
+                    {% else %}
+                      {{ version.version }}
+                    {% endif %}
+                  </li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
+          {% if tool.literature is defined and tool.literature %}
+          <li><span class="entry-key">Literature:</span>
+            <ul class="literature-list traditional-list">
+              {% for reference in tool.literature %}
+                {% set title = reference.title ~ '.&nbsp' ~ reference.year ~ '.' %}
+                <li class="literature-entry">
+                  <span class="literature-title">{{ get_hyper_ref_pdf(reference.doi, title) }}</span>
+                  <span class="doi nobreak">{{ get_hyper_ref_doi(reference.doi) }}</span>
+                </li>
+              {% endfor %}
+              </ul>
+          </li>
+          {% endif %}
+          {% if tool.presentations is defined and tool.presentations %}
+          <li><span class="entry-key">Presentations:</span>
+              <ul class="traditional-list">
+              {% for presentation_file in tool.presentations %}
+                <li>
+                  <span>{{ get_hyper_ref_doc("presentations", presentation_file) }}</span>
+                </li>
+              {% endfor %}
+              </ul>
+          </li>
+          {% endif %}
+          {% if tool.posters is defined and tool.posters %}
+          <li><span class="entry-key">Posters:</span>
+              <ul class="traditional-list">
+              {% for poster_file in tool.posters %}
+                <li>
+                  <span>{{ get_hyper_ref_doc("posters", poster_file) }}</span>
+                </li>
+              {% endfor %}
+              </ul>
+          </li>
+          {% endif %}
+          {% if tool.competition_participations is defined and tool.competition_participations %}
+          <li><span class="entry-key">Competition Participations:</span>
+              <ul class="dense-list">
+              {% for competition in tool.competition_participations %}
+                <li>
+                  <a href="competitions.html#competition-{{ competition.competition|lower|replace(' ', '-') }}-({{ competition.track|lower|replace(' ', '-') }})">{{ competition.competition }} ({{ competition.track }})</a>
+                </li>
+              {% endfor %}
+              </ul>
+          </li>
+          {% endif %}
+        </ul>
+      </section>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,197 @@
+id: witnesslint
+name: WitnessLint
+description: |
+  WitnessLint is a simple witness validator that
+  rejects only witnesses that do not adhere to the witness format specification.
+  It does this through syntactic checks of the verification witnesses.
+  It is used by the competition SV-COMP to 'desk-reject' witnesses
+  that do not adhere to the format specification,
+  such that invalid witnesses do not yield points in the competition.
+input_languages:
+  - C
+  - Java
+project_url: https://github.com/sosy-lab/sv-witnesses
+repository_url: https://github.com/sosy-lab/sv-witnesses
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.witnesslint
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - dbeyer
+  - Marianl
+  - PhilippWendler
+
+maintainers:
+  - orcid: 0000-0003-4832-7662
+    name: Dirk Beyer
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/dbeyer/
+  - name: Marian Lingsch-Rosenfeld
+    orcid: 0000-0002-8172-3184
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+
+versions:
+  - version: "svcomp25-correctness-graphml"
+    doi: 10.5281/zenodo.15050742
+    benchexec_toolinfo_options: ["--witness", "${witness}", "--expectCorrectnessWitness", "--ignoreSelfLoops", "--expectedWitnessVersion", "1.0"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-jsonschema
+      - python3-yaml
+      - python3-pycparser
+  - version: "svcomp25-violation-graphml"
+    doi: 10.5281/zenodo.15050742
+    benchexec_toolinfo_options: ["--witness", "${witness}", "--expectViolationWitness", "--ignoreSelfLoops", "--expectedWitnessVersion", "1.0"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-jsonschema
+      - python3-yaml
+      - python3-pycparser
+  - version: "svcomp25-correctness-yaml"
+    doi: 10.5281/zenodo.15050742
+    benchexec_toolinfo_options: ["--witness", "${witness}", "--expectCorrectnessWitness", "--ignoreSelfLoops", "--expectedWitnessVersion", "2.0"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-jsonschema
+      - python3-yaml
+      - python3-pycparser
+  - version: "svcomp25-violation-yaml"
+    doi: 10.5281/zenodo.15050742
+    benchexec_toolinfo_options: ["--witness", "${witness}", "--expectViolationWitness", "--ignoreSelfLoops", "--expectedWitnessVersion", "2.0"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-jsonschema
+      - python3-yaml
+      - python3-pycparser
+  - version: "svcomp24-correctness-graphml"
+    doi: 10.5281/zenodo.10213801
+    benchexec_toolinfo_options: ["--expectCorrectnessWitness", "--ignoreSelfLoops", "--expectedWitnessVersion", "1.0"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-jsonschema
+      - python3-yaml
+      - python3-pycparser
+  - version: "svcomp24-violation-graphml"
+    doi: 10.5281/zenodo.10213801
+    benchexec_toolinfo_options: ["--expectViolationWitness", "--ignoreSelfLoops", "--expectedWitnessVersion", "1.0"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-jsonschema
+      - python3-yaml
+      - python3-pycparser
+  - version: "svcomp24-correctness-yaml"
+    doi: 10.5281/zenodo.10213801
+    benchexec_toolinfo_options: ["--expectCorrectnessWitness", "--ignoreSelfLoops", "--expectedWitnessVersion", "2.0", "--ignoreFaultyWitness"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-jsonschema
+      - python3-yaml
+      - python3-pycparser
+  - version: "svcomp24-violation-yaml"
+    doi: 10.5281/zenodo.10213801
+    benchexec_toolinfo_options: ["--expectViolationWitness", "--ignoreSelfLoops", "--expectedWitnessVersion", "2.0", "--ignoreFaultyWitness"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-jsonschema
+      - python3-yaml
+      - python3-pycparser
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Validation of Correctness Witnesses 1.0"
+    label:
+      - auxiliary
+    tool_version: "svcomp25-correctness-graphml"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Correctness Witnesses 2.0"
+    label:
+      - auxiliary
+    tool_version: "svcomp25-correctness-yaml"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 1.0"
+    label:
+      - auxiliary
+    tool_version: "svcomp25-violation-graphml"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 2.0"
+    label:
+      - auxiliary
+    tool_version: "svcomp25-violation-yaml"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Correctness Witnesses 1.0"
+    label:
+      - auxiliary
+    tool_version: "svcomp24-correctness-graphml"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Correctness Witnesses 2.0"
+    label:
+      - auxiliary
+    tool_version: "svcomp24-correctness-yaml"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 1.0"
+    label:
+      - auxiliary
+    tool_version: "svcomp24-violation-graphml"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 2.0"
+    label:
+      - auxiliary
+    tool_version: "svcomp24-violation-yaml"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+
+techniques: []
+
+frameworks_solvers: []
+
+used_actors: []
+
+literature: []

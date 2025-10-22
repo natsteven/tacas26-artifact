@@ -1,0 +1,73 @@
+id: java-ranger
+name: Java-Ranger
+input_languages:
+  - Java
+project_url: https://github.com/vaibhavbsharma/java-ranger
+repository_url: https://github.com/vaibhavbsharma/java-ranger
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/java-ranger.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - soha3
+
+maintainers:
+  - name: Soha Hussein
+    institution: Ain Shams University
+    country: Egypt
+    url: https://sohah.github.io/
+    orcid: 0000-0002-5071-6811
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14205198
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-8-jre-headless
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.7467038
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-5071-6811
+      name: Soha Hussein
+      institution: Ain Shams University
+      country: Egypt
+      url: https://sohah.github.io/
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-5071-6811
+      name: Soha Hussein
+      institution: University of Minnesota
+      country: USA
+      url: https://www.linkedin.com/in/sohahusse/
+
+techniques:
+  - Symbolic Execution
+  - Bit-Precise Analysis
+
+frameworks_solvers:
+  - JPF
+literature:
+  - doi: 10.1007/978-3-030-45237-7_27
+    title: "Java Ranger at SV-COMP 2020 (Competition Contribution)"
+    year: 2020
+  - doi: 10.1145/3368089.3409734
+    title: "Java Ranger: statically summarizing regions for efficient symbolic execution of Java"
+    year: 2020

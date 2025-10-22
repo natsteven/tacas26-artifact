@@ -1,0 +1,92 @@
+id: fusebmc
+name: FuSeBMC
+description: |
+  FuSeBMC is an award-winning automated software testing tool that integrates Bounded Model Checking (BMC),
+  Fuzzing, and Artificial Intelligence (AI) to enhance software security and reliability.
+  Designed to detect and repair security vulnerabilities in C programs,
+  FuSeBMC improves code quality while reducing false positives and operational disruptions.
+input_languages:
+  - C
+project_url: https://veribee.co/
+repository_url: https://github.com/FuSeBMC/
+spdx_license_identifier: "MIT"
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/fusebmc.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - kaled-alshmrany
+
+maintainers:
+  - orcid: 0000-0002-5822-5435
+    name: Kaled Alshmrany
+    institution: University of Manchester / Institute of Public Administration
+    country: UK / Saudi Arabia
+    url: https://www.linkedin.com/in/dr-kaled-alshmrany/
+
+versions:
+  - version: "testcomp25"
+    doi: "10.5281/zenodo.13983351"
+    benchexec_toolinfo_options: ["-s", "incr"]
+    required_ubuntu_packages: []
+  - version: "testcomp24"
+    doi: "10.5281/zenodo.10113374"
+    benchexec_toolinfo_options: ["-s", "incr"]
+    required_ubuntu_packages: []
+  - version: "testcomp23"
+    url: "https://gitlab.com/sosy-lab/test-comp/archives-2023/-/raw/testcomp23/2023/FuSeBMC.zip"
+    benchexec_toolinfo_options: ["-s", "incr"]
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "Test-Comp 2025"
+    track: "Test Generation"
+    tool_version: "testcomp25"
+    jury_member:
+      orcid: 0000-0002-5822-5435
+      name: Kaled Alshmrany
+      institution: University of Manchester / Institute of Public Administration
+      country: UK / Saudi Arabia
+      url: https://www.linkedin.com/in/dr-kaled-alshmrany/
+  - competition: "Test-Comp 2024"
+    track: "Test Generation"
+    tool_version: "testcomp24"
+    jury_member:
+      orcid: 0000-0002-5822-5435
+      name: Kaled Alshmrany
+      institution: University of Manchester / Institute of Public Administration
+      country: UK / Saudi Arabia
+      url: https://www.linkedin.com/in/dr-kaled-alshmrany/
+  - competition: "Test-Comp 2023"
+    track: "Test Generation"
+    tool_version: "testcomp23"
+    jury_member:
+      orcid: 0000-0002-5822-5435
+      name: Kaled Alshmrany
+      institution: University of Manchester / Institute of Public Administration
+      country: UK / Saudi Arabia
+      url: https://www.linkedin.com/in/dr-kaled-alshmrany/
+
+techniques:
+  - Bounded Model Checking
+  - Floating-Point Arithmetics
+  - Guidance by Coverage Measures
+  - Targeted Input Generation
+  - Portfolio
+
+frameworks_solvers: []
+
+literature:
+  - doi: "10.1007/978-3-030-71500-7_19"
+    title: "FuSeBMC: A White-Box Fuzzer for Finding Security Vulnerabilities in C Programs (Competition Contribution)"
+    year: 2021
+  - doi: "10.1007/978-3-030-79379-1_6"
+    title: "FuSeBMC: An Energy-Efficient Test Generator for Finding Security Vulnerabilities in C Programs"
+    year: 2021
+  - doi: "10.1007/978-3-030-99429-7_19"
+    title: "FuSeBMC v4: Smart Seed Generation for Hybrid Fuzzing: (Competition Contribution)"
+    year: 2022
+  - doi: "10.1007/978-3-031-30826-0_18"
+    title: "FuSeBMC_IA: Interval Analysis and Methods for Test Case Generation: (Competition Contribution)"
+    year: 2023
+  - doi: "10.1145/3665337"
+    title: "FuSeBMC v4: Improving Code Coverage with Smart Seeds via BMC, Fuzzing and Static Analysis"
+    year: 2024

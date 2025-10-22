@@ -1,0 +1,77 @@
+id: brick
+name: BRICK
+input_languages:
+  - C
+project_url: https://github.com/brick-tool-dev/BRICK-2.0
+repository_url: https://github.com/brick-tool-dev/BRICK-2.0
+spdx_license_identifier: MIT
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/brick.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - brick-tool-dev
+
+maintainers:
+  - orcid: 0000-0003-0517-7801
+    name: Lei Bu
+    institution: Nanjing University
+    country: China
+    url:
+
+versions:
+  - version: "svcomp25"
+    doi: "10.5281/zenodo.14203153"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10202700"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/brick.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0003-0517-7801
+      name: Lei Bu
+      institution: Nanjing University
+      country: China
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0003-0517-7801
+      name: Lei Bu
+      institution: Nanjing University
+      country: China
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0003-0517-7801
+      name: Lei Bu
+      institution: Nanjing University
+      country: China
+      url:
+
+techniques:
+  - CEGAR
+  - Symbolic Execution
+  - Bounded Model Checking
+  - Numeric Interval Analysis
+  - Concurrency Support
+
+frameworks_solvers:
+  - Z3
+  - MiniSAT
+
+literature:
+  - doi: 10.1007/978-3-030-99527-0_22
+    title: "Brick: Path Enumeration-Based Bounded Reachability Checking of C Programs (Competition Contribution)"
+    year: 2022

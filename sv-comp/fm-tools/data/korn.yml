@@ -1,0 +1,80 @@
+id: korn
+name: Korn
+input_languages:
+  - C
+project_url: https://github.com/gernst/korn
+repository_url: https://github.com/gernst/korn
+spdx_license_identifier: MIT
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/korn.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - gernst
+description: |
+  Korn is a software verifier for the C programming language. It translates the input program to a representation with constrained Horn clauses (CHCs) and uses off-the-shelf solvers to find loop invariants and function summaries.
+
+
+maintainers:
+  - name: Gidon Ernst
+    institution: LMU Munich
+    country: Germany
+    orcid: 0000-0002-3289-5764
+    url: https://www.sosy-lab.org/people/ernst/
+
+versions:
+  - version: "svcomp25"
+    doi: "10.5281/zenodo.13987882"
+    benchexec_toolinfo_options: ["-witness", "witness.graphml", "-smt2", "clauses.smt2", "-model", "-write", "-confirm", "-debug", "-random", "20", "-timeout", "60", "-golem:spacer", "-timeout", "60", "-z3", "-timeout", "900", "-eld:portfolio"]
+    required_ubuntu_packages: []
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10202058"
+    benchexec_toolinfo_options: ["-witness", "witness.graphml", "-smt2", "clauses.smt2", "-model", "-write", "-random", "10", "-timeout", "20", "-golem", "-timeout", "20", "-z3", "-timeout", "900", "-eld:portfolio"]
+    required_ubuntu_packages: []
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/korn.zip"
+    benchexec_toolinfo_options: ["-witness", "witness.graphml", "-smt2", "clauses.smt2", "-model", "-write", "-confirm", "-random", "10", "-timeout", "20", "-z3", "-timeout", "900", "-eld:portfolio"]
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      name: Gidon Ernst
+      institution: LMU Munich
+      country: Germany
+      orcid: 0000-0002-3289-5764
+      url: https://www.sosy-lab.org/people/ernst/
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      name: Gidon Ernst
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/ernst/
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      name: Gidon Ernst
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/ernst/
+
+techniques:
+  - Predicate Abstraction
+  - Symbolic Execution
+  - Explicit-Value Analysis
+  - CEGAR
+  - Portfolio
+
+frameworks_solvers:
+  - Z3
+  - Eldarica
+  - Golem
+
+literature:
+  - doi: 10.1007/978-3-031-30820-8_36
+    title: "Korn—Software Verification with Horn Clauses (Competition Contribution)"
+    year: 2023
+

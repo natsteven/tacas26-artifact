@@ -1,0 +1,92 @@
+id: graves
+name: Graves-CPA
+input_languages:
+  - C
+project_url: https://github.com/will-leeson/cpachecker
+repository_url: https://github.com/will-leeson/cpachecker
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.graves
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - will-leeson
+
+maintainers:
+  - name: Will Leeson
+    institution: University of Virginia
+    country: USA
+    url: https://will-leeson.github.io/
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10397102
+    benchexec_toolinfo_options: ['-svcomp23-graves', '-heap', '10000M', '-benchmark', '-timelimit', '900 s']
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+      - llvm-11
+      - clang-11
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+      - meta_tool
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+      - meta_tool
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - meta_tool
+    tool_version: "svcomp23"
+    jury_member:
+      name: Will Leeson
+      institution: University of Virginia
+      country: USA
+      url: https://will-leeson.github.io/
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Bounded Model Checking
+  - k-Induction
+  - Explicit-Value Analysis
+  - Numeric Interval Analysis
+  - Shape Analysis
+  - Bit-Precise Analysis
+  - ARG-Based Analysis
+  - Lazy Abstraction
+  - Interpolation
+  - Concurrency Support
+  - Ranking Functions
+  - Algorithm Selection
+  - Portfolio
+
+literature:
+  - doi: 10.1007/978-3-030-99527-0_28
+    title: "Graves-CPA: A Graph-Attention Verifier Selector (Competition Contribution)"
+    year: 2022
+  - doi: 10.48550/arXiv.2201.11711
+    title: "Algorithm Selection for Software Verification using Graph Neural Networks"
+    year: 2022
+
+frameworks_solvers:
+  - CPAchecker
+  - JavaSMT
+  - MathSAT

@@ -1,0 +1,96 @@
+id: veriabs
+name: VeriAbs
+input_languages:
+  - C
+project_url: https://www.tcs.com
+repository_url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/veriabs.zip"
+spdx_license_identifier: LicenseRef-TCS-VeriAbs
+benchexec_toolinfo_module: benchexec.tools.veriabs
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - priyankadarke
+
+maintainers:
+  - orcid: 0000-0001-6104-9033
+    name: Priyanka Darke
+    institution: Tata Consultancy Services
+    country: India
+    url: https://www.tcs.com
+
+
+versions:
+  - version: "1.6.2"
+    doi: 10.5281/zenodo.14030466
+    benchexec_toolinfo_options: ['--veriabs']
+    required_ubuntu_packages:
+      - libc6-dev-i386
+      - openjdk-11-jre-headless
+      - openjdk-17-jre-headless
+      - clang-12
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10243500
+    benchexec_toolinfo_options: ['--sv22']
+    required_ubuntu_packages:
+      - libc6-dev-i386
+      - openjdk-11-jre-headless
+      - clang-12
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/veriabs.zip"
+    benchexec_toolinfo_options: ['--sv22']
+    required_ubuntu_packages:
+      - libc6-dev-i386
+      - openjdk-11-jre-headless
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0001-6104-9033
+      name: Priyanka Darke
+      institution: Tata Consultancy Services
+      country: India
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0001-6104-9033
+      name: Priyanka Darke
+      institution: Tata Consultancy Services
+      country: India
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0001-6104-9033
+      name: Priyanka Darke
+      institution: Tata Consultancy Services
+      country: India
+      url:
+
+techniques:
+  - CEGAR
+  - Bounded Model Checking
+  - k-Induction
+  - Explicit-Value Analysis
+  - Numeric Interval Analysis
+  - Evolutionary Algorithms
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers:
+  - CPAchecker
+  - CProver
+  - Z3
+  - MiniSAT
+
+literature:
+  - doi: 10.1007/978-3-030-72013-1_32
+    title: "VeriAbs: A Tool for Scalable Verification by Abstraction"
+    year: 2021

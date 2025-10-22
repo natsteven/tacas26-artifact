@@ -49,8 +49,8 @@ file="${files[file_index]}"
 path="benchmarks"
 
 #path set up as various solver/ebnch combinations use different sets
-if [[ $solver == "bass" ]]; then
-  path="${path}/bass/${benchset}/${file}.smt2.json"
+if [[ $solver == "a-str" ]]; then
+  path="${path}/a-str/${benchset}/${file}.smt2.json"
 else # other solvers
   if [[ $benchset == "real" || $benchset == "simple" ]]; then
     path="${path}/not_smt/${solver}/${benchset}/${file}.smt2"

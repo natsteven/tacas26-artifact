@@ -1,0 +1,61 @@
+id: witnessmap
+name: WitnessMap
+description: |
+  WitnessMap is a simple tool with the same input and output as a verifier that
+  only copies witnesses contained in validation tasks
+  to its output folder.
+  It is used by SV-COMP to place existing verification witnesses
+  at the location where the competition infrastructure expects them
+  (this way, the witness is technically 'produced' by a tool
+  with the same interface as a verifier). 
+input_languages:
+  - C
+project_url: https://gitlab.com/sosy-lab/software/witnessmap
+repository_url: https://gitlab.com/sosy-lab/software/witnessmap
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.witnessmap
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - dbeyer
+  - Marianl
+  - PhilippWendler
+
+maintainers:
+  - orcid: 0000-0003-4832-7662
+    name: Dirk Beyer
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/dbeyer/
+  - name: Marian Lingsch-Rosenfeld
+    orcid: 0000-0002-8172-3184
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14205153
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - python3-yaml
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - auxiliary
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+
+techniques: []
+
+frameworks_solvers: []
+
+used_actors: []
+
+literature: []

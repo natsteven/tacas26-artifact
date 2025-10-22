@@ -1,0 +1,39 @@
+#!/bin/env python3
+
+import argparse
+from pathlib import Path
+from typing import cast
+
+
+def make_parser():
+    parser = argparse.ArgumentParser(description="Protect empty lines in yml")
+    parser.add_argument("file", type=Path, help="File to parse", nargs="+")
+    parser.add_argument("--undo", action="store_true", help="Remove the protection")
+
+    return parser
+
+
+def main(args):
+    conf = make_parser().parse_args(args)
+
+    for file in cast(list[Path], conf.file):
+        with file.open("r") as f:
+            lines = f.readlines()
+
+        for i, line in enumerate(lines):
+            if conf.undo:
+                if line.strip().startswith("#-keep-#"):
+                    lines[i] = line.split("#-keep-#", 1)[1]
+                continue
+
+            if line.strip() == "":
+                lines[i] = "#-keep-#" + line
+
+        with file.open("w") as f:
+            f.writelines(lines)
+
+
+if __name__ == "__main__":
+    import sys
+
+    main(sys.argv[1:])

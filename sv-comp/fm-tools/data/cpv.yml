@@ -1,0 +1,93 @@
+id: cpv
+name: CPV
+input_languages:
+  - C
+project_url: https://gitlab.com/sosy-lab/software/cpv
+repository_url: https://gitlab.com/sosy-lab/software/cpv
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.cpv
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Po-Chun-Chien
+  - nianzelee
+
+maintainers:
+  - orcid: 0000-0001-5139-5178
+    name: Po-Chun Chien
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/chien/
+  - orcid: 0000-0002-8096-5595
+    name: Nian-Ze Lee
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/lee/
+
+versions:
+  - version: "0.6"
+    doi: 10.5281/zenodo.14203582
+    benchexec_toolinfo_options: ["--svcomp", "--no-cache-update"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-bitstring
+  - version: "0.5.1"
+    doi: 10.5281/zenodo.14034969
+    benchexec_toolinfo_options: ["--svcomp", "--no-cache-update"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-bitstring
+  - version: "0.4"
+    doi: 10.5281/zenodo.10203472
+    benchexec_toolinfo_options: ["--svcomp", "--no-cache-update"]
+    required_ubuntu_packages:
+      - python3-lxml
+      - python3-bitstring
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "0.6"
+    jury_member:
+      orcid: 0000-0001-5139-5178
+      name: Po-Chun Chien
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/chien/
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "0.4"
+    jury_member:
+      orcid: 0000-0001-5139-5178
+      name: Po-Chun Chien
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/chien/
+
+techniques:
+  - Algorithm Selection
+  - Bit-Precise Analysis
+  - Bounded Model Checking
+  - CEGAR
+  - Interpolation
+  - Logic Synthesis
+  - Portfolio
+  - Predicate Abstraction
+  - Property-Directed Reachability
+  - Task Translation
+  - k-Induction
+
+frameworks_solvers:
+  - MiniSAT
+
+used_actors:
+  - actor_type: "Witness Transformer"
+    description: |
+      Transforms a Btor2 hardware witness to an automata-based software witness.
+  - actor_type: "Instrumentor"
+    description: |
+      Instruments a program to facilitate witness transformation.
+
+literature:
+  - doi: 10.1007/978-3-031-57256-2_22
+    title: "CPV: A Circuit-Based Program Verifier (Competition Contribution)"
+    year: 2024

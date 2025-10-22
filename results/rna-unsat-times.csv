@@ -1,4 +1,4 @@
-,bass,,,,cvc5,,,,ostrich,,,,z3-noodler
+,a-str,,,,cvc5,,,,ostrich,,,,z3-noodler
 filename,real,user,sys,mem,real,user,sys,mem,real,user,sys,mem,real,user,sys,mem
 benchmark_0249,,,,,,,,,4.70,3.52,0.16,404656,0.06,0.04,0.01,31456,
 benchmark_0450,,,,,,,,,4.79,3.56,0.19,420732,0.07,0.04,0.02,31392,

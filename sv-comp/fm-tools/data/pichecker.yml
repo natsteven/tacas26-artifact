@@ -1,0 +1,71 @@
+id: pichecker
+name: PIChecker
+input_languages:
+  - C
+project_url: https://gitlab.com/Lapulatos/pichecker
+repository_url: https://gitlab.com/Lapulatos/pichecker
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: pichecker.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Lapulatos
+
+maintainers:
+  - name: Jie Su
+    institution: Xidian University
+    country: China
+    url:
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.7471378
+    benchexec_toolinfo_options: ['-svcomp23-pichecker', '-heap', '14000M', '-stack', '2048k', '-benchmark', '-timelimit', '900 s']
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      name: Jie Su
+      institution: Xidian University
+      country: China
+      url:
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Bit-Precise Analysis
+  - ARG-Based Analysis
+  - Interpolation
+  - Concurrency Support
+  - Algorithm Selection
+
+frameworks_solvers:
+  - CPAchecker
+  - JavaSMT
+  - MathSAT
+  - SMTinterpol

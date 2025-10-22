@@ -1,0 +1,69 @@
+id: proton
+name: PROTON
+input_languages:
+  - C
+project_url: https://github.com/kumarmadhukar/term
+repository_url: https://github.com/kumarmadhukar/term
+spdx_license_identifier: MIT
+benchexec_toolinfo_module: "proton.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - r.metta
+
+maintainers:
+  - orcid: 0000-0001-7368-2389
+    name: Ravindra Metta
+    institution: Tata Consulting Services
+    country: India
+    url:
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14209458
+    benchexec_toolinfo_options: ['--graphml-witness', 'witness.graphml']
+    required_ubuntu_packages:
+      - gcc
+      - libc6-dev-i386
+      - clang-14
+      - llvm-14
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10185252
+    benchexec_toolinfo_options: ['--graphml-witness', 'witness.graphml']
+    required_ubuntu_packages:
+      - gcc
+      - libc6-dev-i386
+      - clang-14
+      - llvm-14
+
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0001-7368-2389
+      name: Ravindra Metta
+      institution: Tata Consulting Services
+      country: India
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0001-7368-2389
+      name: Ravindra Metta
+      institution: Tata Consulting Services
+      country: India
+      url:
+
+
+
+techniques:
+  - Bounded Model Checking
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-031-57256-2_27
+    title: "Proton: Probes for Non-termination and Termination (Competition Contribution)"
+    year: 2024

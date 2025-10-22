@@ -1,0 +1,27 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: FM-Tools
+Source: https://gitlab.com/sosy-lab/benchmarking/fm-tools
+
+Files:
+ ci/*
+Copyright: 2024-2025 Dirk Beyer <https://www.sosy-lab.org>
+License: Apache-2.0
+
+Files:
+ CODEOWNERS
+Copyright: 2024-2025 The FM-Tools Community
+License: CC0-1.0
+
+Files:
+ data/*.yml
+ website/*
+ README.md
+Copyright: 2024-2025 The FM-Tools Community
+License: CC-BY-4.0
+
+Files:
+ presentations/*
+ posters/*
+Copyright: unknown
+License: LicenseRef-unknown
+

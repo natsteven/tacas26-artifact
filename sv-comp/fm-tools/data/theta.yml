@@ -1,0 +1,93 @@
+id: theta
+name: Theta
+description: |
+  Theta is a model checking framework, with a strong emphasis on effectively handling concurrency in software using abstraction refinement algorithms.
+  We utilize our portfolio with dynamic algorithm selection to guide configuration synthesis and ordering, thus providing an automatic, adaptive verification solution. 
+input_languages:
+  - C
+project_url: https://github.com/ftsrg/theta
+repository_url: https://github.com/ftsrg/theta
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.theta
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - levente.bajczi
+
+maintainers:
+  - name: Levente Bajczi
+    orcid: 0000-0002-6551-5860
+    institution: Budapest University of Technology and Economics
+    country: Hungary
+    url: http://mit.bme.hu/~bajczi
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14194483
+    benchexec_toolinfo_options: ["--svcomp", "--portfolio", "STABLE", "--loglevel", "RESULT"]
+    required_ubuntu_packages:
+      - openjdk-17-jre-headless
+      - libgomp1
+      - libmpfr6
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10202679
+    benchexec_toolinfo_options: ["--witness-only", "--portfolio", "COMPLEX", "--loglevel", "RESULT"]
+    required_ubuntu_packages:
+      - openjdk-17-jre-headless
+      - libgomp1
+      - libmpfr6
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/theta.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-17-jre-headless
+      - libgomp1
+      - libmpfr6
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-6551-5860
+      name: Levente Bajczi
+      institution: Budapest University of Technology and Economics
+      country: Hungary
+      url: http://mit.bme.hu/~bajczi
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      name: Levente Bajczi
+      institution: Budapest University of Technology and Economics
+      country: Hungary
+      url: http://mit.bme.hu/~bajczi
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      name: Levente Bajczi
+      institution: Budapest University of Technology and Economics
+      country: Hungary
+      url: http://mit.bme.hu/~bajczi
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Bounded Model Checking
+  - Explicit-Value Analysis
+  - Bit-Precise Analysis
+  - ARG-Based Analysis
+  - Interpolation
+  - Concurrency Support
+  - Algorithm Selection
+  - Portfolio
+  - Task Translation
+  - Floating-Point Arithmetics
+
+frameworks_solvers: []
+
+
+literature:
+  - doi: 10.1007/978-3-031-57256-2_30
+    title: "Theta: Abstraction Based Techniques for Verifying Concurrency (Competition Contribution)"
+    year: 2024

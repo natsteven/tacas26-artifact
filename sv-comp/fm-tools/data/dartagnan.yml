@@ -1,0 +1,125 @@
+id: dartagnan
+name: Dartagnan
+input_languages:
+  - C
+project_url: https://github.com/hernanponcedeleon/Dat3M
+repository_url: https://github.com/hernanponcedeleon/Dat3M
+spdx_license_identifier: MIT
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/dartagnan.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - hernanponcedeleon
+
+maintainers:
+  - orcid: 0000-0002-4225-8830
+    name: Hernán Ponce de León
+    institution: Huawei Dresden Research Center
+    country: Germany
+    url: https://hernanponcedeleon.github.io
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14079770
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - clang-14
+      - llvm-14
+  - version: "svcomp25-validation"
+    doi: 10.5281/zenodo.14079770
+    benchexec_toolinfo_options: ["-witness", "${witness}"]
+    required_ubuntu_packages:
+      - clang-14
+      - llvm-14
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10161362
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - clang-14
+      - llvm-14
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/dartagnan.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - clang-11
+      - llvm-11
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-4225-8830
+      name: Hernán Ponce de León
+      institution: Huawei Dresden Research Center
+      country: Germany
+      url: https://hernanponcedeleon.github.io
+  - competition: "SV-COMP 2025"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp25-validation"
+    jury_member:
+      orcid: 0000-0002-4225-8830
+      name: Hernán Ponce de León
+      institution: Huawei Dresden Research Center
+      country: Germany
+      url: https://hernanponcedeleon.github.io
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0002-4225-8830
+      name: Hernán Ponce de León
+      institution: Huawei Dresden Research Center
+      country: Germany
+      url: https://hernanponcedeleon.github.io
+  - competition: "SV-COMP 2024"
+    track: "Validation of Violation Witnesses 1.0"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0002-4225-8830
+      name: Hernán Ponce de León
+      institution: Huawei Dresden Research Center
+      country: Germany
+      url: https://hernanponcedeleon.github.io
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-4225-8830
+      name: Hernán Ponce de León
+      institution: Huawei Dresden Research Center
+      country: Germany
+      url: https://hernanponcedeleon.github.io
+
+techniques:
+  - Bounded Model Checking
+  - Bit-Precise Analysis
+  - Concurrency Support
+
+frameworks_solvers:
+  - JavaSMT
+
+literature:
+  - doi: 10.1007/978-3-319-66706-5_15
+    title: "Portability Analysis for Weak Memory Models PORTHOS: One Tool for all Models"
+    year: 2017
+  - doi: 10.23919/FMCAD.2018.8603021
+    title: "BMC with Memory Models as Modules"
+    year: 2018
+  - doi: 10.1007/978-3-030-25540-4_19
+    title: "BMC for Weak Memory Models: Relation Analysis for Compact SMT Encodings"
+    year: 2019
+  - doi: 10.1007/978-3-030-45237-7_24
+    title: "Dartagnan: Bounded Model Checking for Weak Memory Models (Competition Contribution)"
+    year: 2020
+  - doi: 10.1007/978-3-030-72013-1_26
+    title: "Dartagnan: Leveraging Compiler Optimizations and the Price of Precision (Competition Contribution)"
+    year: 2021
+  - doi: 10.1007/978-3-030-99527-0_24
+    title: "Dartagnan: SMT-based Violation Witness Validation (Competition Contribution)"
+    year: 2022
+  - doi: 10.1145/3563292
+    title: "CAAT: consistency as a theory"
+    year: 2022
+  - doi: 10.1145/3622855
+    title: "Static Analysis of Memory Models for SMT Encodings"
+    year: 2023

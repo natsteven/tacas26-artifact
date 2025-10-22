@@ -1,0 +1,91 @@
+id: gdart
+name: GDart
+input_languages:
+  - Java
+project_url: https://github.com/tudo-aqua/gdart-svcomp
+repository_url: https://github.com/tudo-aqua/gdart-svcomp
+spdx_license_identifier: Apache-2.0 AND LGPL-2.0-only
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/gdart.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - fhowar
+  - mmuesly
+
+maintainers:
+  - name: Falk Howar
+    institution: TU Dortmund
+    country: Germany
+    url: https://falkhowar.de
+    orcid: 0000-0002-9524-4459
+  - name: Malte Mues
+    institution: TU Dortmund
+    country: Germany
+    url: https://aqua.cs.tu-dortmund.de/team/researchers/malte-mues/
+    orcid: 0000-0002-6291-9886
+
+versions:
+  - version: "svcomp25"
+    doi: "10.5281/zenodo.14207413"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10059535"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/gdart.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-9524-4459
+      name: Falk Howar
+      institution: TU Dortmund
+      country: Germany
+      url: https://falkhowar.de
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0002-9524-4459
+      name: Falk Howar
+      institution: TU Dortmund
+      country: Germany
+      url: https://falkhowar.de
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-9524-4459
+      name: Falk Howar
+      institution: TU Dortmund
+      country: Germany
+      url: https://falkhowar.de
+
+techniques:
+  - Symbolic Execution
+  - Bit-Precise Analysis
+  - Portfolio
+
+frameworks_solvers:
+  - CVC
+  - Z3
+
+literature:
+  - doi: 10.1007/978-3-030-99527-0_27
+    title: "GDart: an ensemble of tools for dynamic symbolic execution on the Java virtual machine (competition contribution)"
+    year: 2022
+  - doi: 10.1007/978-3-031-17108-6_6
+    title: "SPouT: Symbolic Path Recording During Testing - A Concolic Executor for the JVM"
+    year: 2022
+  - doi: 10.17877/DE290R-23694
+    title: "The integration of multi-color taint-analysis with dynamic symbolic execution for Java web application security analysis"
+    year: 2023
+

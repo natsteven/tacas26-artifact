@@ -1,0 +1,90 @@
+id: jbmc
+name: JBMC
+description: |
+  JBMC is an open-source SAT- and SMT-based bounded model checking tool for verifying Java bytecode.
+  JBMC can be used to verify or falsify functional properties and show the absence or presence of 
+  runtime errors. JBMC relies on an operational model of the Java libraries optimized for program
+  analysis. 
+input_languages:
+  - Java
+project_url: https://github.com/diffblue/cbmc
+repository_url: https://github.com/diffblue/cbmc
+spdx_license_identifier: BSD-4-Clause
+benchexec_toolinfo_module: benchexec.tools.jbmc
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - peterschrammel
+
+maintainers:
+  - orcid: 0000-0002-5713-1381
+    name: Peter Schrammel
+    institution: Diffblue
+    country: UK
+    url: http://www.schrammel.it
+
+versions:
+  - version: "svcomp25"
+    doi: 10.5281/zenodo.14207455
+    benchexec_toolinfo_options: ["--graphml-witness", "witness.graphml"]
+    required_ubuntu_packages:
+      - openjdk-8-jdk-headless
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10198951
+    benchexec_toolinfo_options: ["--graphml-witness", "witness.graphml"]
+    required_ubuntu_packages:
+      - openjdk-8-jdk-headless
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/jbmc.zip"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-8-jdk-headless
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-5713-1381
+      name: Peter Schrammel
+      institution: Diffblue
+      country: UK
+      url: http://www.schrammel.it
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0002-5713-1381
+      name: Peter Schrammel
+      institution: University of Sussex and Diffblue
+      country: UK
+      url: http://www.schrammel.it
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    tool_version: "svcomp23"
+    jury_member:
+      orcid: 0000-0002-5713-1381
+      name: Peter Schrammel
+      institution: University of Sussex and Diffblue
+      country: UK
+      url: http://www.schrammel.it
+
+techniques:
+  - Bounded Model Checking
+  - Bit-Precise Analysis
+  - Concurrency Support
+
+frameworks_solvers:
+  - CProver
+  - MiniSAT
+  - Glucose
+
+literature:
+  - doi: 10.1007/978-3-319-96145-3_10
+    title: "A Bounded Model Checking Tool for Verifying Java Bytecode"
+    year: 2018
+  - doi: 10.1007/978-3-030-17502-3_17
+    title: "JBMC: Bounded Model Checking for Java Bytecode (Competition Contribution)"
+    year: 2019
+  - doi: 10.48550/arXiv.2302.02381
+    title: "JBMC: A Bounded Model Checking Tool for Java Bytecode"
+    year: 2023

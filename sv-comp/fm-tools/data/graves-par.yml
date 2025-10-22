@@ -1,0 +1,60 @@
+id: graves-par
+name: Graves-Par
+input_languages:
+  - C
+project_url: https://github.com/mgerrard/graves-par
+repository_url: https://github.com/mgerrard/graves-par
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: graves-par.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - mgerrard
+
+maintainers:
+  - name: Hors Concours
+    institution: University of Virginia
+    country: USA
+    url:
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10397157
+    benchexec_toolinfo_options: ['verifier-parallel-portfolio.cvt', '--cache-dir', 'cache', '--no-cache-update', '--use-python-processes']
+    required_ubuntu_packages:
+      - python3-numpy
+      - clang
+      - python2
+      - openjdk-11-jre-headless
+      - python3-lxml
+      - gcc
+      - libc6-dev-i386
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+      - meta_tool
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: University of Virginia
+      country: USA
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+      - meta_tool
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: University of Virginia
+      country: USA
+      url:
+
+techniques: []
+
+frameworks_solvers: []

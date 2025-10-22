@@ -1,0 +1,82 @@
+id: predatorhp
+name: PredatorHP
+input_languages:
+  - C
+project_url: https://www.fit.vutbr.cz/research/groups/verifit/tools/predatorhp/
+repository_url: https://github.com/versokova/predatorhp
+spdx_license_identifier: "GPL-3.0-or-later"
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/predatorhp.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - versokova
+
+maintainers:
+  - orcid: 0000-0003-1980-7245
+    name: Veronika Šoková
+    institution: Brno University of Technology
+    country: Czechia
+    url: https://www.fit.vut.cz/person/isokova/.en
+
+versions:
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10183805"
+    benchexec_toolinfo_options: ['--witness', 'witness.graphml']
+    required_ubuntu_packages:
+      - python2.7
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+  - version: "svcomp23"
+    url: "https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/predatorhp.zip"
+    benchexec_toolinfo_options: ['--witness', 'error-witness.graphml']
+    required_ubuntu_packages:
+      - expect
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0003-1980-7245
+      name: Veronika Šoková
+      institution: Brno University of Technology
+      country: Czechia
+      url: https://www.fit.vut.cz/person/isokova/.en
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - Shape Analysis
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/978-3-030-45237-7_30
+    title: "PredatorHP Revamped (Not Only) for Interval-Sized Memory Regions and Memory Reallocation (Competition Contribution)"
+    year: 2020
+  - doi: 10.1007/978-3-319-49052-6_13
+    title: "Predator Shape Analysis Tool Suite"
+    year: 2016
+  - doi: 10.1007/978-3-662-49674-9_66
+    title: "Optimized PredatorHP and the SV-COMP Heap and Memory Safety Benchmark - (Competition Contribution)"
+    year: 2016
+  - doi: 10.1007/978-3-662-46681-0_40
+    title: "Predator Hunting Party (Competition Contribution)"
+    year: 2015

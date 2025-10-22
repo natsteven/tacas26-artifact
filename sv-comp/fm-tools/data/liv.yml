@@ -1,0 +1,96 @@
+id: liv
+name: LIV
+description: |
+  LIV is a witness validator that
+  splits the input program into straight-line programs
+  based on the rules of hoare logic.
+  It tries to prove or refute the invariants provided
+  in the input correctness witnesses
+  based on the straight-line programs.
+input_languages:
+  - C
+project_url: https://gitlab.com/sosy-lab/software/liv
+repository_url: https://gitlab.com/sosy-lab/software/liv
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: "benchexec.tools.liv"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Marianl
+  - dbeyer
+  - PhilippWendler
+
+maintainers:
+  - orcid: 0000-0003-4832-7662
+    name: Dirk Beyer
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/dbeyer/
+  - orcid: 0000-0002-8172-3184
+    name: Marian Lingsch-Rosenfeld
+    institution: LMU Munich
+    country: Germany
+    url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+
+versions:
+  - version: "svcomp25"
+    doi: "10.5281/zenodo.14334835"
+    benchexec_toolinfo_options: ['--witness', '${witness}', '--verifier', 'actors/cbmc.yml', '--verifierversion', 'default', '--cache-dir', 'lib/cvt_cache', '--no-cache-update', '--all-possible-invariant-locations', '--fuzzy-invariant-locations', '1', "--non-strict", '--prep-cgroup', '--debug']
+    required_ubuntu_packages:
+      - python3-requests
+      - python3-pycparser
+      - python3-lxml
+      - python3-yaml
+      - python3-graphviz
+      - python3-tqdm
+      - python3-docker
+  - version: "svcomp24"
+    doi: "10.5281/zenodo.10202756"
+    benchexec_toolinfo_options: ['--verifier', 'actors/cbmc.yml', '--verifierversion', 'default', '--cache-dir', 'lib/cvt_cache', '--no-cache-update', '--all-possible-invariant-locations', '--fuzzy-invariant-locations', '1', "--non-strict"]
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Validation of Correctness Witnesses 2.0"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2025"
+    track: "Validation of Correctness Witnesses 1.0"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0002-8172-3184
+      name: Marian Lingsch-Rosenfeld
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/lingsch-rosenfeld/
+  - competition: "SV-COMP 2024"
+    track: "Validation of Correctness Witnesses 1.0"
+    tool_version: "svcomp24"
+    jury_member:
+      orcid: 0000-0002-9169-9130
+      name: Martin Spiessl
+      institution: LMU Munich
+      country: Germany
+      url: https://www.sosy-lab.org/people/spiessl/
+
+techniques:
+  - "Task Translation"
+
+frameworks_solvers: []
+
+used_actors:
+  - actor_type: "Splitter"
+    description: |
+      Splits a program into straight-line programs for witness validation.
+  - actor_type: "Annotator"
+    description: |
+      Annotates assumes and assertions into straight-line programs for witness validation.
+
+literature:
+  - doi: 10.1109/ASE56229.2023.00214
+    title: "LIV: Invariant Validation using Straight-Line Programs"
+    year: 2023

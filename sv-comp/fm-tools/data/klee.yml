@@ -1,0 +1,69 @@
+id: klee
+name: KLEE
+input_languages:
+  - C
+project_url: https://klee.github.io
+repository_url: https://github.com/klee/klee
+spdx_license_identifier: NCSA
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/klee.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - mnowack
+
+maintainers:
+  - name: Hors Concours
+    institution: --
+    country: --
+    url:
+
+versions:
+  - version: "testcomp23"
+    doi: 10.5281/zenodo.10412702
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "Test-Comp 2025"
+    track: "Test Generation"
+    label:
+      - inactive
+    tool_version: "testcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "Test-Comp 2024"
+    track: "Test Generation"
+    label:
+      - inactive
+    tool_version: "testcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "Test-Comp 2023"
+    track: "Test Generation"
+    label:
+      - inactive
+    tool_version: "testcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - Floating-Point Arithmetics
+  - Symbolic Execution
+  - Targeted Input Generation
+
+frameworks_solvers: []
+
+literature:
+  - doi: 10.1007/s10009-020-00570-3
+    title: "KLEE Symbolic Execution Engine in 2019"
+    year: 2020

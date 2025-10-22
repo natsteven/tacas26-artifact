@@ -1,0 +1,86 @@
+{% macro get_hyper_ref(url) %}
+<a href="{{url}}">{{url}}</a>
+{% endmacro %}
+
+{% macro get_hyper_ref_doi(doi) %}
+<a href='https://doi.org/{{doi}}'>DOI: {{doi}}</a>
+{% endmacro %}
+
+{% macro get_url_for_doi(doi) %}
+{% if doi.startswith("10.1007") %}
+https://link.springer.com/content/pdf/{{ doi }}
+{% endif %}
+{% if doi.startswith("10.1145") %}
+https://dl.acm.org/doi/pdf/{{ doi }}
+{% endif %}
+{% if doi.startswith("10.48550") %}
+https://arxiv.org/pdf/{{ doi.replace("10.48550/arXiv.", "") }}
+{% endif %}
+{% endmacro %}
+
+{% macro get_hyper_ref_pdf(doi, title) %}
+{% if get_url_for_doi(doi) %}
+<a href='{{ get_url_for_doi(doi) }}'><img src='img/pdf.png' width='16px' height='16px' />
+{% endif %}
+{{ title }}
+{% if get_url_for_doi(doi) %}
+</a>
+{% endif %}
+{% endmacro %}
+
+{% macro get_hyper_ref_orcid(orcid, name) %}
+{% if orcid %}
+<a href='https://orcid.org/{{ orcid }}'><img src='img/orcid.svg' width='16px' height='16px' /> {{ name }}</a>
+{% endif %}
+{% endmacro %}
+
+{% macro get_hyper_ref_doc(doc_path, doc_file) %}
+<a href='https://gitlab.com/sosy-lab/benchmarking/fm-tools/-/raw/main/{{ doc_path }}/{{ doc_file }}'>
+  <img src='img/pdf.png' width='16px' height='16px' /> {{ doc_file }}</a>
+{% endmacro %}
+
+{% macro get_hyper_ref_logo(doc_path, doc_file) %}
+  <img style="padding-left: 20px;" height="32" alt="Logo of a tool" src='{{ doc_path }}/{{ doc_file }}'>
+{% endmacro %}
+
+<!DOCTYPE html>
+<!-- This file is part of fm-tools
+     https://gitlab.com/sosy-lab/benchmarking/fm-tools
+     SPDX-FileCopyrightText: 2024 Dirk Beyer <https://www.sosy-lab.org>
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css"  />
+    <meta http-equiv="content-language" content="en" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="description" content="FM-Tools Descriptions" />
+    <meta name="keywords" content="Formal Methods, Software Model Checking" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>{{ self.title() }}</h1>
+      <div id="code-link">
+        <a href="https://gitlab.com/sosy-lab/benchmarking/fm-tools" target="_blank">Code on&nbsp;<img src="img/gitlab-logo-100.png" height="30px" alt="GitLab" /></a>
+      </div>
+      <nav id="quicklinks">
+        <h2>Quicklinks</h2>
+        <ul>
+          <li><a href="index.html">Tools</a></li>
+          <li><a href="techniques.html">Techniques</a></li>
+          <li><a href="competitions.html">Competitions</a></li>
+          <li><a href="frameworks.html">Frameworks</a></li>
+          <li><a href="input_languages.html">Input Languages</a></li>
+          <li><a href="schema.html">Documentation of the YAML Schema ↗</a></li>
+        </ul>
+      </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

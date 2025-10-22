@@ -1,0 +1,67 @@
+id: lazycseq
+name: Lazy-CSeq
+input_languages:
+  - C
+project_url: https://github.com/omainv/cseq/releases
+repository_url: https://github.com/omainv/cseq
+spdx_license_identifier: BSD-3-Clause
+benchexec_toolinfo_module: "lazycseq.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - omainv
+
+maintainers:
+  - name: Omar Inverso
+    institution: Gran Sasso Science Institute
+    country: Italy
+    url:
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10397183
+    benchexec_toolinfo_options: ['--witness', 'error-witness.graphml']
+    required_ubuntu_packages:
+      - python2
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - Bounded Model Checking
+  - Bit-Precise Analysis
+  - Concurrency Support
+
+frameworks_solvers:
+  - CProver
+  - MiniSAT

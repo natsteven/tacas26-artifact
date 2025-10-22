@@ -1,0 +1,54 @@
+id: jcwit
+name: JCWIT
+input_languages:
+  - Java
+project_url: https://github.com/Chriszai/JCWIT
+repository_url: https://github.com/Chriszai/JCWIT
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.jcwit
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - Chriszai
+
+maintainers:
+  - name: Zaiyu Cheng
+    institution: University of Manchester
+    country: UK
+    orcid: 0000-0000-0000-0000
+    url:
+
+versions:
+  - version: "svcomp24"
+    doi: 10.5281/zenodo.10207438
+    benchexec_toolinfo_options: ["--witness", "${witness}"]
+    required_ubuntu_packages:
+      - python3-networkx
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Validation of Correctness Witnesses 1.0"
+    label:
+      - inactive
+    tool_version: "svcomp24"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Validation of Correctness Witnesses 1.0"
+    tool_version: "svcomp24"
+    jury_member:
+      name: Zaiyu Cheng
+      institution: University of Manchester
+      country: UK
+      url:
+
+techniques:
+  - Bounded Model Checking
+
+frameworks_solvers: []
+
+literature: []

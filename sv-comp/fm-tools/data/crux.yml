@@ -1,0 +1,71 @@
+id: crux
+name: Crux
+input_languages:
+  - C
+project_url: https://github.com/GaloisInc/crucible
+repository_url: https://github.com/GaloisInc/crucible
+spdx_license_identifier: BSD-3-Clause
+benchexec_toolinfo_module: crux.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - RyanGlScott
+
+maintainers:
+  - orcid: 0009-0006-5642-5667
+    name: Ryan G. Scott
+    institution: Galois, Arlington
+    country: USA
+    url: https://ryanglscott.github.io/
+
+versions:
+  - version: "svcomp23"
+    doi: 10.5281/zenodo.10396721
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2023
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url: https://ryanglscott.github.io/
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp23"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url: https://ryanglscott.github.io/
+
+techniques:
+  - Symbolic Execution
+
+frameworks_solvers:
+  - Z3
+
+literature:
+  - doi: 10.48550/arXiv.2410.18280
+    title: "Crux, a Precise Verifier for Rust and Other Languages"
+    year: 2024
+

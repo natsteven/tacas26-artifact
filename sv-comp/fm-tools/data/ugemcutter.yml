@@ -1,0 +1,108 @@
+id: ugemcutter
+name: UGemCutter
+description: |
+  GemCutter is a verifier for concurrent programs based on commutativity, i.e., 
+  the observation that for certain statements from different threads, the 
+  execution order does not matter. It integrates partial order reduction 
+  algorithms (that take advantage of commutativity) with a trace 
+  abstraction-based CEGAR scheme.
+input_languages:
+  - C
+project_url: https://ultimate-pa.org
+repository_url: https://github.com/ultimate-pa/ultimate
+spdx_license_identifier: LGPL-3.0-or-later
+benchexec_toolinfo_module: ultimategemcutter.py
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - danieldietsch
+
+maintainers:
+  - orcid: 0000-0003-4252-3558
+    name: Matthias Heizmann
+    institution: University of Stuttgart
+    country: Germany
+    url: https://www.iste.uni-stuttgart.de/de/institut/team/Heizmann/
+  - orcid: 0000-0003-4885-0728
+    name: Dominik Klumpp
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/klumpp
+  - orcid: 0000-0002-5656-306X
+    name: Frank Schüssele
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/schuessele
+  - orcid: 0000-0002-8947-5373
+    name: Daniel Dietsch
+    institution: University of Freiburg
+    country: Germany
+    url: https://swt.informatik.uni-freiburg.de/staff/dietsch
+versions:
+  - version: svcomp25
+    doi: 10.5281/zenodo.14209054
+    benchexec_toolinfo_options: [--full-output]
+    required_ubuntu_packages:
+      - openjdk-21-jre-headless
+  - version: svcomp24
+    doi: 10.5281/zenodo.10203548
+    benchexec_toolinfo_options: [--full-output]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+  - version: svcomp23
+    url: https://gitlab.com/sosy-lab/sv-comp/archives-2023/-/raw/svcomp23/2023/ugemcutter.zip
+    benchexec_toolinfo_options: [--full-output]
+    required_ubuntu_packages:
+      - openjdk-11-jre-headless
+
+competition_participations:
+  - competition: SV-COMP 2025
+    track: Verification
+    tool_version: svcomp25
+    jury_member:
+      orcid: 0000-0003-4885-0728
+      name: Dominik Klumpp
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/klumpp
+  - competition: SV-COMP 2024
+    track: Verification
+    tool_version: svcomp24
+    jury_member:
+      name: Dominik Klumpp
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/klumpp
+  - competition: SV-COMP 2023
+    track: Verification
+    tool_version: svcomp23
+    jury_member:
+      name: Dominik Klumpp
+      institution: University of Freiburg
+      country: Germany
+      url: https://swt.informatik.uni-freiburg.de/staff/klumpp
+
+techniques:
+  - CEGAR
+  - Predicate Abstraction
+  - Bit-Precise Analysis
+  - Lazy Abstraction
+  - Interpolation
+  - Automata-Based Analysis
+  - Concurrency Support
+  - Algorithm Selection
+  - Portfolio
+
+frameworks_solvers:
+  - Ultimate
+  - MathSAT
+  - CVC
+  - SMTinterpol
+  - Z3
+
+literature:
+  - doi: 10.1145/3519939.3523727
+    title: Sound sequentialization for concurrent program verification
+    year: 2022
+  - doi: 10.1007/978-3-030-99527-0_35
+    title: Ultimate GemCutter and the Axes of Generalization
+    year: 2022

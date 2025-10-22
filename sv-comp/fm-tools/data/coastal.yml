@@ -1,0 +1,69 @@
+id: coastal
+name: COASTAL
+input_languages:
+  - Java
+project_url: https://github.com/DeepseaPlatform/coastal
+repository_url: https://github.com/DeepseaPlatform/coastal
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: "https://gitlab.com/sosy-lab/software/benchexec/-/raw/main/benchexec/tools/coastal.py"
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - jacogeld
+
+maintainers:
+  - orcid: 0000-0002-0913-3091
+    name: Willem Visser
+    institution: Stellenbosch University
+    country: South Africa
+    url:
+
+versions:
+  - version: "svcomp20"
+    doi: 10.5281/zenodo.3679243
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+    full_container_images:
+      - registry.gitlab.com/sosy-lab/benchmarking/competition-scripts/user:2024
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp20"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2024"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp20"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+  - competition: "SV-COMP 2023"
+    track: "Verification"
+    label:
+      - inactive
+    tool_version: "svcomp20"
+    jury_member:
+      name: Hors Concours
+      institution: --
+      country: --
+      url:
+
+techniques:
+  - Symbolic Execution
+
+frameworks_solvers:
+  - JPF
+
+literature:
+  - doi: 10.1007/978-3-030-45237-7_23
+    title: "Coastal: Combining Concolic and Fuzzing for Java (Competition Contribution)"
+    year: 2020

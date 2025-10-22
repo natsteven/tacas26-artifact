@@ -1,0 +1,61 @@
+id: hornix
+name: Hornix
+description: |
+  Hornix is a software-verification tool based on the LLVM
+  framework, aiming to verify C/C++ code by employing a custom LLVM pass
+  on the LLVM IR level. It transforms the LLVM IR into a system of
+  constrained Horn clauses (CHC) and uses Z3 to decide about its satisfiability.
+input_languages:
+  - C
+project_url: https://github.com/d3sformal/hornix
+repository_url: https://github.com/d3sformal/hornix
+spdx_license_identifier: Apache-2.0
+benchexec_toolinfo_module: benchexec.tools.hornix
+fmtools_format_version: "2.0"
+fmtools_entry_maintainers:
+  - jan.kofron
+
+maintainers:
+  - orcid: "0000-0000-0000-0000"
+    name: Oliver Glitta
+    institution: Charles University
+    country: Czechia
+    url:
+  - orcid: "0000-0001-8140-4098"
+    name: Martin Blicha
+    institution: University of Lugano
+    country: Switzerland
+    url:
+  - orcid: "0000-0003-0391-4812"
+    name: Jan Kofron
+    institution: Charles University
+    country: Czechia
+    url: https://d3s.mff.cuni.cz/people/jankofron/
+
+versions:
+  - version: "svcomp25"
+    doi: "10.5281/zenodo.14208262"
+    benchexec_toolinfo_options: []
+    required_ubuntu_packages: []
+
+competition_participations:
+  - competition: "SV-COMP 2025"
+    track: "Verification"
+    tool_version: "svcomp25"
+    jury_member:
+      orcid: 0000-0001-8140-4098
+      name: Martin Blicha
+      institution: University of Lugano
+      country: Switzerland
+      url:
+
+techniques:
+  - Property-Directed Reachability
+
+frameworks_solvers:
+  - Z3
+
+literature: []
+
+
+
