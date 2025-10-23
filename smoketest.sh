@@ -42,15 +42,19 @@ rm results/results.*.table.html
 echo -e "\n=======================================\n\
 Tests completed - Validating results...\n\
 Checking SMT-LIB results in $smt_out..."
-astr_actual=$(cat smt-logs/a-str/$set/$bench.json.log | tr -d '\n')
+astr_actual=$(cat smt-logs/a-str/$set/$bench.json.log | tr -d '\n' | tr -d ' ')
 astr_act_0=${astr_actual%,*}
-astr_act_1=${astr_actual#:}
-if [[ "$astr_act_0" != "sat" || "$astr_act_1" != ' ""' ]]; then
+astr_act_1=${astr_actual#*:}
+if [[ "$astr_act_0" != "sat" || "$astr_act_1" != '""' ]]; then
     echo -e "\033[0;31ma-str model output does not match expected.\033[0m"
-    echo $astr_act_0 
-    echo $($actr_act_0 == "sat")
-    echo $astr_act_1
-    echo $($astr_act_1 == ' ""')
+    if [[ "$astr_act_0" != "sat" ]]; then
+        echo $astr_act_0
+        echo $astr_act_0 != "sat"
+    fi
+    if [[ "$astr_act_1" != '""' ]]; then
+        echo $astr_act_1
+        echo $astr_act_1 != '""'
+    fi
     echo "Actual:   '$astr_actual'"
 fi
 cvc5_expect="sat((define-fun X () String \"\"))"

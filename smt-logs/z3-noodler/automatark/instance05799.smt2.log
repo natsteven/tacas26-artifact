@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "Host:AddressDaemonUser-Agent:User-Agent:\u{a}")
+)

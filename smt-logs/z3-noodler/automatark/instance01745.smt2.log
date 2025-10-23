@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "X-Mailer:\u{13}Referer:sponsor2.ucmore.com\u{a}")
+)

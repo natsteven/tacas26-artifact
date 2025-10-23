@@ -1,0 +1,9 @@
+sat
+(
+(define-fun I () String "")
+(define-fun R () String "aa")
+(define-fun H () String "")
+(define-fun F () String "a")
+(define-fun L () String "")
+(define-fun P () String "")
+)

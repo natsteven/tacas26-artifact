@@ -1,0 +1,8 @@
+sat
+(
+(define-fun K () String "abcaaa")
+(define-fun J () String "aacbcaababaabaca")
+(define-fun N () String "")
+(define-fun M () String "")
+(define-fun D () String "")
+)

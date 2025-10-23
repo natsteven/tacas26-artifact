@@ -1,0 +1,10 @@
+sat
+(
+(define-fun H () String "")
+(define-fun K () String "")
+(define-fun F () String "")
+(define-fun G () String "aaaababab")
+(define-fun J () String "")
+(define-fun L () String "")
+(define-fun M () String "aaaabaabaabaa")
+)

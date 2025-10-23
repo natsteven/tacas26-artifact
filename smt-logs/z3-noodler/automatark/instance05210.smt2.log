@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "TROJAN-Owner:User-Agent:%3fTs2/\u{a}")
+)

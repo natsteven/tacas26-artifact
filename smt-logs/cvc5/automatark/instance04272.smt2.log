@@ -1,0 +1,4 @@
+sat
+(
+(define-fun X () String "Validation of Mexican RFC for tax payers individuals\u{a}")
+)

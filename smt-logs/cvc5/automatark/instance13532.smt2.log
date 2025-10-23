@@ -1,0 +1,4 @@
+sat
+(
+(define-fun X () String "<chat>\u{1b}Host:tid={\u{a}")
+)

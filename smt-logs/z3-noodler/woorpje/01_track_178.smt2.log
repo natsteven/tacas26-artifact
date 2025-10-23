@@ -1,0 +1,11 @@
+sat
+(
+  (define-fun F () String
+    "\u{0}")
+  (define-fun I () String
+    "\u{0}")
+  (define-fun G () String
+    "bbaacabe\u{0}bacc\u{0}cddcaebbaacabecdbbcecceacbacbcecbcdbaccbbaacabe\u{0}babedceaaeeadebadedbacc")
+  (define-fun H () String
+    "dbaccbbaacabe\u{0}b")
+)

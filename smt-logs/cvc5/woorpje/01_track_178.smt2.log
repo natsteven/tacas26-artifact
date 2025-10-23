@@ -1,0 +1,7 @@
+sat
+(
+(define-fun H () String "dbaccbbaacabeb")
+(define-fun G () String "bbaacabebacccddcaebbaacabecdbbcecceacbacbcecbcdbaccbbaacabebabedceaaeeadebadedbacc")
+(define-fun F () String "")
+(define-fun I () String "")
+)

@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "www.cameup.com\u{13}NetTracker\u{a}")
+)

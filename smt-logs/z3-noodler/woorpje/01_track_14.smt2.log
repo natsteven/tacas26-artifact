@@ -1,0 +1,9 @@
+sat
+(
+  (define-fun B () String
+    "a")
+  (define-fun A () String
+    "a")
+  (define-fun C () String
+    "aaaaa")
+)

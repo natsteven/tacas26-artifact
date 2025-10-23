@@ -1,0 +1,12 @@
+sat
+(
+(define-fun B () String "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+(define-fun E () String "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+(define-fun I () String "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+(define-fun H () String "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+(define-fun F () String "aaaaaaaaaa")
+(define-fun G () String "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+(define-fun A () String "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+(define-fun C () String "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+(define-fun D () String "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+)

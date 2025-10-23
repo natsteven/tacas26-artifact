@@ -1,0 +1,14 @@
+sat
+(
+(define-fun J () String "")
+(define-fun T () String "aa")
+(define-fun R () String "")
+(define-fun V () String "")
+(define-fun G () String "aaaaaaaaaaa")
+(define-fun L () String "")
+(define-fun N () String "")
+(define-fun O () String "")
+(define-fun M () String "a")
+(define-fun P () String "")
+(define-fun Q () String "")
+)

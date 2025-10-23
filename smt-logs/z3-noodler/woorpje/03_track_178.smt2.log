@@ -1,0 +1,21 @@
+sat
+(
+  (define-fun P () String
+    "")
+  (define-fun I () String
+    "")
+  (define-fun R () String
+    "")
+  (define-fun J () String
+    "")
+  (define-fun G () String
+    "")
+  (define-fun V () String
+    "aaaaaaabbbaa")
+  (define-fun M () String
+    "")
+  (define-fun H () String
+    "aabbb")
+  (define-fun N () String
+    "")
+)

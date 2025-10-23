@@ -1,0 +1,9 @@
+sat
+(
+  (define-fun H () String
+    "fac")
+  (define-fun J () String
+    "")
+  (define-fun E () String
+    "")
+)

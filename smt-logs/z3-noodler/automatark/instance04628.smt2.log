@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "User-Agent:upgrade.qsrch.info\u{a}")
+)

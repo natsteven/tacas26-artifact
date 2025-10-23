@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "t=ProtoUser-Agent:quick.qsrch.com\u{a}")
+)

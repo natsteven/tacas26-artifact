@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "/\u{b6}\u{b6}\u{ff}\u{ff}\u{ff}\u{ff}/\u{a}")
+)

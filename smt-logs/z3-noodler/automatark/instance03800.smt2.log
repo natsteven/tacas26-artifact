@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "ToolbarUser-Agent:www.webcruiser.ccDaemonUser-Agent:\u{a}")
+)

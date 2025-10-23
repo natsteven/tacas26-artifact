@@ -1,0 +1,4 @@
+sat
+(
+(define-fun X () String "http://mysearch.dropspam.com/index.php?tpid=\u{13}\u{a}")
+)

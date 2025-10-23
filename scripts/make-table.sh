@@ -4,20 +4,29 @@ set -euo pipefail
 shopt -s nullglob
 
 if [[ ${#@} -ne 2 ]]; then
-  echo "Usage: $0 <results-file> <benchset(real or smt)>"
+  echo "Usage: $0 <results-file> <benchset(real|smt|all)>"
   exit 1
 fi
 
 solvers=("a-str" "cvc5" "ostrich" "z3-noodler")
-benchsets=("automatark" "matching" "rna-sat" "rna-unsat" "woorpje")
 out="$1"
 rm -f "$out" 2>/dev/null
 echo "bench,a-str_time,cvc5_time,ostrich_time,z3-noodler_time" > "$out"
 
+benchsets_performed=( "smt-logs/${solvers[0]}/*" )
+benchsets=()
 if [[ "$2" == "real" ]]; then
     benchsets=("real")
-elif [[ "$2" != "smt" ]]; then
-    echo "Unknown benchset $2, expected real or smt"
+elif [[ "$2" == "smt" || "$2" == "all" ]]; then
+    for dir in "${benchsets_performed[@]}"; do
+      benchset=$(basename "$dir")
+      if [[ "$2" != all && "$benchset" == "real" ]]; then
+        continue
+      fi
+      benchsets+=("$benchset")
+    done
+elif [[ "$2" != "all" ]]; then
+    echo "Unknown benchset $2, expected real, smt or all"
     exit 1
 fi
 

@@ -1,0 +1,15 @@
+sat
+(
+  (define-fun G () String
+    "a")
+  (define-fun E () String
+    "")
+  (define-fun M () String
+    "a")
+  (define-fun L () String
+    "aa")
+  (define-fun H () String
+    "")
+  (define-fun K () String
+    "a")
+)

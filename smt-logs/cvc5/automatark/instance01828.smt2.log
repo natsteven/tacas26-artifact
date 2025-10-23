@@ -1,0 +1,4 @@
+sat
+(
+(define-fun X () String "/%3D/Im\u{a}")
+)

@@ -1,0 +1,9 @@
+sat
+(
+(define-fun I () String "")
+(define-fun B () String "aaaaaaaaaaaaaaaa")
+(define-fun G () String "")
+(define-fun F () String "")
+(define-fun A () String "")
+(define-fun J () String "")
+)

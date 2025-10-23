@@ -1,0 +1,11 @@
+sat
+(
+  (define-fun D () String
+    "fdaeabdaebcdheefccbbadiihhi")
+  (define-fun B () String
+    "hf")
+  (define-fun C () String
+    "a")
+  (define-fun G () String
+    "")
+)

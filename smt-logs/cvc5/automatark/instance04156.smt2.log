@@ -1,0 +1,4 @@
+sat
+(
+(define-fun X () String "www.yoogee.com\u{13}serverHost:ref=%user_id\u{a}")
+)

@@ -1,0 +1,11 @@
+sat
+(
+(define-fun sym252 () String "")
+(define-fun sym122 () String "HIGH SCHOOL")
+(define-fun sym861 () String "")
+(define-fun sym633 () String "")
+(define-fun sym975 () String "/QUIT")
+(define-fun sym405 () String "")
+(define-fun sym747 () String "")
+(define-fun sym519 () String "")
+)

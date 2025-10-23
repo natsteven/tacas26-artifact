@@ -1,0 +1,9 @@
+sat
+(
+  (define-fun J () String
+    "bjaiijb")
+  (define-fun A () String
+    "\u{0}")
+  (define-fun D () String
+    "jaiijbjaiijbehfhccbbbjaiijbjaecdf\u{0}cdchciicdiedjbgea")
+)

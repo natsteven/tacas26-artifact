@@ -1,0 +1,6 @@
+sat
+(
+(define-fun B () String "dc")
+(define-fun A () String "aadc")
+(define-fun C () String "aadcb")
+)

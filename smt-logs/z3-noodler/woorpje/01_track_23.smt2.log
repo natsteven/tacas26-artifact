@@ -1,0 +1,13 @@
+sat
+(
+  (define-fun J () String
+    "bab")
+  (define-fun K () String
+    "a")
+  (define-fun C () String
+    "d")
+  (define-fun N () String
+    "")
+  (define-fun M () String
+    "")
+)

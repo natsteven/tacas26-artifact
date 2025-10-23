@@ -1,0 +1,4 @@
+sat
+(
+(define-fun X () String "HWAEUser-Agent:TestHost:www.dotcomtoolbar.com\u{a}")
+)

@@ -1,0 +1,16 @@
+sat
+(
+(define-fun sym1907 () String "P")
+(define-fun sym209 () String "Y")
+(define-fun sym817 () String "P")
+(define-fun sym551 () String "P")
+(define-fun sym1689 () String "P")
+(define-fun sym1035 () String "P")
+(define-fun sym2125 () String "P")
+(define-fun sym1253 () String "P")
+(define-fun sym2343 () String "P")
+(define-fun sym1471 () String "P")
+(define-fun sym2660 () String "A")
+(define-fun sym2561 () String "P")
+(define-fun sym161 () String "")
+)

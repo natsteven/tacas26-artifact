@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "<script type=""text/javascript"">\u{a}")
+)

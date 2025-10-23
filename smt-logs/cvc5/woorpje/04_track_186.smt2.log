@@ -1,0 +1,8 @@
+sat
+(
+(define-fun H () String "a")
+(define-fun F () String "bac")
+(define-fun G () String "aac")
+(define-fun C () String "ccbabaacababa")
+(define-fun D () String "ababaabbccbaa")
+)

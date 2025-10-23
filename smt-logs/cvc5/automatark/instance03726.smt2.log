@@ -1,0 +1,4 @@
+sat
+(
+(define-fun X () String "Host:X-Mailer:\u{13}toolbar.wishbone.com\u{a}")
+)

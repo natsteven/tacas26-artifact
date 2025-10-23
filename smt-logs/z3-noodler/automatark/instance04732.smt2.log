@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "www.webcruiser.ccgot\u{a}")
+)

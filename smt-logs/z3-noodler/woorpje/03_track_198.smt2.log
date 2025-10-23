@@ -1,0 +1,13 @@
+sat
+(
+  (define-fun J () String
+    "")
+  (define-fun F () String
+    "")
+  (define-fun K () String
+    "aa")
+  (define-fun D () String
+    "")
+  (define-fun H () String
+    "")
+)

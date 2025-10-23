@@ -21,11 +21,11 @@ TIMEOUT_SECS=${TIMEOUT_SECS:-120}
   timeout "${TIMEOUT_SECS}s" ./bin/"$solver" "$file" > "$log" 2>&1 || rc=$?
 
 if [ $rc -eq 124 ]; then
-  echo "timeout" >> "$log"
+  echo "timeout" > "$log"
 	echo "real=$TIMEOUT_SECS" > "$performance_log"
-elif [ $rc -eq 137 ]; then
-  echo "memout" >> "$log"
-  echo "memout" > "$performance_log"
+elif [ $rc -ne 0 ]; then
+  echo "EXITED with $rc" > "$log"
+  echo "real=$TIMEOUT_SECS" > "$performance_log"
 fi
 
 # end=$(date +%s.%3N)

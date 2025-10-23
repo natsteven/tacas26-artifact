@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "MailerHost:User-Agent:\u{a}")
+)

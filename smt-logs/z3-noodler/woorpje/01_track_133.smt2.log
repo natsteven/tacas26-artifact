@@ -1,0 +1,11 @@
+sat
+(
+  (define-fun L () String
+    "adadiecfaiifeeafffgafbhgdccdhfffdeffiebhieiefh")
+  (define-fun H () String
+    "ecfaiifeeafffgafbh")
+  (define-fun E () String
+    "hhbehehbbgeghiggcdfbgadbgcdfcfdhhcfhfdcfcifefhggifh")
+  (define-fun K () String
+    "a")
+)

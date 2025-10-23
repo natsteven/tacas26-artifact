@@ -1,0 +1,11 @@
+sat
+(
+(define-fun sym175 () String "")
+(define-fun sym113 () String "DATABASE")
+(define-fun sym135 () String "NAME")
+(define-fun sym20 () String "HTML")
+(define-fun sym160 () String "DESCRIPTION")
+(define-fun sym150 () String "")
+(define-fun sym195 () String "")
+(define-fun sym185 () String "")
+)

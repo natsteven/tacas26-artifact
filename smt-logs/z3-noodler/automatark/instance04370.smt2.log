@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "ZC-BridgeHost:Subject:as.starware.com\u{a}")
+)

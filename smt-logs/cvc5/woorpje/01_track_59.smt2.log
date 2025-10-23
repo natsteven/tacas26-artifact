@@ -1,0 +1,6 @@
+sat
+(
+(define-fun D () String "")
+(define-fun G () String "b")
+(define-fun J () String "efedfdcbccfccadacbaaffcffbc")
+)

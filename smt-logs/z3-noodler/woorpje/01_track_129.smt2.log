@@ -1,0 +1,7 @@
+sat
+(
+  (define-fun M () String
+    "")
+  (define-fun E () String
+    "")
+)

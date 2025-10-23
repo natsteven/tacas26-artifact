@@ -1,0 +1,7 @@
+sat
+(
+  (define-fun A () String
+    "bbfbgegffgedegdfcgebgecgccadgdaefbf")
+  (define-fun C () String
+    "cbgcdbgbfbgfeacegbcddgagbebgea")
+)

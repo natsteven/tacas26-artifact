@@ -1,0 +1,5 @@
+sat
+(
+(define-fun D () String "a")
+(define-fun E () String "")
+)

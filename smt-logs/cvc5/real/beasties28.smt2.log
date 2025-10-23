@@ -1,0 +1,16 @@
+sat
+(
+(define-fun sym2082 () String "K")
+(define-fun sym811 () String "K")
+(define-fun sym209 () String "Y")
+(define-fun sym2508 () String "K")
+(define-fun sym2619 () String "A")
+(define-fun sym1869 () String "K")
+(define-fun sym1237 () String "K")
+(define-fun sym551 () String "K")
+(define-fun sym1024 () String "K")
+(define-fun sym1663 () String "K")
+(define-fun sym1450 () String "K")
+(define-fun sym2295 () String "K")
+(define-fun sym161 () String "")
+)

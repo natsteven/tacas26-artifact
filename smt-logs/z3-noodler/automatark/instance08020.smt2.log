@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "Host:%2EResultsUser-Agent:\u{a}")
+)

@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun X () String
+    "tipHost:GirafaClient\u{13}\u{d}\u{a}subject=GhostVoice\u{a}")
+)

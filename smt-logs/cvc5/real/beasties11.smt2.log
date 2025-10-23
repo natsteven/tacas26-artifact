@@ -1,0 +1,7 @@
+sat
+(
+(define-fun sym753 () String "H")
+(define-fun sym205 () String "Y")
+(define-fun sym547 () String "H")
+(define-fun sym161 () String "A")
+)

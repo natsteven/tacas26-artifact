@@ -1,0 +1,9 @@
+sat
+(
+  (define-fun E () String
+    "dde")
+  (define-fun B () String
+    "gdbdccb")
+  (define-fun F () String
+    "")
+)

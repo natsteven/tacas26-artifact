@@ -1,0 +1,4 @@
+sat
+(
+(define-fun X () String "//999/U\u{a}")
+)

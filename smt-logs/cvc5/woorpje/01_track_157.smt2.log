@@ -1,0 +1,7 @@
+sat
+(
+(define-fun L () String "")
+(define-fun O () String "")
+(define-fun E () String "babdddgfffggbccgfdfbfcddgafccf")
+(define-fun A () String "")
+)

@@ -1,0 +1,11 @@
+sat
+(
+  (define-fun H () String
+    "ifahi")
+  (define-fun E () String
+    "\u{0}")
+  (define-fun J () String
+    "\u{0}")
+  (define-fun G () String
+    "ifahgf\u{0}ifahibgifahidfchjgbjhgafiagegfcije\u{0}ifah")
+)

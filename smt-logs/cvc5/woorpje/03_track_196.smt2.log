@@ -1,0 +1,16 @@
+sat
+(
+(define-fun S () String "")
+(define-fun J () String "")
+(define-fun T () String "")
+(define-fun R () String "")
+(define-fun K () String "")
+(define-fun V () String "")
+(define-fun G () String "aaa")
+(define-fun L () String "abaabbb")
+(define-fun Y () String "aaabaabbbabbbbaa")
+(define-fun M () String "")
+(define-fun Z () String "")
+(define-fun P () String "")
+(define-fun W () String "")
+)

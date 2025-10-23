@@ -1,0 +1,15 @@
+sat
+(
+  (define-fun J () String
+    "e")
+  (define-fun O () String
+    "ebfjihfchjdaec")
+  (define-fun M () String
+    "ecjjgcjacijhh")
+  (define-fun E () String
+    "")
+  (define-fun D () String
+    "j")
+  (define-fun H () String
+    "jafijihfchjdaecahaecjjg")
+)

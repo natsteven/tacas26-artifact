@@ -1,0 +1,4 @@
+sat
+(
+(define-fun X () String "Servidor.\u{13}home.edonkey.com\u{a}")
+)
