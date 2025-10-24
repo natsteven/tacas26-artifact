@@ -1,2 +1,2 @@
 #!/bin/bash
-exec java $JAVA_TOOL_OPTIONS -cp bin/a-str.jar edu.boisestate.cs.SolveMain "$1" -v 2 -s inverse -l 2
+exec java -Xmx700m -XX:MaxMetaspaceSize=128m -XX:MaxDirectMemorySize=128m -Xss512k -cp bin/a-str.jar edu.boisestate.cs.SolveMain "$1" -v 2 -s inverse -l 2

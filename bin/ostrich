@@ -1,2 +1,2 @@
 #!/bin/bash
-exec java $JAVA_TOOL_OPTIONS -jar bin/ostrich.jar -portfolio=strings +quiet +model "$1"
+exec java -Xmx700m -XX:MaxMetaspaceSize=128m -XX:MaxDirectMemorySize=128m -Xss512k -jar bin/ostrich.jar -portfolio=strings +quiet +model "$1"
