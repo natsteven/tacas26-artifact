@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "Host:00000www.zhongsou.com\u{a}")
-)

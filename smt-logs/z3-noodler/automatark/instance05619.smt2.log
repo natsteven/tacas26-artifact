@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "<logs@dummyserver.com>\u{a}")
-)

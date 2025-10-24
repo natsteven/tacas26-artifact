@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "wv=update.cgidrivesDaysform-data; name=""pid""\u{a}")
-)

@@ -1,7 +1,0 @@
-sat
-(
-(define-fun H () String "")
-(define-fun G () String "aa")
-(define-fun E () String "aaaaaa")
-(define-fun F () String "")
-)

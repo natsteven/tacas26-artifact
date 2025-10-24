@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "User-Agent:SpyPORT-ischeck=Component\u{a}")
-)

@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "User-Agent:Host:passwordhavewww.alfacleaner.com\u{a}")
-)

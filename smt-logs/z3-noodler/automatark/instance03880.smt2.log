@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "Host:YOUR/xml/toolbar/GREATExplorerSecureNet\u{a}")
-)

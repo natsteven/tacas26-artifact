@@ -5,6 +5,8 @@ echo "Installing benchexec and dependencies..."
 sudo apt install -y --install-recommends ./util/benchexec_*.deb
 sudo apt install -y openjdk-8-jdk
 sudo apt install -y parallel
+python3 -m venv .venv
+.venv/bin/pip install pandas matplotlib
 
 # Allow unprivileged user namespaces (quiet)
 sudo sysctl -q -w kernel.apparmor_restrict_unprivileged_userns=0 >/dev/null 2>&1 || true

@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "www.altnet.com\u{1b}Host:NSIS_DOWNLOADSubject:User-Agent:www.searchingall.com\u{a}")
-)

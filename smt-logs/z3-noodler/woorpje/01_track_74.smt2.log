@@ -1,7 +1,0 @@
-sat
-(
-  (define-fun E () String
-    "afbeegcfafgbfbceadaeecaegfadgebbfdcddafcaeadaafdeabgeccceagaecd")
-  (define-fun M () String
-    "eaceaefefeababacedfcafdb")
-)

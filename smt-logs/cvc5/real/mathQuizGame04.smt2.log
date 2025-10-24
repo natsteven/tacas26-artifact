@@ -1,6 +1,0 @@
-sat
-(
-(define-fun sym252 () String "/CLEAR")
-(define-fun sym122 () String "HIGH SCHOOL")
-(define-fun sym302 () String "")
-)

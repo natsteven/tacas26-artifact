@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "User-Agent:register.aspUser-Agent:Host:cdpView\u{a}")
-)

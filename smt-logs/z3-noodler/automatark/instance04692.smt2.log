@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "TM_SEARCH3Host:User-Agent:media.dxcdirect.com\u{a}")
-)

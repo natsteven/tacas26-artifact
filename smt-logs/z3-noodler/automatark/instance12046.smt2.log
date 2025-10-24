@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "ovplEchelonUser-Agent:User-Agent:Host:\u{a}")
-)

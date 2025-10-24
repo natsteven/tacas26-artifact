@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "Host:Host:body=%21%21%21Optix\u{13}\u{a}")
-)

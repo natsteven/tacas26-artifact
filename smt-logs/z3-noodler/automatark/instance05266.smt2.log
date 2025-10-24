@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "findX-Mailer:\u{13}User-Agent:www.take5bingo.com\u{1b}X-Mailer:\u{13}\u{4}\u{0}\u{a}")
-)

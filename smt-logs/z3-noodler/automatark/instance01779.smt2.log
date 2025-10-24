@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "www.weepee.com\u{1b}http\u{d}\u{a}CurrentOwner:\u{a}")
-)

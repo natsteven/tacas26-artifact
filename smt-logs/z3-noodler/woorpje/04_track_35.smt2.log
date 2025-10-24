@@ -1,7 +1,0 @@
-sat
-(
-  (define-fun A () String
-    "ababbbbb")
-  (define-fun B () String
-    "bbababbbaba")
-)

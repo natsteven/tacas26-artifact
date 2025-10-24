@@ -1,7 +1,0 @@
-sat
-(
-  (define-fun a () String
-    "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")
-  (define-fun b () String
-    "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")
-)

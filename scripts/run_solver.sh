@@ -5,6 +5,9 @@ solver="$1"
 file="$2"
 benchset="$3"
 
+JAVA_TOOL_OPTIONS="-Xmx700m -XX:MaxMetaspaceSize=128m -XX:MaxDirectMemorySize=128m -Xss512k"
+export JAVA_TOOL_OPTIONS
+
 mkdir -p smt-logs smt-logs/"$solver" smt-logs/"$solver"/"$benchset"
 
 log="smt-logs/$solver/$benchset/$(basename "$file").log"

@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "URLUBAgent%3fSchwindlerurl=Host:httpUser-Agent:\u{a}")
-)

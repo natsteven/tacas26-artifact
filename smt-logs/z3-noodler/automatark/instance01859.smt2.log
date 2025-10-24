@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "Host:From:Keylogger\u{a}")
-)

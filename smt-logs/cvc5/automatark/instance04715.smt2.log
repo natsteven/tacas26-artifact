@@ -1,4 +1,0 @@
-sat
-(
-(define-fun X () String "User-Agent:User-Agent:www.take5bingo.com\u{1b}User-Agent:\u{a}")
-)

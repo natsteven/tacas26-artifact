@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "FTPHost:User-Agent:User:distID=deskwizz.com\u{a}")
-)

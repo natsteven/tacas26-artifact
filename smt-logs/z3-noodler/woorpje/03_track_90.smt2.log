@@ -1,9 +1,0 @@
-sat
-(
-  (define-fun F () String
-    "aa")
-  (define-fun H () String
-    "aa")
-  (define-fun D () String
-    "a")
-)

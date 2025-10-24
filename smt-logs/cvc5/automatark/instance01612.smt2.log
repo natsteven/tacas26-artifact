@@ -1,4 +1,0 @@
-sat
-(
-(define-fun X () String "\u{a}\u{d}   replacement string---->\u{a}\u{a}")
-)

@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "Host:}{Port:www.instafinder.com\u{a}")
-)

@@ -1,6 +1,0 @@
-sat
-(
-(define-fun M () String "bdebc")
-(define-fun B () String "eeecbcbbcebdebbbbee")
-(define-fun E () String "")
-)

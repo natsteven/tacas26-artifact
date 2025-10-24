@@ -1,5 +1,0 @@
-sat
-(
-  (define-fun X () String
-    "//stat_svc//U\u{a}")
-)
