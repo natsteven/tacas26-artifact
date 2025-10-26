@@ -1,0 +1,3 @@
+[submodule "A-Str"]
+	path = A-Str
+	url = git@github.com:BoiseState/string-constraint-counting
