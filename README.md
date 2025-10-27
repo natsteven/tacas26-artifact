@@ -5,6 +5,8 @@ This has been constructed to work on the TACAS '26 VM provided at https://zenodo
 The following instructions assume you are at the artifact directory root.
 
 ## General Info
+`A-Str` contains the source code for the A-Str tool.
+
 The `benchmarks` directory contains the benchmarks run for the smt-solver experiments.
 As explained in the tool paper this includes a selction of SMT-LIB benches and those from real-world Java programs.
 More explanation is below.
@@ -22,7 +24,7 @@ The reasoning behind this is discussed in the following section.
 `sv-comp` is where the SV-COMP and SPF experiments scripts and framework are located.
 This is a subset of the repository located at https://gitlab.com/sosy-lab/sv-comp/bench-defs
 
-`util` contains some basic utilities.
+`util` contains some utilities.
 
 Otherwise we have our main scripts for running experiments.
 
@@ -53,26 +55,35 @@ To simulate the smt-solver experiment performed in the paper, retrieve the resul
 ./run-smt.sh
 ```
 This should take around 2 hours.
-It is important to note that we choose not to run the rna-sat and rna-unsat benchmark sets in this script as all 1000 of the benches timeout for two of the solvers.
-This would waste something like 67 hours of compute time.
-The user may adjust the script or otherwise see the descriptions below for running the solvers on specific benchmark sets, but we felt it unnecessary to include these sets in our simulated run.
+We limit the timeout to 60 seconds in contrast to the 120 used for the paper to improve runtime.
+This only effects a small portion of the benchmarks.
+We also choose not to run the rna-sat and rna-unsat benchmark sets in this script as all of these benches timeout for two of the solvers.
+This would waste something like 33 hours of compute time.
+The user may adjust the script or otherwise see the descriptions below for running the solvers on specific benchmark sets.
 
 After completion the timing results for SMT-LIB benchmark can be found at `results/smt-results.csv` and those for the real Java benchmarks at `results/real-results.csv`.
 Additionally graphs are produced and available as .pngs in the results directory.
 
 Also note that the experiments for the paper were run on a high-performance cluster using SLURM for jobs allocation and resource management. 
 Various changes were made to the scripts to enforce resource limits on the virtual machine.
-If a process reaches these limits we specify
+If a process reaches these limits we record it as a timeout.
 
 To perform the SPF comparison between A-Str and z3str3 on the sv-benchmarks and supplemental benches you can run:
 ```
 run-spf.sh
 ```
 This takes around 7 minutes.
-tThe results for this run can be seen in the html and csv files: `results/results.<DATETIME>.table`
+The results for this run can be seen in the html and csv files: `results/results.<DATETIME>.table`
 You are encouraged to open the html version with firefox for a user-friendly experience.
 
 ## Additional Use
+
+### A-Str 
+Source code can be seen in `A-Str` as well as build instructions and usage.
+We also provide a script `run-a-str.sh` for running A-Str with a smt2 or json file as input.
+Usage with an .smt2 file uses our smt-lib parser to output a temporary json file.
+This does not have any safeguards for timeouts or memory usage like the `run-smt.sh` or `scripts/smt-run.sh` scripts so use at your own risk.
+
 ### SMT-Solver Runs
 The script provided in the `scripts/` directory allow a user to run any combination of solvers and benchmark sets for the smt-solver evaluations.
 Specifically the `smt-run.sh` script takes as arguments a list of solver and benchmark sets and runs those combinations. 
@@ -110,3 +121,6 @@ The main driver for the SV-COMP benching is `sv-comp/myRunVerify.sh`
 This points to the definition file `sv-comp/spf.xml` which in turn points at the benchmark set file `sv-comp/Strings.set`.
 User could set up different subsets of the benchmakrs or otherwise adjust the definition file if they so choose. 
 We point to the https://gitlab.com/sosy-lab/sv-comp/bench-defs repository for extensive documentation on this framework.
+
+### Converting SMT-LIB to JSON
+If you would like to only convert a .smt2 to our .json DFG format use `util/getSMT.sh` with a directory or file path and optional output path.

@@ -3,9 +3,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
+import os
 
 def make_graph(data_file, name):
-    # Load data
     data = pd.read_csv(data_file)
 
     solvers = ['a-str', 'cvc5', 'ostrich', 'z3-noodler']
@@ -33,4 +33,10 @@ if __name__ == "__main__":
     parser.add_argument("data_file", help="CSV file with results")
     parser.add_argument("name", help="Name for the graph")
     args = parser.parse_args()
+    if not args.data_file or not args.name:
+        parser.print_help()
+        exit(1)
+    if not os.path.isfile(args.data_file):
+        print(f"Error: {args.data_file} does not exist.")
+        exit(1)
     make_graph(args.data_file, args.name)

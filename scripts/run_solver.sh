@@ -12,7 +12,7 @@ performance_log="smt-logs/$solver/$benchset/$(basename "$file").time"
 rm -f "$log" "$performance_log"
 
 rc=0
-TIMEOUT_SECS=${TIMEOUT_SECS:-120}
+TIMEOUT_SECS=${TIMEOUT_SECS:-60}
 MEM_LIMIT_MB=${MEM_LIMIT_MB:-1536}
 
 systemd-run --user --scope \

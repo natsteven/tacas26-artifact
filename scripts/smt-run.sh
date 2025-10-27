@@ -12,7 +12,7 @@ fi
 
 solvers=""
 benchsets=""
-TIMEOUT_SECS="120"
+TIMEOUT_SECS="60"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -80,4 +80,4 @@ for benchset in "${bench_arr[@]}"; do
   done
 done
 echo "Total jobs to run: ${#job_list[@]}"
-parallel -j 4 --memfree 1536M --bar --colsep ',' 'scripts/run_solver.sh "{1}" "{2}" "{3}"' ::: "${job_list[@]}"
+parallel -j 2 --bar --colsep ',' 'scripts/run_solver.sh "{1}" "{2}" "{3}"' ::: "${job_list[@]}"
