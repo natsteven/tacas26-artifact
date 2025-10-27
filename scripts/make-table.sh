@@ -48,6 +48,7 @@ for benchset in "${benchsets[@]}"; do
       if [[ -f "$f" ]]; then
         time=$(awk -F= '/^real=/{print $2}' "$f")
       else
+        echo "Warning: missing time file $f" >&2
         time=""
       fi
       row="$row,$time"
