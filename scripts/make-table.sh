@@ -13,7 +13,7 @@ out="$1"
 rm -f "$out" 2>/dev/null
 echo "bench,a-str_time,cvc5_time,ostrich_time,z3-noodler_time" > "$out"
 
-benchsets_performed=( "smt-logs/${solvers[0]}/*" )
+benchsets_performed=( smt-logs/${solvers[0]}/* )
 benchsets=()
 if [[ "$2" == "real" ]]; then
     benchsets=("real")
@@ -31,19 +31,18 @@ elif [[ "$2" != "all" ]]; then
 fi
 
 for benchset in "${benchsets[@]}"; do
-  src_dir="smt-logs/${solvers[0]}/$benchset"
-  files=( "$src_dir"/*.time )
+  files=( smt-logs/${solvers[0]}/$benchset/*.time )
   [[ ${#files[@]} -eq 0 ]] && continue
 
   for file in "${files[@]}"; do
     name=$(basename "$file")
     name=${name%%.*}
 
-    row="$name"
+    echo -n "$name" >> "$out"
     for solver in "${solvers[@]}"; do
-      f="smt-logs/$solver/$benchset/$name.time"
+      f="smt-logs/$solver/$benchset/$name.smt2.time"
       if [[ $solver == "a-str" ]]; then
-        f="smt-logs/$solver/$benchset/$name.json.time"
+        f="smt-logs/$solver/$benchset/$name.smt2.json.time"
       fi
       if [[ -f "$f" ]]; then
         time=$(awk -F= '/^real=/{print $2}' "$f")
@@ -51,9 +50,9 @@ for benchset in "${benchsets[@]}"; do
         echo "Warning: missing time file $f" >&2
         time=""
       fi
-      row="$row,$time"
+      echo -n ",$time" >> "$out"
     done
-    echo "$row" >> "$out"
+    echo "" >> "$out"
   done
 done
 
