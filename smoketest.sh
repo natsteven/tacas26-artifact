@@ -88,6 +88,6 @@ fi
 
 rm -rf smt-logs
 
-echo -e "=======================================\nSmoketest completed.\n\
-SMT-LIB results in $smt_out\n\
-SV-COMP results in $spf_out"
+echo -e "=======================================\nSmoketest completed.\n"
+rm $smt_out
+rm $spf_out

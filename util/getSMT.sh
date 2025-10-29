@@ -5,4 +5,4 @@ if [[ $# < 1 || $# > 2 ]]; then
     exit 1
 fi
 
-java -cp smt-lib-gen.jar edu.boisestate.cs.MainJSON $@
+java -cp A-Str/tools/smtlib-converter.jar edu.boisestate.cs.MainJSON $@

@@ -6,6 +6,15 @@ if [[ ${#@} -ge 2 ]]; then
   exit 1
 fi
 
+if [ -t 0 ]; then
+  read -p "Run full SMT benchmark suite? This will take several hours. (y/n) " response || exit 1
+  response=${response,,}
+  if [[ -n "$response" && "$response" != "y" && "$response" != "yes" ]]; then
+    echo "Aborted"
+    exit 0
+  fi
+fi
+
 ./scripts/smt-run.sh --s all --b automatark,matching,real,woorpje $@
 
 ./scripts/make-table.sh results/smt-results.csv smt

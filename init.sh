@@ -1,10 +1,23 @@
 #!/bin/bash
 set -euo pipefail
 
+if [[ ! -e "/home/tacas" ]]; then
+  echo "WARNING: This script is intended for the TACAS '26 VM environment."
+  echo "Proceeding may lead to unexpected results."
+  read -p "Continue? (y/n) " response || exit 1
+  response=${response,,}
+  if [[ -n "$response" && "$response" != "y" && "$response" != "yes" ]]; then
+    echo "Aborted"
+    exit 0
+  fi
+fi
+
 echo "Installing benchexec and dependencies..."
+sudo apt update -y
 sudo apt install -y --install-recommends ./util/benchexec_*.deb
 sudo apt install -y openjdk-8-jdk
 sudo apt install -y parallel
+sudo apt install -y maven
 python3 -m venv .venv
 .venv/bin/pip install pandas matplotlib
 

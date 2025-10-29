@@ -80,4 +80,4 @@ for benchset in "${bench_arr[@]}"; do
   done
 done
 echo "Total jobs to run: ${#job_list[@]}"
-parallel -j 2 --bar --colsep ',' 'scripts/run_solver.sh "{1}" "{2}" "{3}"' ::: "${job_list[@]}"
+parallel -j 3 --bar --colsep ',' 'scripts/run_solver.sh "{1}" "{2}" "{3}"' ::: "${job_list[@]}"
