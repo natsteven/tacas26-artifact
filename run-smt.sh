@@ -15,6 +15,8 @@ if [ -t 0 ]; then
   fi
 fi
 
+echo "Start time: $(date)"
+
 ./scripts/smt-run.sh --s all --b automatark,matching,real,woorpje $@
 
 ./scripts/make-table.sh results/smt-results.csv smt

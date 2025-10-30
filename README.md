@@ -48,7 +48,7 @@ To set up the VM with the proper packages, run the init.sh script using:
 ```bash
 ./init.sh
 ```
-This will install some dependencies and perform some cgroup workaround management for benchexec.
+This takes about 2 minutes, installs dependencies, and performs some cgroup management necessary for benchexec.
 
 ### Smoketest
 

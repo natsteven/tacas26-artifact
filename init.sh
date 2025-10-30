@@ -14,6 +14,8 @@ fi
 
 echo "Installing benchexec and dependencies..."
 sudo apt update -y
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8
 sudo apt install -y --install-recommends ./util/benchexec_*.deb
 sudo apt install -y openjdk-8-jdk
 sudo apt install -y parallel
